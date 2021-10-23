@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "cycling-cat-app",
+    "slug": "cycling-cat-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "cycling-cat-app"
+}
