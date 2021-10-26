@@ -10,10 +10,10 @@ export default function App() {
       </Text>
 
       <TouchableOpacity
-        onPress={() => alert('Bạn đã đồng ý không ảo game')}
+        onPress={() => alert('Bạn đã đồng ý đi ăn cơm')}
         style={{ backgroundColor: 'blue' }}>
         <Text style={{ fontSize: 20, color: '#fff' }}>
-        Bấm để đồng ý không bao giờ ảo game nữa
+        Bấm để đi ăn cơm
         </Text>
       </TouchableOpacity>
     </View>
