@@ -5,7 +5,6 @@ export default function App() {
   return (
     <View>
       <Text>Hello Cat </Text>
-      <StatusBar style="auto" />
     </View>
   );
 }
