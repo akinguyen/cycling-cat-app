@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, Image, StyleSheet, SafeAreaView } from "react-native";
 
-export default function Listofmatchinggroups() {
+export default function MatchGroup() {
   return ( 
     <SafeAreaView style = {styles.container}>
       <View style = {styles.bar}>

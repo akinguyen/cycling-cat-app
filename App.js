@@ -1,10 +1,10 @@
 import React from "react";
 import { Text, View, Image, SafeAreaView, StyleSheet } from "react-native";
-import Listofmatchinggroups from "./src/list of matching groups";
+import MatchGroup from "./src/MatchGroup";
 
 
 export default function App() {
   return (
-    <Listofmatchinggroups></Listofmatchinggroups>
+    <MatchGroup></MatchGroup>
   );
 }
