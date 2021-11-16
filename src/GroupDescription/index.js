@@ -5,7 +5,7 @@ import styles from "./styles";
 
 export default function GroupDescription() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.top}>
         <View style={styles.menu}>
           <View style={styles.inMenu} />
@@ -40,6 +40,6 @@ export default function GroupDescription() {
       <View style={styles.achievement}>
         <Text style={{ color: "black", fontSize: 20 }}>Achievement:</Text>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }

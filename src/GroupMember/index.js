@@ -4,7 +4,7 @@ import styles from "./styles";
 
 export default function GroupMember() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.top}>
         <View style={styles.menu}>
           <View style={styles.inMenu} />
@@ -36,6 +36,6 @@ export default function GroupMember() {
       <View style={styles.member}>
         <Text style={{ color: "black", fontSize: 20 }}>Members:</Text>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
