@@ -26,7 +26,7 @@ export default function screen5() {
        <View style = {{marginHorizontal : "7%"}}>
        <Text style = {{fontSize : 25}}> Street</Text>
         <View style = {{backgroundColor: "white", height : "100%", width : "100%", flexDirection: "row", justifyContent : "center", alignSelf : "center"}}>
-          <Text style = {{alignSelf: "center", fontSize : 20}}> Lý Thường Kiệt</Text>
+          <Text style = {{alignSelf: "center", fontSize : 20}}> Ly Thuong Kiet </Text>
         </View>
       </View>
     </View>
