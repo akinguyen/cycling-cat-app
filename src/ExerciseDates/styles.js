@@ -8,5 +8,8 @@ const styles = StyleSheet.create({
     margin: 10,
     justifyContent: "center",
   },
+  textDates: {
+    textAlign: "center",
+  },
 });
 export default styles;
