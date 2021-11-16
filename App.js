@@ -4,6 +4,4 @@ import Dates from "./src/ExerciseDates";
 
 export default function App() {
   return <Dates></Dates>;
-
 }
-
