@@ -65,22 +65,13 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderRightWidth: 1,
   },
-  description: {
+  member: {
     marginTop: "10%",
-    height: "30%",
+    height: "45%",
     marginHorizontal: "5%",
     justifyContent: "flex-start",
     alignItems: "flex-start",
     borderWidth: 3,
-  },
-  achievement: {
-    marginTop: "6%",
-    borderWidth: 3,
-    marginBottom: "6%",
-    height: "12%",
-    marginHorizontal: "5%",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
   },
 });
 

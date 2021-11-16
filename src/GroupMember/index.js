@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, View, SafeAreaView } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import styles from "./styles";
 
-export default function GroupDescription() {
+export default function GroupMember() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.top}>
@@ -34,11 +33,8 @@ export default function GroupDescription() {
           <Text style={{ fontSize: 10, fontWeight: "bold" }}>SCHEDULE</Text>
         </View>
       </View>
-      <View style={styles.description}>
-        <Text style={{ color: "black" }}>Description:</Text>
-      </View>
-      <View style={styles.achievement}>
-        <Text style={{ color: "black" }}>Achievement:</Text>
+      <View style={styles.member}>
+        <Text style={{ color: "black", fontSize: 20 }}>Members:</Text>
       </View>
     </SafeAreaView>
   );
