@@ -1,8 +1,9 @@
 import React from "react";
 import { Text, View, Image, SafeAreaView, StyleSheet } from "react-native";
+import GroupDescription from "./src/GroupDescription";
 import MatchGroup from "./src/MatchGroup";
 import NotifyMatching from "./src/NotifyMatching";
 
 export default function App() {
-  return <NotifyMatching />;
+  return <GroupDescription />;
 }
