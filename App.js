@@ -1,11 +1,11 @@
 import React from "react";
 import { Text, View } from "react-native";
-import picksport from "./src/picksport"
+import PickSport from "./src/PickSport"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <picksport></picksport>
+    <View>
+      <PickSport></PickSport>
     </View>
   );
 }
