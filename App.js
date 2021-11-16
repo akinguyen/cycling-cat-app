@@ -1,7 +1,9 @@
 import React from "react";
-import { Text, View, Image, SafeAreaView, StyleSheet } from "react-native";
-import MatchGroup from "./src/MatchGroup";
+import { View, Text } from "react-native";
+import Dates from "./src/ExerciseDates";
 
 export default function App() {
-  return <MatchGroup></MatchGroup>;
+  return <Dates></Dates>;
+
 }
+
