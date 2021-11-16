@@ -35,10 +35,10 @@ export default function GroupDescription() {
         </View>
       </View>
       <View style={styles.description}>
-        <Text style={{ color: "black" }}>Description:</Text>
+        <Text style={{ color: "black", fontSize: 20 }}>Description:</Text>
       </View>
       <View style={styles.achievement}>
-        <Text style={{ color: "black" }}>Achievement:</Text>
+        <Text style={{ color: "black", fontSize: 20 }}>Achievement:</Text>
       </View>
     </SafeAreaView>
   );

@@ -7,5 +7,5 @@ import MatchGroup from "./src/MatchGroup";
 import NotifyMatching from "./src/NotifyMatching";
 
 export default function App() {
-  return <GroupActivity />;
+  return <GroupDescription />;
 }
