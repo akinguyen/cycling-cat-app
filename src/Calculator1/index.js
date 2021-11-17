@@ -8,22 +8,20 @@ export default function Welcome() {
       <View style={styles.Rect}>
         <Text style={{ fontSize: 20, justifyContent: "centre" }}>
           {" "}
-          Personal Training{" "}
+          BMI Calculator{" "}
         </Text>
       </View>
 
       <View style={styles.White}>
         <View style={styles.Choose}>
-          <Text style={styles.Text}> Choose your goal! </Text>
+          <Text style={styles.Text}> Weight </Text>
         </View>
         <View style={styles.Choose}>
-          <Text style={styles.Text}> Lose weight </Text>
+          <Text style={styles.Text}> Height </Text>
         </View>
+        <View style={styles.Fake}></View>
         <View style={styles.Choose}>
-          <Text style={styles.Text}> General workout </Text>
-        </View>
-        <View style={styles.Choose}>
-          <Text style={styles.Text}> Lose weight </Text>
+          <Text style={styles.Text}> Your BMI </Text>
         </View>
       </View>
     </View>
