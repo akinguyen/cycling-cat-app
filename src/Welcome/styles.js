@@ -1,6 +1,21 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  Main: {
+    backgroundColor: "white",
+    height: "100%",
+    flexDirection: "column-reverse",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+  Circle: {
+    backgroundColor: "#00ff00",
+    height: 200,
+    width: 200,
+    borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   container: {
     flex: 1,
     alignItems: "center",
