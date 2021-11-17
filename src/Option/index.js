@@ -12,8 +12,33 @@ export default function Option() {
         justifyContent: "space-around",
       }}
     >
-      <Text> Group </Text>
-      <Text> Personal Training </Text>
+      <View
+        style={{
+          backgroundColor: "#4682b4",
+          height: 100,
+          width: 300,
+          borderRadius: 300,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text style={{ fontSize: 30, textAlign: "center" }}>
+          {" "}
+          Personal Training{" "}
+        </Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: "#4682b4",
+          height: 100,
+          width: 300,
+          borderRadius: 300,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text style={{ fontSize: 30, textAlign: "center" }}> Group </Text>
+      </View>
     </View>
   );
 }

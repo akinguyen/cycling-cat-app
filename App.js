@@ -2,10 +2,11 @@ import React from "react";
 import { Text, View } from "react-native";
 import Welcome from "./src/Welcome";
 import Option from "./src/Option";
+import Calculator1 from "./src/Calculator1";
 export default function App() {
   return (
     <View>
-      <Option></Option>
+      <Calculator1></Calculator1>
     </View>
   );
 }

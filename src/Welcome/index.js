@@ -16,7 +16,7 @@ export default function Welcome() {
 
       <View
         style={{
-          backgroundColor: "green",
+          backgroundColor: "#00ff00",
           height: 200,
           width: 200,
           borderRadius: 100,
@@ -24,7 +24,10 @@ export default function Welcome() {
           justifyContent: "center",
         }}
       >
-        <Text style={{ textAlign: "center" }}> LOGO </Text>
+        <Text style={{ fontSize: 20, textAlign: "center" }}>
+          {" "}
+          SPORTY NEKOS{" "}
+        </Text>
       </View>
     </View>
   );
