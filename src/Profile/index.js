@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 
-export default function screen5() {
+export default function Profile() {
   return (
     <View
       style={{

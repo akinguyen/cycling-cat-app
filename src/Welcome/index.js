@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
-export default function createurownpro5() {
+export default function Welcome() {
   return (
     <View
       style={{ width: "100%", alignItems: "center", justifyContent: "center" }}
