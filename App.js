@@ -27,7 +27,7 @@ export default function App() {
         setOrder(order < screens.length - 1 ? order + 1 : 0);
       }}
     >
-      {screens[order]}
+      <View style={{ flex: 1 }}>{screens[order]}</View>
     </TouchableWithoutFeedback>
   );
 }
