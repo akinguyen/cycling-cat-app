@@ -1,7 +1,11 @@
 import React from "react";
-import { Text, View, Image, SafeAreaView, StyleSheet } from "react-native";
-import MatchGroup from "./src/MatchGroup";
+import { Text, View } from "react-native";
+import PickSport from "./src/PickSport";
 
 export default function App() {
-  return <MatchGroup></MatchGroup>;
+  return (
+    <View>
+      <PickSport></PickSport>
+    </View>
+  );
 }
