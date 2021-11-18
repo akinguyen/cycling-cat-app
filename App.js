@@ -1,8 +1,8 @@
 ﻿import React, { useState } from "react";
-import { TouchableWithoutFeedback } from "react-native";
+import { TouchableWithoutFeedback, View } from "react-native";
 import PickSport from "./src/PickSport";
 import GroupDescription from "./src/GroupDescription";
-import Login from "./src/Login";
+import Login from "./src/login";
 import MatchGroup from "./src/MatchGroup";
 import NotifyMatching from "./src/NotifyMatching";
 import Profile from "./src/Profile";
