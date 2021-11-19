@@ -1,6 +1,8 @@
-﻿import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+﻿import React from "react";
+import { Text, View } from "react-native";
+import PickSport from "./src/PickSport";
 
+<<<<<<< HEAD
 export default function() {
   return(
     <View style= {{flex:1, flexDirection :"column"}}>
@@ -34,6 +36,12 @@ export default function() {
           </View>
         </View>
       </View>
+=======
+export default function App() {
+  return (
+    <View>
+      <PickSport></PickSport>
+>>>>>>> 8e6337eff084cd7e9e5f5fa8bee205159b35d719
     </View>
-  )
+  );
 }
