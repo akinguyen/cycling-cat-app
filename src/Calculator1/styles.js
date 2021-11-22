@@ -43,10 +43,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
   },
-  Text1: {
-    fontSize: 20,
-    justifyContent: "centre",
-  },
 });
 
 export default styles;

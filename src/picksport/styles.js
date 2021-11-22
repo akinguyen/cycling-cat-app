@@ -3,7 +3,6 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
     width: "100%",
-    justifyContent: "center",
     alignItems: "center",
   },
   content: {
@@ -12,7 +11,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 200,
     marginBottom: 20,
-    justifyContent: "center",
     alignItems: "center",
   },
   contentrow2: {
@@ -21,7 +19,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 200,
     marginBottom: 20,
-    justifyContent: "center",
     alignItems: "center",
   },
   contentview2: {
@@ -35,7 +32,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 200,
     marginBottom: 20,
-    justifyContent: "center",
     alignItems: "center",
   },
   textbox: { color: "white", textAlign: "center", fontSize: 17 },

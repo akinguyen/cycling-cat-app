@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     height: "20%",
     width: "100%",
     alignItems: "center",
-    justifyContent: "centre",
   },
 
   Choose: {
@@ -29,17 +28,12 @@ const styles = StyleSheet.create({
     width: 200,
     borderRadius: 300,
     alignItems: "center",
-    justifyContent: "center",
     marginTop: 30,
   },
 
   Text: {
     fontSize: 20,
     textAlign: "center",
-  },
-  Text1: {
-    fontSize: 20,
-    justifyContent: "centre",
   },
 });
 

@@ -6,7 +6,7 @@ export default function Welcome() {
   return (
     <View style={styles.Main}>
       <View style={styles.Rect}>
-        <Text style={styles.Text1}> BMI Calculator </Text>
+        <Text style={styles.Text}> BMI Calculator </Text>
       </View>
 
       <View style={styles.White}>

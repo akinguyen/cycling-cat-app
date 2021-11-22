@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
   BigView: {
     width: "100%",
     alignItems: "center",
-    justifyContent: "center",
   },
   Main: {
     backgroundColor: "white",
@@ -23,14 +22,12 @@ const styles = StyleSheet.create({
     width: 200,
     borderRadius: 100,
     alignItems: "center",
-    justifyContent: "center",
   },
   container: {
     flex: 1,
     alignItems: "center",
   },
   bar: {
-    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "black",
     marginLeft: 100,
