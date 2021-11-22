@@ -2,7 +2,7 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import styles from "./styles";
 
-export default function Welcome() {
+export default function CalculatorTwo() {
   return (
     <View style={styles.Main}>
       <View style={styles.Rect}>
