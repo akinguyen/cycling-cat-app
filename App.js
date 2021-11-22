@@ -8,8 +8,9 @@ import NotifyMatching from "./src/NotifyMatching";
 import Profile from "./src/Profile";
 import Welcome from "./src/Welcome";
 import Option from "./src/Option";
-import Calculator1 from "./src/Calculator1";
-import Calculator2 from "./src/Calculator2";
+import CalculatorOne from "./src/CalculatorOne";
+import CalculatorTwo from "./src/CalculatorTwo";
+import ChooseGoal from "./src/ChooseGoal";
 import Logo from "./src/Logo";
 
 const screens = [
@@ -21,8 +22,9 @@ const screens = [
   <PickSport />,
   <NotifyMatching />,
   <GroupDescription />,
-  <Calculator1 />,
-  <Calculator2 />,
+  <ChooseGoal />,
+  <CalculatorOne />,
+  <CalculatorTwo />,
 ];
 
 export default function App() {
