@@ -13,7 +13,7 @@ export default function Logo() {
           justifyContent: "center",
         }}
       >
-        <Image source={require("./asset/logo.png")} />
+        <Image source={require("../../asset/logo.png")} />
       </View>
     </View>
   );
