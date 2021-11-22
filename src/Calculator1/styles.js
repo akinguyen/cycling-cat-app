@@ -20,14 +20,12 @@ const styles = StyleSheet.create({
     height: "20%",
     width: "100%",
     alignItems: "center",
-    justifyContent: "centre",
   },
   Fake: {
     backgroundColor: "white",
     height: "20%",
     width: "100%",
     alignItems: "center",
-    justifyContent: "centre",
   },
 
   Choose: {
@@ -35,7 +33,6 @@ const styles = StyleSheet.create({
     height: 50,
     width: 200,
     alignItems: "center",
-    justifyContent: "center",
     marginTop: 30,
   },
 
