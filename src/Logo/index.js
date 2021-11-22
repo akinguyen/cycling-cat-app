@@ -4,7 +4,7 @@ import styles from "./styles";
 
 export default function Logo() {
   return (
-    <View style={styles.BigView}>
+    <View style={styles.bigView}>
       <Text style={{ fontSize: 50, color: "#34A47F" }}> Welcome! </Text>
 
       <View

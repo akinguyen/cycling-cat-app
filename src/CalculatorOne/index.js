@@ -4,21 +4,21 @@ import styles from "./styles";
 
 export default function CalculatorOne() {
   return (
-    <View style={styles.Main}>
-      <View style={styles.Rect}>
-        <Text style={styles.Text}> BMI Calculator </Text>
+    <View style={styles.main}>
+      <View style={styles.rect}>
+        <Text style={styles.text}> BMI Calculator </Text>
       </View>
 
-      <View style={styles.White}>
-        <View style={styles.Choose}>
-          <Text style={styles.Text}> Weight </Text>
+      <View style={styles.white}>
+        <View style={styles.chooseBig}>
+          <Text style={styles.text}> Weight </Text>
         </View>
-        <View style={styles.Choose}>
-          <Text style={styles.Text}> Height </Text>
+        <View style={styles.fhooseBig}>
+          <Text style={styles.text}> Height </Text>
         </View>
-        <View style={styles.Fake}></View>
-        <View style={styles.Choose}>
-          <Text style={styles.Text}> Your BMI </Text>
+        <View style={styles.fake}></View>
+        <View style={styles.chooseBig}>
+          <Text style={styles.text}> Your BMI </Text>
         </View>
       </View>
     </View>
