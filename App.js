@@ -21,7 +21,7 @@ const screens = [
   <PickSport />,
   <NotifyMatching />,
   <GroupDescription />,
-  <ChooseGoal />
+  <ChooseGoal />,
   <CalculatorOne />,
   <CalculatorTwo />,
 ];
