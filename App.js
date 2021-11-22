@@ -1,21 +1,29 @@
 ﻿import React, { useState } from "react";
 import { TouchableWithoutFeedback, View } from "react-native";
-import PickSport from "./src/PickSport";
+import PickSport from "./src/picksport";
 import GroupDescription from "./src/GroupDescription";
-import Login from "./src/Login";
+import Login from "./src/login";
 import MatchGroup from "./src/MatchGroup";
 import NotifyMatching from "./src/NotifyMatching";
 import Profile from "./src/Profile";
 import Welcome from "./src/Welcome";
-
+import Option from "./src/Option";
+import CalculatorOne from "./src/CalculatorOne";
+import CalculatorTwo from "./src/CalculatorTwo";
+import ChooseGoal from "./src/ChooseGoal";
+import Logo from "./src/Logo";
 const screens = [
-  <Welcome />,
+  <Logo />,
   <Login />,
+  <Option />,
+  <Welcome />,
   <MatchGroup />,
   <PickSport />,
-  <Profile />,
   <NotifyMatching />,
   <GroupDescription />,
+  <ChooseGoal />,
+  <CalculatorOne />,
+  <CalculatorTwo />,
 ];
 
 export default function App() {
