@@ -10,7 +10,9 @@ import Welcome from "./src/Welcome";
 import Option from "./src/Option";
 import Calculator1 from "./src/Calculator1";
 import Calculator2 from "./src/Calculator2";
+import Logo from "./src/Logo";
 const screens = [
+  <Logo />,
   <Login />,
   <Option />,
   <Welcome />,
