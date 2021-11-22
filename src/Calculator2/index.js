@@ -6,10 +6,7 @@ export default function Welcome() {
   return (
     <View style={styles.Main}>
       <View style={styles.Rect}>
-        <Text style={{ fontSize: 20, justifyContent: "centre" }}>
-          {" "}
-          BMI Calculator{" "}
-        </Text>
+        <Text style={styles.Text1}> BMI Calculator </Text>
       </View>
 
       <View style={styles.White}>
