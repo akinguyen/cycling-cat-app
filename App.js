@@ -11,9 +11,9 @@ import Option from "./src/Option";
 import Calculator1 from "./src/Calculator1";
 import Calculator2 from "./src/Calculator2";
 const screens = [
-  <Welcome />,
-  <Option />,
   <Login />,
+  <Option />,
+  <Welcome />,
   <MatchGroup />,
   <PickSport />,
   <NotifyMatching />,
