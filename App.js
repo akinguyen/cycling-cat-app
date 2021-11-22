@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text } from "react-native";
-import ExerciseDates from "./src/ExerciseDates";
+import { View, Text, TouchableOpacity } from "react-native";
+import GroupText from "./src/GroupText";
 
 export default function App() {
-  return <ExerciseDates></ExerciseDates>;
+  return <GroupText></GroupText>;
 }
