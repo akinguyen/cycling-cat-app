@@ -1,12 +1,21 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  BigView: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   Main: {
     backgroundColor: "white",
     height: "100%",
     flexDirection: "column-reverse",
     alignItems: "center",
     justifyContent: "space-around",
+  },
+  Image: {
+    width: 200,
+    height: 200,
   },
   Circle: {
     backgroundColor: "#00ff00",

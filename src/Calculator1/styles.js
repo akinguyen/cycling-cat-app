@@ -39,8 +39,14 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
 
-  Text: { fontSize: 20, textAlign: "center" },
-  Text1: { fontSize: 20, justifyContent: "centre" },
+  Text: {
+    fontSize: 20,
+    textAlign: "center",
+  },
+  Text1: {
+    fontSize: 20,
+    justifyContent: "centre",
+  },
 });
 
 export default styles;
