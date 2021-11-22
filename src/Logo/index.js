@@ -4,15 +4,7 @@ import styles from "./styles";
 
 export default function Logo() {
   return (
-    <View
-      style={{
-        backgroundColor: "white",
-        height: "100%",
-        flexDirection: "column-reverse",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <View style={styles.BigView}>
       <Text style={{ fontSize: 50, color: "#34A47F" }}> Welcome! </Text>
 
       <View
@@ -21,7 +13,7 @@ export default function Logo() {
           justifyContent: "center",
         }}
       >
-        <Image source={"./asset/logo.png"} />
+        <Image source={require("./asset/logo.png")} />
       </View>
     </View>
   );
