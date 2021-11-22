@@ -4,23 +4,23 @@ import styles from "./styles";
 
 export default function ChooseGoal() {
   return (
-    <View style={styles.Main}>
-      <View style={styles.Rect}>
-        <Text style={styles.Text}> Personal Training </Text>
+    <View style={styles.main}>
+      <View style={styles.rect}>
+        <Text style={styles.text}> Personal Training </Text>
       </View>
 
-      <View style={styles.White}>
-        <View style={styles.Choose}>
-          <Text style={styles.Text}> Choose your goal! </Text>
+      <View style={styles.white}>
+        <View style={styles.chooseBig}>
+          <Text style={styles.text}> Choose your goal! </Text>
         </View>
-        <View style={styles.Choose}>
-          <Text style={styles.Text}> Lose weight </Text>
+        <View style={styles.chooseBig}>
+          <Text style={styles.text}> Lose weight </Text>
         </View>
-        <View style={styles.Choose}>
+        <View style={styles.chooseBig}>
           <Text style={styles.Text}> General workout </Text>
         </View>
-        <View style={styles.Choose}>
-          <Text style={styles.Text}> Lose weight </Text>
+        <View style={styles.chooseBig}>
+          <Text style={styles.text}> Lose weight </Text>
         </View>
       </View>
     </View>
