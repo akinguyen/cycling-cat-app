@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "column-reverse",
     alignItems: "center",
+    justifyContent: "center",
   },
 });
 

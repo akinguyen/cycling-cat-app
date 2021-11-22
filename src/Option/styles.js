@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
 
-  Choose: {
+  chooseBig: {
     backgroundColor: "#4682b4",
     height: 100,
     width: 300,
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  Text: {
+  text: {
     fontSize: 30,
     textAlign: "center",
   },

@@ -4,12 +4,12 @@ import styles from "./styles";
 
 export default function Option() {
   return (
-    <View style={styles.BigView}>
-      <View style={styles.Choose}>
-        <Text style={styles.Text}> Personal Training </Text>
+    <View style={styles.bigView}>
+      <View style={styles.chooseBig}>
+        <Text style={styles.text}> Personal Training </Text>
       </View>
-      <View style={styles.Choose}>
-        <Text style={styles.Text}> Group </Text>
+      <View style={styles.chooseBig}>
+        <Text style={styles.text}> Group </Text>
       </View>
     </View>
   );
