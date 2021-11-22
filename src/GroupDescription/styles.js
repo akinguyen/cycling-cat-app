@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     backgroundColor: "red",
-    justifyContent: "center",
     alignItems: "center",
   },
   ava: {

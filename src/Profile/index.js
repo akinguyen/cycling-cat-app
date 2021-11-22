@@ -65,7 +65,6 @@ export default function screen5() {
             height: "100%",
             width: "100%",
             flexDirection: "row",
-            justifyContent: "center",
             alignSelf: "center",
           }}
         >
