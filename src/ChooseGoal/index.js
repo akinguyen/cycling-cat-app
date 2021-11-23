@@ -4,7 +4,7 @@ import styles from "./styles";
 
 export default function ChooseGoal() {
   return (
-    <View style={styles.main}>
+    <View style={styles.container}>
       <View style={styles.rect}>
         <Text style={styles.title}> Personal Training </Text>
       </View>

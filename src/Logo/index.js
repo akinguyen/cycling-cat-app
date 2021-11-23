@@ -4,7 +4,7 @@ import styles from "./styles";
 
 export default function Logo() {
   return (
-    <View style={styles.bigView}>
+    <View style={styles.container}>
       <Text style={styles.text}> Welcome! </Text>
 
       <View style={styles.view}>
