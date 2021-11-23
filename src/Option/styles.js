@@ -11,14 +11,19 @@ const styles = StyleSheet.create({
 
   chooseBig: {
     backgroundColor: "#4682b4",
-    height: 100,
+    height: 200,
     width: 300,
-    borderRadius: 300,
+    borderRadius: 200,
     alignItems: "center",
+    justifyContent: "center",
   },
 
   text: {
     fontSize: 30,
+    textAlign: "center",
+  },
+  note: {
+    fontSize: 20,
     textAlign: "center",
   },
 

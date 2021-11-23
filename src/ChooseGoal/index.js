@@ -6,7 +6,7 @@ export default function ChooseGoal() {
   return (
     <View style={styles.main}>
       <View style={styles.rect}>
-        <Text style={styles.text}> Personal Training </Text>
+        <Text style={styles.title}> Personal Training </Text>
       </View>
 
       <View style={styles.white}>

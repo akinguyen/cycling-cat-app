@@ -6,7 +6,7 @@ export default function CalculatorOne() {
   return (
     <View style={styles.main}>
       <View style={styles.rect}>
-        <Text style={styles.text}> BMI Calculator </Text>
+        <Text style={styles.title}> BMI Calculator </Text>
       </View>
 
       <View style={styles.white}>
