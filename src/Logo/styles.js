@@ -9,7 +9,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  text: { fontSize: 50, color: "#34A47F" },
+  text: {
+    fontSize: 50,
+    color: "#34A47F",
+  },
 
   view: {
     alignItems: "center",
