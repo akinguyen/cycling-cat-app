@@ -8,6 +8,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
+  text: { fontSize: 50, color: "#34A47F" },
+
+  view: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
 
 export default styles;
