@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     width: 200,
     alignItems: "center",
     marginTop: 30,
+    borderRadius: 300,
   },
 
   chooseSmall: {
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
     width: 150,
     alignItems: "center",
     marginTop: 30,
+    borderRadius: 300,
   },
 
   text: {
