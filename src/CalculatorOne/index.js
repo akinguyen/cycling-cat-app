@@ -13,7 +13,7 @@ export default function CalculatorOne() {
         <View style={styles.chooseBig}>
           <Text style={styles.text}> Weight </Text>
         </View>
-        <View style={styles.fhooseBig}>
+        <View style={styles.chooseBig}>
           <Text style={styles.text}> Height </Text>
         </View>
         <View style={styles.fake}></View>

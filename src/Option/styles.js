@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  BigView: {
+  bigView: {
     backgroundColor: "white",
     height: "100%",
     flexDirection: "column-reverse",

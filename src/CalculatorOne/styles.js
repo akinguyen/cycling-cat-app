@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  choose: {
+  chooseBig: {
     backgroundColor: "#4682b4",
     height: 50,
     width: 200,
