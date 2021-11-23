@@ -1,47 +1,114 @@
-﻿import React from "react";
-import { Text, View } from "react-native";
-import PickSport from "./src/PickSport";
+﻿import * as React from "react";
+import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
 
-<<<<<<< HEAD
-export default function() {
-  return(
-    <View style= {{flex:1, flexDirection :"column"}}>
-      <View style = {{backgroundColor : 'red', height : "15%", width : "100%", borderRadius: 20, justifyContent:"center"}}>
-        <Text style ={{alignSelf:"center", fontSize: 20, color:"white"}}>EXERCISES</Text>
-      </View>
-        <View style = {{width: "38%", height:"13%", backgroundColor:'green', borderRadius: 30, justifyContent:"center",}}>
-          <Text style={{color:"white", alignSelf:"center", fontSize: 17}}> Cat 1 </Text>
-        </View>
-      <View style ={{height:"70%", justifyContent:"space-around"}}>
-        <View style ={{width:"80%", height : "30%", marginHorizontal:"10%", backgroundColor:'chartreuse', justifyContent:"center", borderRadius: 15}}>
-          <Text style={{fontSize: 30, alignSelf:"center", color: "white"}}>EXC 1</Text>
-        </View>
-        <View style = {{flexDirection:"row", justifyContent:"space-around"}}>
-          <View style ={{height: 70, width:"35%", backgroundColor:"deepskyblue", borderRadius:10, justifyContent:"center"}}>
-            <Text style ={{alignSelf:"center", fontSize: 20, color:"white"}}>Share</Text>
-          </View>
-          <View style ={{height: 70, width: "20%", backgroundColor: "deepskyblue", borderRadius:200, justifyContent:"center"}}>
-            <Text style={{alignSelf:"center", fontSize: 20, color:"white"}}>+</Text>
-          </View>
-        </View>
-        <View style ={{width:"80%", height : "30%", marginHorizontal:"10%", backgroundColor:'chartreuse', justifyContent:"center", borderRadius: 15}}>
-          <Text style={{fontSize: 30, alignSelf:"center", color: "white"}}>EXC 2</Text>
-        </View>
-        <View style = {{flexDirection:"row", justifyContent:"space-around"}}>
-          <View style ={{height: 70, width:"35%", backgroundColor:"deepskyblue", borderRadius:10, justifyContent:"center"}}>
-            <Text style ={{alignSelf:"center", fontSize: 20, color:"white"}}>Share</Text>
-          </View>
-          <View style ={{height: 70, width: "20%", backgroundColor: "deepskyblue", borderRadius:200, justifyContent:"center"}}>
-            <Text style={{alignSelf:"center", fontSize: 20, color:"white"}}>+</Text>
-          </View>
-        </View>
-      </View>
-=======
-export default function App() {
+export default function Welcome() {
   return (
-    <View>
-      <PickSport></PickSport>
->>>>>>> 8e6337eff084cd7e9e5f5fa8bee205159b35d719
+    <View
+      style={{ flex:1, justifyContent:"space-evenly"  }}>
+        <View style = {styles.titleContainer}>
+          <Text style = {styles.textTitle}>Timetable</Text>
+        </View>
+        <View style ={{width: "60%", height: "8%", backgroundColor:"chartreuse", alignSelf:"flex-start", borderRadius:50, justifyContent:"center"}}>
+          <Text style = {styles.text}>Today</Text>
+        </View>
+        <View style = {styles.middleContainer}>
+          <View style = {styles.smallContainer}>
+
+          </View>
+          <View style = {styles.smallContainer}>
+
+          </View>
+          <View style = {styles.smallContainer}>
+
+          </View>
+        </View>
+        <View style = {styles.smolContainer}>
+          <Text style = {styles.text}> Edit Timetable </Text>
+        </View>
+        <View style = {styles.cal}>
+        <Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square>
+        </View>
+        <View style = {styles.cal}>
+        <Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square>
+        </View>
+        <View style = {styles.cal}>
+        <Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square>
+        </View>
+        <View style = {styles.cal}>
+        <Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square>
+        </View>
+        <View style = {styles.cal}>
+        <Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square><Square></Square>
+        </View>
     </View>
-  );
+  )
 }
+
+
+
+
+const windowWidth = Dimensions.get('window').width;
+
+
+const Square = props => {
+  return (
+          <View style={styles.square}>
+          </View>
+      );
+  };
+  const n = 5;
+
+
+  
+const styles = StyleSheet.create({
+  textTitle: {
+    fontSize: 30,
+    alignSelf: "center",
+    color: "white"
+  },
+  titleContainer: {
+    width: "100%",
+    height: "15%",
+    backgroundColor: "grey",
+    justifyContent:"center"
+  },
+  middleContainer: {
+    width: "100%",
+    height: "30%",
+    justifyContent:"space-evenly"
+  },
+  smallContainer:{
+    alignSelf:"center",
+    width:"90%",
+    height:"25%",
+    backgroundColor:"green",
+    borderRadius:30
+  },
+  text: {
+    fontSize: 20,
+    alignSelf: "center",
+    color: "white",
+    justifyContent:"center"
+  },
+  square: {
+    width : windowWidth/8,
+    height : 50,
+    backgroundColor : "greenyellow",
+    alignSelf:"flex-start",
+    borderColor: "white",
+    borderRadius: 10
+  },
+  cal: {
+    flexDirection:"row",
+    justifyContent:"space-evenly"
+  },
+  smolContainer:{
+    width : "50%", 
+    height : "8%", backgroundColor: "red", 
+    alignSelf: "flex-end", 
+    borderRadius: 15, 
+    justifyContent:"center"
+  }
+
+
+});
