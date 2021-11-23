@@ -20,7 +20,7 @@ export default function ChooseGoal() {
           <Text style={styles.text}> General workout </Text>
         </View>
         <View style={styles.chooseBig}>
-          <Text style={styles.text}> Lose weight </Text>
+          <Text style={styles.text}> Muscular Training </Text>
         </View>
       </View>
     </View>

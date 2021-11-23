@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     color: "#34A47F",
   },
 
-  view: {
+  logo: {
     alignItems: "center",
     justifyContent: "center",
   },
