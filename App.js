@@ -13,7 +13,7 @@ const screens = [
   <Login />,
   <MatchGroup />,
   <PickSport />,
-  <Profile />,
+  //<Profile />,
   <NotifyMatching />,
   <GroupDescription />,
 ];
