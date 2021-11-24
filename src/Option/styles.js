@@ -1,11 +1,38 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  bigView: {
+    backgroundColor: "white",
+    height: "100%",
+    flexDirection: "column-reverse",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+
+  chooseBig: {
+    backgroundColor: "#4682b4",
+    height: 200,
+    width: 300,
+    borderRadius: 200,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  text: {
+    fontSize: 30,
+    textAlign: "center",
+  },
+  note: {
+    fontSize: 20,
+    textAlign: "center",
+  },
+
   container: {
     flex: 1,
     alignItems: "center",
   },
   bar: {
+    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "black",
     marginLeft: 100,
