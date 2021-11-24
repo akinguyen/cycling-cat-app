@@ -5,7 +5,7 @@ import GroupDescription from "./src/GroupDescription";
 import Login from "./src/login";
 import MatchGroup from "./src/MatchGroup";
 import NotifyMatching from "./src/NotifyMatching";
-import Profile from "./src/Profile";
+//import Profile from "./src/Profile";
 import Welcome from "./src/Welcome";
 import Option from "./src/Option";
 import CalculatorOne from "./src/CalculatorOne";
