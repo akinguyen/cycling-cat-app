@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     backgroundColor: "red",
+    justifyContent: "center",
     alignItems: "center",
   },
   ava: {
@@ -58,27 +59,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#CCCCCC",
   },
   content: {
+    justifyContent: "center",
     alignItems: "center",
     width: "25%",
     borderLeftWidth: 1,
     borderRightWidth: 1,
   },
-  description: {
+  activity: {
     marginTop: "10%",
-    height: "30%",
+    height: "45%",
     marginHorizontal: "5%",
     justifyContent: "flex-start",
     alignItems: "flex-start",
     borderWidth: 3,
-  },
-  achievement: {
-    marginTop: "6%",
-    borderWidth: 3,
-    marginBottom: "6%",
-    height: "12%",
-    marginHorizontal: "5%",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
   },
 });
 
