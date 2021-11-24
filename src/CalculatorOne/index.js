@@ -4,16 +4,16 @@ import styles from "./styles";
 
 export default function CalculatorOne() {
   return (
-    <View style={styles.main}>
+    <View style={styles.container}>
       <View style={styles.rect}>
-        <Text style={styles.text}> BMI Calculator </Text>
+        <Text style={styles.title}> BMI Calculator </Text>
       </View>
 
       <View style={styles.white}>
         <View style={styles.chooseBig}>
           <Text style={styles.text}> Weight </Text>
         </View>
-        <View style={styles.fhooseBig}>
+        <View style={styles.chooseBig}>
           <Text style={styles.text}> Height </Text>
         </View>
         <View style={styles.fake}></View>

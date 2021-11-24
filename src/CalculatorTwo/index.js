@@ -4,12 +4,12 @@ import styles from "./styles";
 
 export default function CalculatorTwo() {
   return (
-    <View style={styles.Main}>
+    <View style={styles.container}>
       <View style={styles.rect}>
-        <Text style={styles.text}> BMI Calculator </Text>
+        <Text style={styles.title}> BMI Calculator </Text>
       </View>
 
-      <View style={styles.White}>
+      <View style={styles.white}>
         <View style={styles.chooseBig}>
           <Text style={styles.text}> Desire BMI </Text>
         </View>

@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  main: {
+  container: {
     backgroundColor: "white",
     height: "100%",
     flexDirection: "column",
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     height: "20%",
     width: "100%",
     alignItems: "center",
+    justifyContent: "space-evenly",
   },
   fake: {
     backgroundColor: "white",
@@ -28,16 +29,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  choose: {
+  chooseBig: {
     backgroundColor: "#4682b4",
     height: 50,
     width: 200,
     alignItems: "center",
     marginTop: 30,
+    borderRadius: 300,
+    justifyContent: "center",
   },
 
   text: {
     fontSize: 20,
+    textAlign: "center",
+  },
+  title: {
+    fontSize: 30,
     textAlign: "center",
   },
 });

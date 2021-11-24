@@ -4,9 +4,9 @@ import styles from "./styles";
 
 export default function ChooseGoal() {
   return (
-    <View style={styles.main}>
+    <View style={styles.container}>
       <View style={styles.rect}>
-        <Text style={styles.text}> Personal Training </Text>
+        <Text style={styles.title}> Personal Training </Text>
       </View>
 
       <View style={styles.white}>
@@ -17,10 +17,10 @@ export default function ChooseGoal() {
           <Text style={styles.text}> Lose weight </Text>
         </View>
         <View style={styles.chooseBig}>
-          <Text style={styles.Text}> General workout </Text>
+          <Text style={styles.text}> General workout </Text>
         </View>
         <View style={styles.chooseBig}>
-          <Text style={styles.text}> Lose weight </Text>
+          <Text style={styles.text}> Muscular Training </Text>
         </View>
       </View>
     </View>
