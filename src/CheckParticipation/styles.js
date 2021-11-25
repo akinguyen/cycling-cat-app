@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: "green",
     alignItems: "center",
   },
+
   avt: {
     height: 150,
     width: 150,
@@ -23,10 +24,12 @@ const styles = StyleSheet.create({
     marginTop: 50,
     alignItems: "center",
   },
+
   white: {
     backgroundColor: "white",
     marginTop: 20,
   },
+
   bar: {
     flexDirection: "row",
     height: 50,
@@ -36,20 +39,24 @@ const styles = StyleSheet.create({
     width: "33.5%",
     justifyContent: "center",
   },
+
   menu: {
     fontSize: 16,
     justifyContent: "space-around",
     textAlign: "center",
   },
+
   parti: {
     fontSize: 15,
     backgroundColor: "green",
     marginTop: 20,
   },
+
   text: {
     fontSize: 20,
     fontWeight: "bold",
   },
+
   rect: {
     flexDirection: "row",
     justifyContent: "flex-end",
