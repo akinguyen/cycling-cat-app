@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import GroupText from "./src/GroupText";
+import EventInfo from "./src/EventInfo";
 
 export default function App() {
-  return <GroupText></GroupText>;
+  return <EventInfo></EventInfo>;
 }
