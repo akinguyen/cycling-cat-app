@@ -1,6 +1,5 @@
 ﻿import React, { useState } from "react";
 import { TouchableWithoutFeedback, View } from "react-native";
-import PickSport from "./src/PickSport";
 import GroupDescription from "./src/GroupDescription";
 import Login from "./src/Login";
 import NotifyMatching from "./src/NotifyMatching";
@@ -14,6 +13,8 @@ import Logo from "./src/Logo";
 import GroupActivity from "./src/GroupActivitiy";
 import GroupMember from "./src/GroupMember";
 import EventList from "./src/EventList";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const screens = [
   <Logo />,
@@ -21,7 +22,6 @@ const screens = [
   <Option />,
   <Welcome />,
   <EventList />,
-  <PickSport />,
   <NotifyMatching />,
   <GroupActivity />,
   <GroupDescription />,
