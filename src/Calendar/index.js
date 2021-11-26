@@ -3,6 +3,7 @@ import { Text, View, Image, TextInput, Button } from "react-native";
 import styles from "./styles";
 import { NavigationScreenProps } from "react-navigation";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
+
 <Calendar
   // Initially visible month. Default = Date()
   current={"2012-03-01"}
@@ -55,4 +56,19 @@ import { Calendar, CalendarList, Agenda } from "react-native-calendars";
   }}
   // Enable the option to swipe between months. Default = false
   enableSwipeMonths={true}
+/>;
+
+<CalendarList
+  // Callback which gets executed when visible months change in scroll view. Default = undefined
+  onVisibleMonthsChange={(months) => {
+    console.log("now these months are visible", months);
+  }}
+  // Max amount of months allowed to scroll to the past. Default = 50
+  pastScrollRange={50}
+  // Max amount of months allowed to scroll to the future. Default = 50
+  futureScrollRange={50}
+  // Enable or disable scrolling of calendar list
+  scrollEnabled={true}
+  // Enable or disable vertical scroll indicator. Default = false
+  showScrollIndicator={true}
 />;

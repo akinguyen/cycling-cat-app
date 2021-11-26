@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import styles from "./styles";
-export default function PickSport() {
+export default function PickSport({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={{ height: "25%" }}>
