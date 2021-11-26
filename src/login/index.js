@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, Image, TextInput } from "react-native";
 import styles from "./styles";
+
 export default function Login() {
   const [textName, setTextName] = useState("");
   const onEnterName = (value) => {

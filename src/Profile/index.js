@@ -20,7 +20,6 @@ export default function Profile() {
             height: "100%",
             width: "100%",
             flexDirection: "row",
-            justifyContent: "center",
             alignSelf: "center",
           }}
         >
@@ -35,7 +34,6 @@ export default function Profile() {
             height: "100%",
             width: "100%",
             flexDirection: "row",
-            justifyContent: "center",
             alignSelf: "center",
           }}
         >
@@ -50,7 +48,6 @@ export default function Profile() {
             height: "100%",
             width: "100%",
             flexDirection: "row",
-            justifyContent: "center",
             alignSelf: "center",
           }}
         >
@@ -65,12 +62,10 @@ export default function Profile() {
             height: "100%",
             width: "100%",
             flexDirection: "row",
-            justifyContent: "center",
             alignSelf: "center",
           }}
         >
           <Text style={{ alignSelf: "center", fontSize: 20 }}>
-            {" "}
             Ly Thuong Kiet{" "}
           </Text>
         </View>
