@@ -1,13 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Login from "./src/Login";
-import PickSport from "./src/PickSport";
+import Profile from "./src/Profile";
+import EventList from "./src/EventList";
 import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-const AuthStack = createStackNavigator();
 
 export default function App() {
   return (
@@ -36,8 +34,9 @@ function MyTabs() {
     >
       <Tab.Screen
         name="Feed"
-        component={Login}
+        component={EventList}
         options={{
+          title: "Daily Events",
           tabBarLabel: "New events",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -46,7 +45,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={PickSport}
+        component={Profile}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (

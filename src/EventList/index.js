@@ -2,13 +2,10 @@ import React from "react";
 import { Text, View, Image, SafeAreaView, ScrollView } from "react-native";
 import styles from "./styles";
 
-export default function EventList() {
+export default function EventList({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.bar}>
-        <Text style={{ color: "white", fontSize: 25 }}>DAILY EVENT</Text>
-      </View>
-      <ScrollView>
+      <ScrollView contentContainerStyle={{ alignItems: "center" }}>
         <View style={styles.groupinfo}>
           <Image
             source={{ uri: "https://s.luyengame.net/games/pikachu/image.jpg" }}

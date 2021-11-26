@@ -24,7 +24,7 @@ export default function Login({ navigation }) {
           placeholder="enter your name"
           style={styles.input}
         />
-        <Button title="Submit" onPress={() => navigation.push("PickSport")} />
+        <Button title="Submit" onPress={() => navigation.push("Profile")} />
       </View>
     </View>
   );
