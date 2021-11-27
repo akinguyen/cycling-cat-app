@@ -13,10 +13,11 @@ const styles = StyleSheet.create({
     marginTop: 80,
     height: 40,
     width: 250,
+    justifyContent: "center",
   },
   circle: {
-    height: 120,
-    width: 120,
+    height: 127,
+    width: 127,
   },
   groupinfo: {
     marginTop: 75,
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 100,
     borderBottomRightRadius: 100,
     backgroundColor: "#CCFF99",
-    justifyContent: "space-around",
+    padding: 10,
   },
   infoname: {
     alignItems: "flex-start",
