@@ -13,8 +13,8 @@ import CalculatorTwo from "./src/CalculatorTwo";
 import ChooseGoal from "./src/ChooseGoal";
 import Logo from "./src/Logo";
 import GroupActivity from "./src/GroupActivitiy";
-import GroupDescription from "./src/GroupDescription";
-import GroupMember from "./src/GroupMember";
+//import GroupMember from "./src/GroupMember";
+import CheckParticipation from "./src/CheckParticipation";
 
 const screens = [
   <Logo />,
@@ -26,10 +26,11 @@ const screens = [
   <NotifyMatching />,
   <GroupActivity />,
   <GroupDescription />,
-  <GroupMember />,
+  // <GroupMember />,
   <ChooseGoal />,
   <CalculatorOne />,
   <CalculatorTwo />,
+  <CheckParticipation />,
 ];
 
 export default function App() {
