@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     backgroundColor: "lightgreen",
     alignItems: "center",
   },
+
   avt: {
     height: 150,
     width: 150,
