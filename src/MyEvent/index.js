@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, Image, SafeAreaView, ScrollView } from "react-native";
 import styles from "./styles";
 
-export default function EventList({ navigation }) {
+export default function MyEvent({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{ alignItems: "center" }}>

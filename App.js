@@ -1,25 +1,66 @@
-﻿import React, { useState } from "react";
-import { TouchableWithoutFeedback, View } from "react-native";
-import Login from "./src/Login";
-//import Profile from "./src/Profile";
-import Welcome from "./src/Welcome";
-import Logo from "./src/Logo";
+﻿import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Profile from "./src/Profile";
 import EventList from "./src/EventList";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import MyEvent from "./src/MyEvent";
+import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-const screens = [<Logo />, <Login />, <Welcome />, <EventList />];
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function App() {
-  const [order, setOrder] = useState(0);
-
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        setOrder(order < screens.length - 1 ? order + 1 : 0);
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Feed"
+      screenOptions={{
+        tabBarActiveTintColor: "#7ED957",
       }}
     >
-      <View style={{ flex: 1 }}>{screens[order]}</View>
-    </TouchableWithoutFeedback>
+      <Tab.Screen
+        name="Feed"
+        component={EventList}
+        options={{
+          title: "Daily Events",
+          tabBarLabel: "New events",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="My events"
+        component={MyEvent}
+        options={{
+          tabBarLabel: "My events",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="book-open-outline"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
 }
