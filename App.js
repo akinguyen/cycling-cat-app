@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Profile from "./src/Profile";
 import EventList from "./src/EventList";
+import MyEvent from "./src/MyEvent";
 import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -15,13 +16,6 @@ export default function App() {
   );
 }
 
-function Myevents() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>My events here</Text>
-    </View>
-  );
-}
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -54,8 +48,8 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Myevents"
-        component={Myevents}
+        name="My events"
+        component={MyEvent}
         options={{
           tabBarLabel: "My events",
           tabBarIcon: ({ color, size }) => (

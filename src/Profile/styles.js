@@ -9,28 +9,20 @@ const styles = StyleSheet.create({
   },
 
   BackGroundTop: {
-    backgroundColor: "#40ff00",
+    backgroundColor: "#CCFF99",
     width: "100%",
     height: "50%",
     alignItems: "center",
     justifyContent: "flex-end",
   },
 
-  Circle: {
-    backgroundColor: "white",
-    width: 100,
-    height: 100,
-    justifyContent: "flex-end",
-    borderRadius: 100,
-  },
-
   BackGroundMid: {
-    backgroundColor: "#bfff00",
+    backgroundColor: "#CCFF99",
     width: "95%",
     height: 60,
     flexDirection: "column",
     justifyContent: "space-evenly",
-    marginTop: 20,
+    marginTop: 30,
   },
 
   BackGroundBottom: {
@@ -60,6 +52,20 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+  },
+  avatar: {
+    height: 127,
+    width: 127,
+    marginBottom: -15,
+  },
+  BackGroundMid1: {
+    backgroundColor: "#CCFF99",
+    width: "95%",
+    height: 60,
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    marginTop: 30,
+    marginBottom: 60,
   },
 });
 

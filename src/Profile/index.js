@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, SafeAreaView, ScrollView } from "react-native";
+import { Text, View, SafeAreaView, ScrollView, Image } from "react-native";
 import styles from "./styles";
 export default function Profile({ navigation }) {
   return (
@@ -7,7 +7,12 @@ export default function Profile({ navigation }) {
       <ScrollView>
         <View style={styles.BackGroundAll}>
           <View style={styles.BackGroundTop}>
-            <View style={styles.Circle}></View>
+            <Image
+              source={{
+                uri: "https://s.luyengame.net/games/pikachu/image.jpg",
+              }}
+              style={styles.avatar}
+            />
           </View>
 
           <View style={styles.BackGroundMid}>
@@ -34,7 +39,7 @@ export default function Profile({ navigation }) {
             <Text style={{ marginLeft: 10 }}>Year/Grade:</Text>
           </View>
 
-          <View style={styles.BackGroundMid}>
+          <View style={styles.BackGroundMid1}>
             <Text style={{ marginLeft: 10 }}>Student ID:</Text>
           </View>
         </View>
