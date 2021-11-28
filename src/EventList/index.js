@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, Image, SafeAreaView, ScrollView } from "react-native";
 import styles from "./styles";
 
-export default function EventList() {
+export const EventList=({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.bar}>

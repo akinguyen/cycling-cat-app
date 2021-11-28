@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Text, View, Image, TextInput } from "react-native";
 import styles from "./styles";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 export function login  ({ navigation })  {
-  const Stack = createNativeStackNavigator();
   const [textName, setTextName] = useState("");
   const onEnterName = (value) => {
     setTextName(value);
