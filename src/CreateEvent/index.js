@@ -37,9 +37,16 @@ const CreateEvent = ({ navigation }) => {
           <Text style={{ marginLeft: 10 }}>Time:</Text>
         </View>
       </View>
-      <View style={{ height: 40, marginTop: 50 }}>
+      <View style={{ height: 40, marginTop: 10 }}>
         <Button
           title="POST"
+          onPress={() => navigation.goBack()}
+          color="#339900"
+        />
+      </View>
+      <View style={{ height: 40, marginTop: 20 }}>
+        <Button
+          title="BACK"
           onPress={() => navigation.goBack()}
           color="#339900"
         />
