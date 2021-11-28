@@ -7,6 +7,9 @@ export default function Profile({ navigation }) {
       <ScrollView>
         <View style={styles.BackGroundAll}>
           <View style={styles.BackGroundTop}>
+            <View style={styles.points}>
+              <Text style={{ fontWeight: "bold" }}>PTS</Text>
+            </View>
             <Image
               source={{
                 uri: "https://s.luyengame.net/games/pikachu/image.jpg",

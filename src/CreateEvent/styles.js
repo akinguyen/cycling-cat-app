@@ -11,9 +11,8 @@ const styles = StyleSheet.create({
   BackGroundTop: {
     backgroundColor: "#CCFF99",
     width: "100%",
-    height: "50%",
+    height: "20%",
     alignItems: "center",
-    justifyContent: "flex-end",
   },
 
   BackGroundMid: {
@@ -52,11 +51,12 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    alignItems: "center",
   },
   avatar: {
     height: 127,
     width: 127,
-    marginBottom: -15,
+    marginBottom: 0,
   },
   BackGroundMid1: {
     backgroundColor: "#CCFF99",
@@ -74,6 +74,19 @@ const styles = StyleSheet.create({
     width: 60,
     marginRight: 10,
     alignItems: "center",
+    marginTop: 0,
+  },
+  infocontainer: {
+    width: "95%",
+    marginTop: 30,
+    alignItems: "center",
+  },
+  button: {
+    color: "#CCFF99",
+    marginTop: 20,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
 });
 

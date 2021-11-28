@@ -3,10 +3,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Profile from "./src/Profile";
 import EventList from "./src/EventList";
-import MyEvent from "./src/MyEvent";
+import MyEventNavigator from "./src/MyEvent";
 import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import EventListNavigator from "./src/EventList";
 
 export default function App() {
   return (
@@ -24,11 +25,13 @@ function MyTabs() {
       initialRouteName="Feed"
       screenOptions={{
         tabBarActiveTintColor: "#7ED957",
+        headerStyle: { backgroundColor: "#808080" },
+        headerTitleStyle: { color: "#fff" },
       }}
     >
       <Tab.Screen
         name="Feed"
-        component={EventList}
+        component={EventListNavigator}
         options={{
           title: "Daily Events",
           tabBarLabel: "New events",
@@ -49,7 +52,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="My events"
-        component={MyEvent}
+        component={MyEventNavigator}
         options={{
           tabBarLabel: "My events",
           tabBarIcon: ({ color, size }) => (

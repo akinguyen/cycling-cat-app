@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     width: 127,
   },
   groupinfo: {
-    marginTop: 75,
+    marginBottom: 75,
     justifyContent: "flex-start",
     alignItems: "center",
     flexDirection: "row",
@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
   infoname: {
     alignItems: "flex-start",
     marginLeft: 2,
+  },
+  button: {
+    marginTop: 20,
   },
 });
 
