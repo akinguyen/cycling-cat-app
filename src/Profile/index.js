@@ -8,7 +8,7 @@ export default function Profile({ navigation }) {
         <View style={styles.BackGroundAll}>
           <View style={styles.BackGroundTop}>
             <View style={styles.points}>
-              <Text style={{ fontWeight: "bold" }}>PTS</Text>
+              <Text style={styles.pts}>PTS</Text>
             </View>
             <Image
               source={{
@@ -19,31 +19,31 @@ export default function Profile({ navigation }) {
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={{ marginLeft: 10 }}>Description:</Text>
+            <Text style={styles.text}>Description:</Text>
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={{ marginLeft: 10 }}>Name:</Text>
+            <Text style={styles.text}>Name:</Text>
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={{ marginLeft: 10 }}>Date of brith:</Text>
+            <Text style={styles.text}>Date of brith:</Text>
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={{ marginLeft: 10 }}>Type of school:</Text>
+            <Text style={styles.text}>Type of school:</Text>
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={{ marginLeft: 10 }}>Name of school:</Text>
+            <Text style={styles.text}>Name of school:</Text>
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={{ marginLeft: 10 }}>Year/Grade:</Text>
+            <Text style={styles.text}>Year/Grade:</Text>
           </View>
 
           <View style={styles.BackGroundMid1}>
-            <Text style={{ marginLeft: 10 }}>Student ID:</Text>
+            <Text style={styles.text}>Student ID:</Text>
           </View>
         </View>
       </ScrollView>

@@ -16,25 +16,25 @@ const MyEventDetail = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.BackGroundTop}>
         <View style={styles.points}>
-          <Text style={{ fontWeight: "bold" }}>PTS</Text>
+          <Text style={styles.pts}>PTS</Text>
         </View>
-        <Text style={{ fontSize: 50 }}>EVENT</Text>
+        <Text style={styles.title}>EVENT</Text>
       </View>
       <View style={styles.infocontainer}>
         <View style={styles.BackGroundMid}>
-          <Text style={{ marginLeft: 10 }}>Description:</Text>
+          <Text style={styles.text}>Description:</Text>
         </View>
 
         <View style={styles.BackGroundMid}>
-          <Text style={{ marginLeft: 10 }}>Sport:</Text>
+          <Text style={styles.text}>Sport:</Text>
         </View>
 
         <View style={styles.BackGroundMid}>
-          <Text style={{ marginLeft: 10 }}>Location:</Text>
+          <Text style={styles.text}>Location:</Text>
         </View>
 
         <View style={styles.BackGroundMid}>
-          <Text style={{ marginLeft: 10 }}>Time:</Text>
+          <Text style={styles.text}>Time:</Text>
         </View>
       </View>
       <View style={styles.button}>
@@ -63,5 +63,3 @@ const MyEventDetail = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
-export default MyEventDetail;

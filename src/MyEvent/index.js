@@ -25,9 +25,7 @@ function MyEvent({ navigation }) {
           color="#FAD46B"
         />
       </View>
-      <ScrollView
-        contentContainerStyle={{ alignItems: "center", marginTop: 20 }}
-      >
+      <ScrollView contentContainerStyle={styles.scroll}>
         <TouchableOpacity
           onPress={() => navigation.navigate("MyEventDetail")}
           style={styles.groupinfo}
@@ -38,9 +36,9 @@ function MyEvent({ navigation }) {
           />
 
           <View style={styles.infoname}>
-            <Text style={{ fontWeight: "bold", fontSize: 20 }}>Event </Text>
+            <Text style={styles.event}>Event </Text>
             <View style={styles.infobox}>
-              <Text style={{ fontSize: 20 }}>Desscription:...</Text>
+              <Text style={styles.text}>Desscription:...</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -57,9 +55,9 @@ function MyEvent({ navigation }) {
           />
 
           <View style={styles.infoname}>
-            <Text style={{ fontWeight: "bold", fontSize: 20 }}>Event </Text>
+            <Text style={styles.event}>Event </Text>
             <View style={styles.infobox}>
-              <Text style={{ fontSize: 20 }}>Desscription:...</Text>
+              <Text style={styles.text}>Desscription:...</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -76,9 +74,9 @@ function MyEvent({ navigation }) {
           />
 
           <View style={styles.infoname}>
-            <Text style={{ fontWeight: "bold", fontSize: 20 }}>Event </Text>
+            <Text style={styles.event}>Event </Text>
             <View style={styles.infobox}>
-              <Text style={{ fontSize: 20 }}>Desscription:...</Text>
+              <Text style={styles.text}>Desscription:...</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -93,9 +91,9 @@ function MyEvent({ navigation }) {
           />
 
           <View style={styles.infoname}>
-            <Text style={{ fontWeight: "bold", fontSize: 20 }}>Event </Text>
+            <Text style={styles.event}>Event </Text>
             <View style={styles.infobox}>
-              <Text style={{ fontSize: 20 }}>Desscription:...</Text>
+              <Text style={styles.text}>Desscription:...</Text>
             </View>
           </View>
         </TouchableOpacity>

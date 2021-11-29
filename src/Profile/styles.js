@@ -75,6 +75,12 @@ const styles = StyleSheet.create({
     marginRight: 10,
     alignItems: "center",
   },
+  pts: {
+    fontWeight: "bold",
+  },
+  text: {
+    marginLeft: 10,
+  },
 });
 
 export default styles;

@@ -88,6 +88,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
+  title: {
+    fontSize: 50,
+  },
+  pts: {
+    fontWeight: "bold",
+  },
+  text: {
+    marginLeft: 10,
+  },
+  back: {
+    width: 70,
+    height: 40,
+  },
 });
 
 export default styles;
