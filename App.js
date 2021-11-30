@@ -1,36 +1,33 @@
 ﻿import React, { useState } from "react";
 import { TouchableWithoutFeedback, View } from "react-native";
-import PickSport from "./src/picksport";
-import GroupDescription from "./src/GroupDescription";
-import Login from "./src/login";
-import MatchGroup from "./src/MatchGroup";
-import NotifyMatching from "./src/NotifyMatching";
-//import Profile from "./src/Profile";
+import Login from "./src/Login";
+import Profile from "./src/Profile";
 import Welcome from "./src/Welcome";
-import Option from "./src/Option";
-import CalculatorOne from "./src/CalculatorOne";
-import CalculatorTwo from "./src/CalculatorTwo";
-import ChooseGoal from "./src/ChooseGoal";
 import Logo from "./src/Logo";
-import GroupActivity from "./src/GroupActivitiy";
-//import GroupMember from "./src/GroupMember";
+import EventList from "./src/EventList";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import CheckParticipation from "./src/CheckParticipation";
+import MyEvent from "./src/MyEvent";
+import MyEventDetail from "./src/MyEventDetail";
+import EditEvent from "./src/EditEvent";
+import CreateEvent from "./src/CreateEvent";
+import EventDetail from "./src/EventDetail";
+import EventList from "./src/EventList";
 
 const screens = [
+  <Profile />,
   <Logo />,
   <Login />,
-  <Option />,
   <Welcome />,
-  <MatchGroup />,
-  <PickSport />,
-  <NotifyMatching />,
-  <GroupActivity />,
-  <GroupDescription />,
-  // <GroupMember />,
-  <ChooseGoal />,
-  <CalculatorOne />,
-  <CalculatorTwo />,
+  <EventList />,
   <CheckParticipation />,
+  <MyEvent />,
+  <MyEventDetail />,
+  <EventDetail />,
+  <EditEvent />,
+  <CreateEvent />,
+  <EventList />,
 ];
 
 export default function App() {
