@@ -2,12 +2,18 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Profile from "./src/Profile";
-import EventList from "./src/EventList";
 import MyEventNavigator from "./src/MyEvent";
 import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import EventListNavigator from "./src/EventList";
+import CheckParticipation from "./src/CheckParticipation";
+import MyEvent from "./src/MyEvent";
+import MyEventDetail from "./src/MyEventDetail";
+import EditEvent from "./src/EditEvent";
+import CreateEvent from "./src/CreateEvent";
+import EventDetail from "./src/EventDetail";
+import EventList from "./src/EventList";
 
 export default function App() {
   return (
