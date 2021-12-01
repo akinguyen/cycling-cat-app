@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -6,12 +6,19 @@ import {
   ScrollView,
   Image,
   Button,
+  TextInput,
 } from "react-native";
 import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-const CreateEvent = ({ navigation }) => {
+const [description, setDescription] = useState("");
+
+const onEnterDescription = (value) => {
+  setDescription(value);
+};
+
+export default function CreateEvent({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.BackGroundTop}>
@@ -23,6 +30,12 @@ const CreateEvent = ({ navigation }) => {
       <View style={styles.infocontainer}>
         <View style={styles.BackGroundMid}>
           <Text style={styles.text}>Description:</Text>
+          <TextInput
+            value={description}
+            onChangeText={onEnterDescription}
+            placeholder="enter your description"
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.BackGroundMid}>
@@ -53,6 +66,4 @@ const CreateEvent = ({ navigation }) => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default CreateEvent;
+}
