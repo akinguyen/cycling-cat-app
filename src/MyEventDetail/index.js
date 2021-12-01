@@ -63,3 +63,4 @@ const MyEventDetail = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+export default MyEventDetail;
