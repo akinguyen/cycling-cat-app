@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+
   bar: {
     alignItems: "center",
     backgroundColor: "black",
@@ -14,10 +15,12 @@ const styles = StyleSheet.create({
     width: 250,
     justifyContent: "center",
   },
+
   circle: {
     height: 127,
     width: 127,
   },
+
   groupinfo: {
     marginBottom: 75,
     justifyContent: "flex-start",
@@ -25,6 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flex: 1,
   },
+
   infobox: {
     height: 100,
     width: 200,
@@ -34,17 +38,21 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 30,
   },
+
   infoname: {
     alignItems: "flex-start",
     marginLeft: 2,
   },
+
   pts: {
     fontWeight: "bold",
   },
+
   event: {
     fontWeight: "bold",
     fontSize: 20,
   },
+
   scroll: {
     alignItems: "center",
     marginTop: 20,

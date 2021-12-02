@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   BackGroundMid: {
     backgroundColor: "#CCFF99",
     width: "95%",
-    height: 60,
+    height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
     marginTop: 30,
