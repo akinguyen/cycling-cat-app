@@ -38,7 +38,7 @@ function MyEvent({ navigation }) {
           <View style={styles.infoname}>
             <Text style={styles.event}>Event </Text>
             <View style={styles.infobox}>
-              <Text style={styles.text}>Desscription:...</Text>
+              <Text style={styles.text}>Description:...</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -57,7 +57,7 @@ function MyEvent({ navigation }) {
           <View style={styles.infoname}>
             <Text style={styles.event}>Event </Text>
             <View style={styles.infobox}>
-              <Text style={styles.text}>Desscription:...</Text>
+              <Text style={styles.text}>Description:...</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -76,7 +76,7 @@ function MyEvent({ navigation }) {
           <View style={styles.infoname}>
             <Text style={styles.event}>Event </Text>
             <View style={styles.infobox}>
-              <Text style={styles.text}>Desscription:...</Text>
+              <Text style={styles.text}>Description:...</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -93,7 +93,7 @@ function MyEvent({ navigation }) {
           <View style={styles.infoname}>
             <Text style={styles.event}>Event </Text>
             <View style={styles.infobox}>
-              <Text style={styles.text}>Desscription:...</Text>
+              <Text style={styles.text}>Description:...</Text>
             </View>
           </View>
         </TouchableOpacity>

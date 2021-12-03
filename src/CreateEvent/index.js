@@ -57,7 +57,7 @@ export default function CreateEvent({ navigation }) {
         <View style={styles.BackGroundMid}>
           <Text style={styles.text}>Sport:</Text>
           <TextInput
-            value={description}
+            value={sport}
             onChangeText={onEnterSport}
             placeholder="enter your favourite sport"
             style={styles.input}
@@ -67,7 +67,7 @@ export default function CreateEvent({ navigation }) {
         <View style={styles.BackGroundMid}>
           <Text style={styles.text}>Location:</Text>
           <TextInput
-            value={description}
+            value={location}
             onChangeText={onEnterLocation}
             placeholder="Where does your event take place?"
             style={styles.input}
@@ -77,7 +77,7 @@ export default function CreateEvent({ navigation }) {
         <View style={styles.BackGroundMid}>
           <Text style={styles.text}>Time:</Text>
           <TextInput
-            value={description}
+            value={time}
             onChangeText={onEnterTime}
             placeholder="The time of the event: "
             style={styles.input}

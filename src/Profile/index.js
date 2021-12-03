@@ -12,7 +12,7 @@ import styles from "./styles";
 export default function Profile({ navigation }) {
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
-  const [brith, setBirth] = useState("");
+  const [birth, setBirth] = useState("");
   const [typeOfSchool, setTypeOfSchool] = useState("");
   const [nameOfSchool, setNameOfSchool] = useState("");
   const [grade, setGrade] = useState("");
@@ -67,7 +67,7 @@ export default function Profile({ navigation }) {
             <TextInput
               value={description}
               onChangeText={onEnterDescription}
-              placeholder="enter your description"
+              placeholder="Enter your description"
               style={styles.input}
             />
           </View>
@@ -83,10 +83,10 @@ export default function Profile({ navigation }) {
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Date of brith:</Text>
+            <Text style={styles.text}>Date of birth:</Text>
             <TextInput
               keyboardType="numbers-and-punctuation"
-              value={brith}
+              value={birth}
               onChangeText={onEnterBirth}
               placeholder="Enter your date of birth"
               style={styles.input}
