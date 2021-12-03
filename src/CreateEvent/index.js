@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -6,45 +6,94 @@ import {
   ScrollView,
   Image,
   Button,
+  TextInput,
 } from "react-native";
 import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-const CreateEvent = ({ navigation }) => {
+export default function CreateEvent({ navigation }) {
+  const [description, setDescription] = useState("");
+  const [sport, setSport] = useState("");
+  const [location, setLocation] = useState("");
+  const [time, setTime] = useState("");
+
+  const onEnterDescription = (value) => {
+    setDescription(value);
+  };
+
+  const onEnterSport = (value) => {
+    setSport(value);
+  };
+
+  const onEnterLocation = (value) => {
+    setLocation(value);
+  };
+
+  const onEnterTime = (value) => {
+    setTime(value);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.BackGroundTop}>
         <View style={styles.points}>
-          <Text style={{ fontWeight: "bold" }}>PTS</Text>
+          <Text style={styles.pts}>PTS</Text>
         </View>
-        <Text style={{ fontSize: 50 }}>EVENT</Text>
+        <Text style={styles.title}>EVENT</Text>
       </View>
+
       <View style={styles.infocontainer}>
         <View style={styles.BackGroundMid}>
-          <Text style={{ marginLeft: 10 }}>Description:</Text>
+          <Text style={styles.text}>Description:</Text>
+          <TextInput
+            value={description}
+            onChangeText={onEnterDescription}
+            placeholder="enter your description"
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.BackGroundMid}>
-          <Text style={{ marginLeft: 10 }}>Sport:</Text>
+          <Text style={styles.text}>Sport:</Text>
+          <TextInput
+            value={description}
+            onChangeText={onEnterSport}
+            placeholder="enter your favourite sport"
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.BackGroundMid}>
-          <Text style={{ marginLeft: 10 }}>Location:</Text>
+          <Text style={styles.text}>Location:</Text>
+          <TextInput
+            value={description}
+            onChangeText={onEnterLocation}
+            placeholder="Where does your event take place?"
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.BackGroundMid}>
-          <Text style={{ marginLeft: 10 }}>Time:</Text>
+          <Text style={styles.text}>Time:</Text>
+          <TextInput
+            value={description}
+            onChangeText={onEnterTime}
+            placeholder="The time of the event: "
+            style={styles.input}
+          />
         </View>
       </View>
-      <View style={{ height: 40, marginTop: 10 }}>
+
+      <View style={styles.post}>
         <Button
           title="POST"
           onPress={() => navigation.goBack()}
           color="#339900"
         />
       </View>
-      <View style={{ height: 40, marginTop: 20 }}>
+
+      <View style={styles.back}>
         <Button
           title="BACK"
           onPress={() => navigation.goBack()}
@@ -53,6 +102,4 @@ const CreateEvent = ({ navigation }) => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default CreateEvent;
+}

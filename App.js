@@ -2,7 +2,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Profile from "./src/Profile";
-import EventList from "./src/EventList";
 import MyEventNavigator from "./src/MyEvent";
 import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";

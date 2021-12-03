@@ -41,6 +41,21 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 20,
   },
+  pts: {
+    fontWeight: "bold",
+  },
+  event: {
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  scroll: {
+    alignItems: "center",
+    marginTop: 20,
+  },
+
+  text: {
+    fontSize: 20,
+  },
 });
 
 export default styles;
