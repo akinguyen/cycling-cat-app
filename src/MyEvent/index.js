@@ -5,29 +5,35 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
-  TouchableOpacity,
   Button,
+  TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
+import MyEventDetail from "../MyEventDetail";
 import { createStackNavigator } from "@react-navigation/stack";
-import EventDetail from "../EventDetail";
+import CheckParticipation from "../CheckParticipation";
+import EditEvent from "../EditEvent";
+import CreateEvent from "../CreateEvent";
 
-const StackEvent = createStackNavigator();
-
-function EventList({ navigation }) {
+function MyEvent({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.button}>
+        <Button
+          title="ADD"
+          onPress={() => navigation.navigate("CreateEvent")}
+          color="#FAD46B"
+        />
+      </View>
       <ScrollView
         contentContainerStyle={{ alignItems: "center", marginTop: 20 }}
       >
         <TouchableOpacity
-          onPress={() => navigation.navigate("EventDetail")}
+          onPress={() => navigation.navigate("MyEventDetail")}
           style={styles.groupinfo}
         >
           <Image
-            source={{
-              uri: "https://s.luyengame.net/games/pikachu/image.jpg",
-            }}
+            source={{ uri: "https://s.luyengame.net/games/pikachu/image.jpg" }}
             style={styles.circle}
           />
 
@@ -40,7 +46,7 @@ function EventList({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("EventDetail")}
+          onPress={() => navigation.navigate("MyEventDetail")}
           style={styles.groupinfo}
         >
           <Image
@@ -59,7 +65,7 @@ function EventList({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("EventDetail")}
+          onPress={() => navigation.navigate("MyEventDetail")}
           style={styles.groupinfo}
         >
           <Image
@@ -78,7 +84,7 @@ function EventList({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("EventDetail")}
+          onPress={() => navigation.navigate("MyEventDetail")}
           style={styles.groupinfo}
         >
           <Image
@@ -98,21 +104,38 @@ function EventList({ navigation }) {
   );
 }
 
-const EventListNavigator = () => {
+const StackMyEvent = createStackNavigator();
+
+const MyEventNavigator = () => {
   return (
-    <StackEvent.Navigator initialRouteName="EventList">
-      <StackEvent.Screen
-        name="EventList"
-        component={EventList}
+    <StackMyEvent.Navigator initialRouteName="MyEvent">
+      <StackMyEvent.Screen
+        name="MyEvent"
+        component={MyEvent}
         options={{ headerShown: false }}
       />
-      <StackEvent.Screen
-        name="EventDetail"
-        component={EventDetail}
+      <StackMyEvent.Screen
+        name="MyEventDetail"
+        component={MyEventDetail}
         options={{ headerShown: false }}
       />
-    </StackEvent.Navigator>
+      <StackMyEvent.Screen
+        name="CheckParticipation"
+        component={CheckParticipation}
+        options={{ headerShown: false }}
+      />
+      <StackMyEvent.Screen
+        name="EditEvent"
+        component={EditEvent}
+        options={{ headerShown: false }}
+      />
+      <StackMyEvent.Screen
+        name="CreateEvent"
+        component={CreateEvent}
+        options={{ headerShown: false }}
+      />
+    </StackMyEvent.Navigator>
   );
 };
 
-export default EventListNavigator;
+export default MyEventNavigator;
