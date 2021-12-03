@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
-    marginTop: 30,
+    marginTop: 7,
   },
 
   BackGroundBottom: {

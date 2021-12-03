@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
-    marginTop: 30,
+    marginTop: 7,
   },
 
   BackGroundBottom: {
@@ -90,10 +90,10 @@ const styles = StyleSheet.create({
 
   button: {
     color: "#CCFF99",
-    marginTop: 20,
-    width: "100%",
+    marginTop: 50,
+    width: 300,
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
 
   title: {
@@ -114,8 +114,8 @@ const styles = StyleSheet.create({
   },
 
   back: {
+    width: 70,
     height: 40,
-    marginTop: 20,
   },
 
   input: {

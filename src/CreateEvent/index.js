@@ -40,7 +40,7 @@ export default function CreateEvent({ navigation }) {
         <View style={styles.points}>
           <Text style={styles.pts}>PTS</Text>
         </View>
-        <Text style={styles.title}>EVENT</Text>
+        <Text style={styles.title}>CREATE</Text>
       </View>
 
       <View style={styles.infocontainer}>
@@ -84,21 +84,22 @@ export default function CreateEvent({ navigation }) {
           />
         </View>
       </View>
+      <View style={styles.button}>
+        <View style={styles.cancel}>
+          <Button
+            title="CANCEL"
+            onPress={() => navigation.goBack()}
+            color="#339900"
+          />
+        </View>
 
-      <View style={styles.post}>
-        <Button
-          title="POST"
-          onPress={() => navigation.goBack()}
-          color="#339900"
-        />
-      </View>
-
-      <View style={styles.back}>
-        <Button
-          title="BACK"
-          onPress={() => navigation.goBack()}
-          color="#339900"
-        />
+        <View style={styles.back}>
+          <Button
+            title="POST"
+            onPress={() => navigation.goBack()}
+            color="#339900"
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
