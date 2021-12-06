@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Text,
   View,
@@ -11,6 +11,7 @@ import {
 import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
+import axios from "axios";
 
 export default function EventDetail({ navigation }) {
   const [description, setDescription] = useState("");
@@ -33,6 +34,18 @@ export default function EventDetail({ navigation }) {
   const onEnterTime = (value) => {
     setTime(value);
   };
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://cycling-cat-api.herokuapp.com/events"
+      )
+      .then((response) => {
+        setDescription(JSON.stringify(response.data.description));
+        console.log(description);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
