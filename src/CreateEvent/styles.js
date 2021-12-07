@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
 
   cancel: {
-    width: 80,
+    width: 90,
     height: 40,
   },
 
