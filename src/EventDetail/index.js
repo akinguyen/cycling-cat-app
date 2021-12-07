@@ -15,7 +15,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
 
-export default function EventDetail({ navigation }) {
+export default function EventDetail({ navigation, route }) {
+  const { id } = route.params;
   const [description, setDescription] = useState("");
   const [sport, setSport] = useState("");
   const [location, setLocation] = useState("");
@@ -44,9 +45,7 @@ export default function EventDetail({ navigation }) {
 
   useEffect(() => {
     axios
-      .get(
-        "https://cycling-cat-api.herokuapp.com/events/61ae281d6050735fd2a650f8"
-      )
+      .get("https://cycling-cat-api.herokuapp.com/events/" + id)
       .then((response) => {
         console.log(response.data);
         setDescription(response.data.description);
