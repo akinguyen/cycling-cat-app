@@ -17,7 +17,6 @@ const StackEvent = createStackNavigator();
 
 function EventList({ navigation }) {
   const [list, setList] = useState([]);
-
   useEffect(() => {
     axios
       .get("https://cycling-cat-api.herokuapp.com/events")
@@ -28,7 +27,7 @@ function EventList({ navigation }) {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
