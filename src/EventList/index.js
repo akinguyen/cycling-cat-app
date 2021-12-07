@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Text,
   View,
@@ -11,10 +11,25 @@ import {
 import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import EventDetail from "../EventDetail";
+import axios from "axios";
 
 const StackEvent = createStackNavigator();
 
 function EventList({ navigation }) {
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://cycling-cat-api.herokuapp.com/events")
+      .then((response) => {
+        console.log(response.data);
+        setList(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll}>

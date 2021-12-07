@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 
   BackGroundMid: {
     backgroundColor: "#CCFF99",
-    width: "95%",
+    width: 370,
     height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
 
   text: {
     marginLeft: 10,
+    fontWeight: "bold",
   },
 
   back: {
