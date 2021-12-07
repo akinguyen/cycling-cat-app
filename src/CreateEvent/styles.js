@@ -118,6 +118,11 @@ const styles = StyleSheet.create({
     height: 40,
   },
 
+  cancel: {
+    width: 90,
+    height: 40,
+  },
+
   input: {
     height: 40,
     margin: 5,

@@ -3,6 +3,8 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: "10%",
+    alignItems: "center",
   },
 
   bar: {
@@ -37,6 +39,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#CCFF99",
     padding: 10,
     marginBottom: 30,
+    justifyContent: "space-around",
   },
 
   infoname: {
