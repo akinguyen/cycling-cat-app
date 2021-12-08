@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   BackGroundMid: {
     backgroundColor: "#CCFF99",
     width: "95%",
-    height: 60,
+    height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
     marginTop: 30,
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     width: "33.5%",
     justifyContent: "center",
   },
+
   Square2: {
     backgroundColor: "#40ff00",
     flexDirection: "row",
@@ -50,23 +51,27 @@ const styles = StyleSheet.create({
     width: "33.5%",
     justifyContent: "center",
   },
+
   container: {
     flex: 1,
   },
+
   avatar: {
     height: 127,
     width: 127,
     marginBottom: -15,
   },
+
   BackGroundMid1: {
     backgroundColor: "#CCFF99",
     width: "95%",
-    height: 60,
+    height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
     marginTop: 30,
-    marginBottom: 60,
+    marginBottom: 50,
   },
+
   points: {
     alignSelf: "flex-end",
     backgroundColor: "red",
@@ -75,11 +80,20 @@ const styles = StyleSheet.create({
     marginRight: 10,
     alignItems: "center",
   },
+
   pts: {
     fontWeight: "bold",
   },
+
   text: {
     marginLeft: 10,
+  },
+
+  input: {
+    height: 40,
+    margin: 5,
+    borderWidth: 1,
+    padding: 10,
   },
 });
 

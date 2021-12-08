@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Text,
   View,
@@ -7,91 +7,76 @@ import {
   ScrollView,
   TouchableOpacity,
   Button,
+  FlatList,
 } from "react-native";
 import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import EventDetail from "../EventDetail";
+import axios from "axios";
 
 const StackEvent = createStackNavigator();
 
 function EventList({ navigation }) {
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://cycling-cat-api.herokuapp.com/events")
+      .then((response) => {
+        console.log(response.data);
+        setList(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scroll}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("EventDetail")}
-          style={styles.groupinfo}
-        >
-          <Image
-            source={{
-              uri: "https://s.luyengame.net/games/pikachu/image.jpg",
-            }}
-            style={styles.circle}
-          />
+      <FlatList
+        keyExtractor={(item, index) => item._id}
+        data={list}
+        renderItem={(ItemData) => (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("EventDetail", {
+                id: ItemData.item._id.toString(),
+              })
+            }
+            style={styles.groupinfo}
+          >
+            <Image
+              source={{
+                uri: "https://s.luyengame.net/games/pikachu/image.jpg",
+              }}
+              style={styles.circle}
+            />
 
-          <View style={styles.infoname}>
-            <Text style={styles.event}>Event </Text>
-            <View style={styles.infobox}>
-              <Text style={styles.text}>Desscription:...</Text>
+            <View style={styles.infoname}>
+              <Text style={styles.event}>Event </Text>
+              <View style={styles.infobox}>
+                <Text style={{ fontWeight: "bold" }}>
+                  Location:{" "}
+                  <Text style={{ fontWeight: "normal" }}>
+                    {ItemData.item.location}
+                  </Text>
+                </Text>
+                <Text style={{ fontWeight: "bold" }}>
+                  Sport:{" "}
+                  <Text style={{ fontWeight: "normal" }}>
+                    {ItemData.item.sport}
+                  </Text>
+                </Text>
+                <Text style={{ fontWeight: "bold" }}>
+                  Time:{" "}
+                  <Text style={{ fontWeight: "normal" }}>
+                    {ItemData.item.time}
+                  </Text>
+                </Text>
+              </View>
             </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate("EventDetail")}
-          style={styles.groupinfo}
-        >
-          <Image
-            source={{
-              uri: "https://img.pokemondb.net/artwork/large/charizard-mega-x.jpg",
-            }}
-            style={styles.circle}
-          />
-
-          <View style={styles.infoname}>
-            <Text style={styles.event}>Event </Text>
-            <View style={styles.infobox}>
-              <Text style={styles.text}>Desscription:...</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate("EventDetail")}
-          style={styles.groupinfo}
-        >
-          <Image
-            source={{
-              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSntjrvQhcLbcd1R49jvD9ME7V3xhGxBDvdOA&usqp=CAU",
-            }}
-            style={styles.circle}
-          />
-
-          <View style={styles.infoname}>
-            <Text style={styles.event}>Event </Text>
-            <View style={styles.infobox}>
-              <Text style={styles.text}>Desscription:...</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate("EventDetail")}
-          style={styles.groupinfo}
-        >
-          <Image
-            source={{ uri: "https://s.luyengame.net/games/pikachu/image.jpg" }}
-            style={styles.circle}
-          />
-
-          <View style={styles.infoname}>
-            <Text style={styles.event}>Event </Text>
-            <View style={styles.infobox}>
-              <Text style={styles.text}>Desscription:...</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-      </ScrollView>
+          </TouchableOpacity>
+        )}
+      />
     </SafeAreaView>
   );
 }
