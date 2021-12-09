@@ -7,7 +7,7 @@ import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import EventListNavigator from "./src/EventList";
-
+import axios from "axios";
 export default function App() {
   return (
     <NavigationContainer>
