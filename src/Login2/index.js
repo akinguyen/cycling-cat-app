@@ -1,15 +1,18 @@
+import "react-native-gesture-handler";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-
+import { NavigationContainer } from "@react-navigation/native";
 import { SignIn } from "./screen";
-import PickSport from "../picksport";
+import apptest1Screen from "../apptest1";
 
-const AuthStack = createStackNavigator();
+const Stack = createStackNavigator();
 export default function Login2() {
   return (
-    <AuthStack.Navigator>
-      <AuthStack.Screen name="SignIn" component={SignIn} />
-      <AuthStack.Screen name="PickSport" component={PickSport} />
-    </AuthStack.Navigator>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="apptest1Screen" component={apptest1Screen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

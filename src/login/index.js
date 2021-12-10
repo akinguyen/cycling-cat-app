@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Text, View, Image, TextInput, Button } from "react-native";
+import apptest1Screen from "../apptest1";
 import styles from "./styles";
-export default function Login({ navigation }) {
-  const [textName, setTextName] = useState("");
-  const onEnterName = (value) => {
-    setTextName(value);
+
+export default function LoginScreen({ navigation }) {
+  const [textEmail, settextEmail] = useState("");
+  const onEnterEmail = (value) => {
+    settextEmail(value);
+  };
+
+  const [textPassword, settextPassword] = useState("");
+  const onEnterPassword = (value) => {
+    settextPassword(value);
   };
 
   return (
@@ -17,14 +24,23 @@ export default function Login({ navigation }) {
       />
 
       <View style={{ marginTop: 120 }}>
-        <Text style={styles.username}> User name:</Text>
+        <Text style={styles.username}> Enter your email: </Text>
         <TextInput
-          value={textName}
-          onChangeText={onEnterName}
-          placeholder="enter your name"
+          value={textEmail}
+          onChangeText={onEnterEmail}
+          placeholder="enter your email"
           style={styles.input}
         />
-        <Button title="Submit" onPress={() => navigation.push("Profile")} />
+      </View>
+
+      <View style={{ marginTop: 10 }}>
+        <Text style={styles.username}> Enter your password: </Text>
+        <TextInput
+          value={textPassword}
+          onChangeText={onEnterPassword}
+          placeholder="enter your password"
+          style={styles.input}
+        />
       </View>
     </View>
   );

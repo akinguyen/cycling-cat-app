@@ -22,5 +22,24 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "black",
   },
+  back: {
+    width: 70,
+    height: 40,
+  },
+  back1: {
+    width: 80,
+    height: 40,
+  },
+  button: {
+    color: "#CCFF99",
+    marginTop: 50,
+    width: 300,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  container1: {
+    flex: 1,
+    alignItems: "center",
+  },
 });
 export default styles;
