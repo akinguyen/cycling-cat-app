@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 0,
     padding: 0,
-    backgroundColor:"white",
+    backgroundColor: "white",
   },
   input: {
     height: 40,
@@ -24,4 +24,5 @@ const styles = StyleSheet.create({
     color: "black",
   },
 });
+
 export default styles;
