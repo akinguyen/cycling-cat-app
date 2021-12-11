@@ -55,7 +55,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-
+  scroll: {
+    flex: 1,
+  },
   avatar: {
     height: 127,
     width: 127,
