@@ -36,6 +36,14 @@ export default function MyEventDetail({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
+<<<<<<< HEAD
+      <ScrollView>
+        <View style={styles.BackGroundTop}>
+          <View style={styles.points}>
+            <Text style={styles.pts}>PTS</Text>
+          </View>
+          <Text style={styles.title}>EVENT</Text>
+=======
       <View style={styles.BackGroundTop}>
         <View style={styles.points}>
           <Text style={styles.pts}>PTS</Text>
@@ -51,8 +59,26 @@ export default function MyEventDetail({ navigation }) {
             placeholder="enter your description"
             style={styles.input}
           />
+>>>>>>> 8c0be27af339fbb049e20cc0220b09b3deba667f
         </View>
+        <View style={styles.infocontainer}>
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Description:</Text>
+          </View>
 
+<<<<<<< HEAD
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Sport:</Text>
+          </View>
+
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Location:</Text>
+          </View>
+
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Time:</Text>
+          </View>
+=======
         <View style={styles.BackGroundMid}>
           <Text style={styles.text}>Sport:</Text>
           <TextInput
@@ -81,31 +107,37 @@ export default function MyEventDetail({ navigation }) {
             placeholder="The time of the event: "
             style={styles.input}
           />
+>>>>>>> 8c0be27af339fbb049e20cc0220b09b3deba667f
         </View>
-      </View>
-      <View style={styles.button}>
+        <View style={styles.button}>
+          <View style={{ height: 40 }}>
+            <Button
+              title="EDIT"
+              onPress={() => navigation.navigate("EditEvent")}
+              color="#339900"
+            />
+          </View>
+          <View style={{ height: 40 }}>
+            <Button
+              title="GOING"
+              onPress={() => navigation.navigate("CheckParticipation")}
+              color="#339900"
+            />
+          </View>
+        </View>
         <View style={{ height: 40 }}>
           <Button
-            title="EDIT"
-            onPress={() => navigation.navigate("EditEvent")}
+            title="BACK"
+            onPress={() => navigation.goBack()}
             color="#339900"
           />
         </View>
-        <View style={{ height: 40 }}>
-          <Button
-            title="GOING"
-            onPress={() => navigation.navigate("CheckParticipation")}
-            color="#339900"
-          />
-        </View>
-      </View>
-      <View style={{ height: 40 }}>
-        <Button
-          title="BACK"
-          onPress={() => navigation.goBack()}
-          color="#339900"
-        />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
+<<<<<<< HEAD
+};
+export default MyEventDetail;
+=======
 }
+>>>>>>> 8c0be27af339fbb049e20cc0220b09b3deba667f
