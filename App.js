@@ -6,6 +6,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import AuthContext from "./AuthContext";
 import SignIn from "./src/SignIn";
 import MainNavigation from "./src/MainNavigation";
+import axios from "axios";
 
 const Stack = createStackNavigator();
 
