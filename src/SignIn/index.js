@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Text, View, Button, TextInput, Image } from "react-native";
 import styles from "./styles";
 import AuthContext from "../../AuthContext";
+import { createStackNavigator } from "@react-navigation/stack";
+import SignUp from "../SignUp";
 
-export default function SignIn({ navigation }) {
+function SignIn({ navigation }) {
   const { signIn } = React.useContext(AuthContext);
 
   const [textEmail, settextEmail] = useState("");
@@ -57,7 +59,7 @@ export default function SignIn({ navigation }) {
         <View style={{}}>
           <Button
             title="Sign up"
-            onPress={() => navigation.push("")}
+            onPress={() => navigation.navigate("SignUp")}
             color="#7ED957"
           />
         </View>
@@ -65,3 +67,24 @@ export default function SignIn({ navigation }) {
     </View>
   );
 }
+
+const Stack = createStackNavigator();
+
+const SignUpNavigator = () => {
+  return (
+    <Stack.Navigator initialRouteName="SignIn">
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+export default SignUpNavigator;
