@@ -19,13 +19,13 @@ export default function SignIn({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
-        style={{ height: "100%", width: "100%", position: "absolute", top: 0 }}
+        style={{ height: 160, width: 320, marginTop: 100, marginBottom: 50 }}
         source={{
-          uri: "https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/255972745_288842226478427_4834561469916519793_n.png?_nc_cat=107&ccb=1-5&_nc_sid=ae9488&_nc_ohc=K9IIRTwRTqsAX_cWDmd&_nc_ht=scontent.fsgn3-1.fna&oh=4cb92935c2fc51f34f634e4cd334dbcc&oe=61B9CB35",
+          uri: "https://fv9-4.failiem.lv/thumb_show.php?i=d5c95gm34&view",
         }}
       />
 
-      <View style={{ marginTop: 120 }}>
+      <View style={{ marginTop: 0, marginBottom: 20 }}>
         <Text style={styles.username}> Enter your email: </Text>
         <TextInput
           value={textEmail}
@@ -35,7 +35,7 @@ export default function SignIn({ navigation }) {
         />
       </View>
 
-      <View style={{ marginTop: 10 }}>
+      <View style={{ marginTop: 0, marginBottom: 20 }}>
         <Text style={styles.username}> Enter your password: </Text>
         <TextInput
           value={textPassword}

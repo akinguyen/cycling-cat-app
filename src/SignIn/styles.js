@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-around",
+    top: 10,
     alignItems: "center",
     paddingTop: 0,
     padding: 0,
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
   },
   username: {
-    margin: 20,
+    marginBottom: 10,
     fontSize: 17,
     fontWeight: "bold",
     textAlign: "center",
