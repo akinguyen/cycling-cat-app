@@ -35,77 +35,79 @@ export default function MyEventDetail({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.BackGroundTop}>
-        <View style={styles.points}>
-          <Text style={styles.pts}>PTS</Text>
+    <ScrollView style={styles.scroll}>
+      <View style={styles.container}>
+        <View style={styles.BackGroundTop}>
+          <View style={styles.points}>
+            <Text style={styles.pts}>PTS</Text>
+          </View>
+          <Text style={styles.title}>EVENT</Text>
         </View>
-        <Text style={styles.title}>EVENT</Text>
-      </View>
-      <View style={styles.infocontainer}>
-        <View style={styles.BackGroundMid}>
-          <Text style={styles.text}>Description:</Text>
-          <TextInput
-            value={description}
-            onChangeText={onEnterDescription}
-            placeholder="enter your description"
-            style={styles.input}
-          />
-        </View>
+        <View style={styles.infocontainer}>
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Description:</Text>
+            <TextInput
+              value={description}
+              onChangeText={onEnterDescription}
+              placeholder="enter your description"
+              style={styles.input}
+            />
+          </View>
 
-        <View style={styles.BackGroundMid}>
-          <Text style={styles.text}>Sport:</Text>
-          <TextInput
-            value={sport}
-            onChangeText={onEnterSport}
-            placeholder="enter your favourite sport"
-            style={styles.input}
-          />
-        </View>
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Sport:</Text>
+            <TextInput
+              value={sport}
+              onChangeText={onEnterSport}
+              placeholder="enter your favourite sport"
+              style={styles.input}
+            />
+          </View>
 
-        <View style={styles.BackGroundMid}>
-          <Text style={styles.text}>Location:</Text>
-          <TextInput
-            value={location}
-            onChangeText={onEnterLocation}
-            placeholder="Where does your event take place?"
-            style={styles.input}
-          />
-        </View>
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Location:</Text>
+            <TextInput
+              value={location}
+              onChangeText={onEnterLocation}
+              placeholder="Where does your event take place?"
+              style={styles.input}
+            />
+          </View>
 
-        <View style={styles.BackGroundMid}>
-          <Text style={styles.text}>Time:</Text>
-          <TextInput
-            value={time}
-            onChangeText={onEnterTime}
-            placeholder="The time of the event: "
-            style={styles.input}
-          />
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Time:</Text>
+            <TextInput
+              value={time}
+              onChangeText={onEnterTime}
+              placeholder="The time of the event: "
+              style={styles.input}
+            />
+          </View>
         </View>
-      </View>
-      <View style={styles.button}>
+        <View style={styles.button}>
+          <View style={{ height: 40 }}>
+            <Button
+              title="EDIT"
+              onPress={() => navigation.navigate("EditEvent")}
+              color="#339900"
+            />
+          </View>
+          <View style={{ height: 40 }}>
+            <Button
+              title="GOING"
+              onPress={() => navigation.navigate("CheckParticipation")}
+              color="#339900"
+            />
+          </View>
+        </View>
         <View style={{ height: 40 }}>
           <Button
-            title="EDIT"
-            onPress={() => navigation.navigate("EditEvent")}
+            title="BACK"
+            onPress={() => navigation.goBack()}
             color="#339900"
           />
         </View>
-        <View style={{ height: 40 }}>
-          <Button
-            title="GOING"
-            onPress={() => navigation.navigate("CheckParticipation")}
-            color="#339900"
-          />
-        </View>
       </View>
-      <View style={{ height: 40 }}>
-        <Button
-          title="BACK"
-          onPress={() => navigation.goBack()}
-          color="#339900"
-        />
-      </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
