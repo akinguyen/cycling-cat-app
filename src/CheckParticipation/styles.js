@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    height: "100%",
+    flex: 1,
     flexDirection: "column",
     alignItems: "center",
   },
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   back: {
     height: 200,
     width: "100%",
-    backgroundColor: "green",
+    backgroundColor: "#CCFF99",
     alignItems: "center",
   },
 
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   bar: {
     flexDirection: "row",
     height: 50,
-    backgroundColor: "green",
+    backgroundColor: "#CCFF99",
     alignItems: "center",
     borderWidth: 1,
     width: "33.5%",
@@ -48,13 +48,14 @@ const styles = StyleSheet.create({
 
   parti: {
     fontSize: 15,
-    backgroundColor: "green",
+    backgroundColor: "#CCFF99",
     marginTop: 20,
   },
 
   text: {
     fontSize: 20,
     fontWeight: "bold",
+    alignSelf: "center",
   },
 
   rect: {
