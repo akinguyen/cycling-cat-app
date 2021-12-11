@@ -1,21 +1,13 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import Profile from "./Profile";
-import EventList from "./EventList";
-import MyEventNavigator from "./MyEvent";
-import { Text, View } from "react-native";
+import Profile from "../Profile";
+import MyEventNavigator from "../MyEvent";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import EventListNavigator from "./EventList";
-
-export default function apptest1Screen({ navigation }) {
-  return <MyTabs />;
-}
+import EventListNavigator from "../EventList";
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+export default function Main({ navigation }) {
   return (
     <Tab.Navigator
       initialRouteName="Feed"
