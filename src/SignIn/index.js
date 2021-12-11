@@ -44,8 +44,8 @@ export default function SignIn({ navigation }) {
           style={styles.input}
         />
       </View>
-      <View style={{}}>
-        <View style={{}}>
+      <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+        <View style={{ marginRight: 20 }}>
           <Button
             title="Sign in"
             onPress={() =>

@@ -7,9 +7,14 @@ import {
   ScrollView,
   Image,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
+import AuthContext from "../../AuthContext";
+
 export default function Profile({ navigation }) {
+  const { signOut } = React.useContext(AuthContext);
+
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
   const [birth, setBirth] = useState("");
@@ -51,9 +56,12 @@ export default function Profile({ navigation }) {
       <ScrollView>
         <View style={styles.BackGroundAll}>
           <View style={styles.BackGroundTop}>
-            <View style={styles.points}>
-              <Text style={styles.pts}>PTS</Text>
-            </View>
+            <TouchableOpacity onPress={signOut}>
+              <View style={styles.points}>
+                <Text style={styles.pts}>Sign Out</Text>
+              </View>
+            </TouchableOpacity>
+
             <Image
               source={{
                 uri: "https://s.luyengame.net/games/pikachu/image.jpg",
