@@ -51,7 +51,7 @@ export default function SignIn({ navigation }) {
             title="Sign in"
             onPress={() => {
               console.log("bello");
-              /*
+
               axios
                 .post("https://cycling-cat-api.herokuapp.com/user/login", {
                   email: textEmail,
@@ -60,15 +60,11 @@ export default function SignIn({ navigation }) {
                 .then((result) => {
                   dispatch({
                     type: "SIGN_IN",
-                    userData: result.data,
+                    userData: result.data.userData,
                   });
+                  console.log(result.data);
                 })
                 .catch((err) => console.log(err));
-                */
-              dispatch({
-                type: "SIGN_IN",
-                userData: {},
-              });
             }}
             color="#7ED957"
           />

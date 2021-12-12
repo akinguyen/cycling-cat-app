@@ -14,18 +14,11 @@ import { Context } from "../../state/Provider";
 
 export default function Profile({ navigation }) {
   const [state, dispatch] = useContext(Context);
-
-  const [description, setDescription] = useState("");
-  const [name, setName] = useState(state.userData.name); // look here
-  const [birth, setBirth] = useState("");
-  const [typeOfSchool, setTypeOfSchool] = useState("");
-  const [nameOfSchool, setNameOfSchool] = useState("");
-  const [grade, setGrade] = useState("");
-  const [id, setId] = useState("");
-
-  const onEnterDescription = (value) => {
-    setDescription(value);
-  };
+  console.log(state.userData.info);
+  const [name, setName] = useState(state.userData.info.name); // look here
+  const [birth, setBirth] = useState(state.userData.info.birthday);
+  const [school, setschool] = useState(state.userData.info.school);
+  const [id, setId] = useState(state.userData.info.stuID);
 
   const onEnterName = (value) => {
     setName(value);
@@ -35,16 +28,8 @@ export default function Profile({ navigation }) {
     setBirth(value);
   };
 
-  const onEnterTypeOfSchool = (value) => {
-    setTypeOfSchool(value);
-  };
-
-  const onEnterNameOfSchool = (value) => {
-    setNameOfSchool(value);
-  };
-
-  const onEnterGrade = (value) => {
-    setGrade(value);
+  const onSetSchool = (value) => {
+    setschool(value);
   };
 
   const onEnterId = (value) => {
@@ -77,16 +62,6 @@ export default function Profile({ navigation }) {
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Description:</Text>
-            <TextInput
-              value={description}
-              onChangeText={onEnterDescription}
-              placeholder="Enter your description"
-              style={styles.input}
-            />
-          </View>
-
-          <View style={styles.BackGroundMid}>
             <Text style={styles.text}>Name:</Text>
             <TextInput
               value={name}
@@ -97,7 +72,7 @@ export default function Profile({ navigation }) {
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Date of birth:</Text>
+            <Text style={styles.text}>Birthday:</Text>
             <TextInput
               keyboardType="numbers-and-punctuation"
               value={birth}
@@ -108,32 +83,11 @@ export default function Profile({ navigation }) {
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Type of school:</Text>
+            <Text style={styles.text}>School:</Text>
             <TextInput
-              value={typeOfSchool}
-              onChangeText={onEnterTypeOfSchool}
+              value={school}
+              onChangeText={onSetSchool}
               placeholder="Enter the type of you school"
-              style={styles.input}
-            />
-          </View>
-
-          <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Name of school:</Text>
-            <TextInput
-              value={nameOfSchool}
-              onChangeText={onEnterNameOfSchool}
-              placeholder="Enter your school name"
-              style={styles.input}
-            />
-          </View>
-
-          <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Year/Grade:</Text>
-            <TextInput
-              keyboardType="numeric"
-              value={grade}
-              onChangeText={onEnterGrade}
-              placeholder="Enter your grade"
               style={styles.input}
             />
           </View>

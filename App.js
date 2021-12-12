@@ -12,30 +12,28 @@ export default function App() {
   const [state, dispatch] = useContext(Context);
 
   return (
-    <Provider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          {state.userData == null ? (
-            // No token found, user isn't signed in
-            <Stack.Screen
-              name="Auth"
-              component={AuthNavigation}
-              options={{
-                headerShown: false,
-              }}
-            />
-          ) : (
-            // User is signed in
-            <Stack.Screen
-              name="Home"
-              component={MainNavigation}
-              options={{
-                headerShown: false,
-              }}
-            />
-          )}
-        </Stack.Navigator>
-      </NavigationContainer>
-    </Provider>
+    <NavigationContainer>
+      <Stack.Navigator>
+        {state.userData == null ? (
+          // No token found, user isn't signed in
+          <Stack.Screen
+            name="Auth"
+            component={AuthNavigation}
+            options={{
+              headerShown: false,
+            }}
+          />
+        ) : (
+          // User is signed in
+          <Stack.Screen
+            name="Home"
+            component={MainNavigation}
+            options={{
+              headerShown: false,
+            }}
+          />
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
