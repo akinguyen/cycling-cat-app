@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Text, View, Button, TextInput, Image } from "react-native";
 import styles from "./styles";
 import AuthContext from "../../AuthContext";
+import { Context } from "../../state/Provider";
 
 export default function SignUp({ navigation }) {
-  const { signUp } = React.useContext(AuthContext);
+  const [state, dispatch] = useContext(Context);
 
   const [textEmail, settextEmail] = useState("");
   const onEnterEmail = (value) => {
