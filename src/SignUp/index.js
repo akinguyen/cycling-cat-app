@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Text, View, Button, TextInput, Image } from "react-native";
 import styles from "./styles";
-import AuthContext from "../../AuthContext";
 import { Context } from "../../state/Provider";
 
 export default function SignUp({ navigation }) {

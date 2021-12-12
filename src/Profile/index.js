@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   Text,
@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
+import { Context } from "../../state/Provider";
 
 export default function Profile({ navigation }) {
   const [state, dispatch] = useContext(Context);

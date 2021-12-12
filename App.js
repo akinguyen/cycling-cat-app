@@ -1,10 +1,10 @@
 ﻿import "react-native-gesture-handler";
-import React from "react";
+import React, { useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import SignUpNavigator from "./src/SignIn";
 import MainNavigation from "./src/MainNavigation";
 import Provider, { Context } from "./state/Provider";
+import AuthNavigation from "./src/AuthNavigation";
 
 const Stack = createStackNavigator();
 
@@ -18,12 +18,9 @@ export default function App() {
           {state.userData == null ? (
             // No token found, user isn't signed in
             <Stack.Screen
-              name="Login"
-              component={SignUpNavigator}
+              name="Auth"
+              component={AuthNavigation}
               options={{
-                title: "Sign in",
-                // When logging out, a pop animation feels intuitive
-                animationTypeForReplace: state.isSignout ? "pop" : "push",
                 headerShown: false,
               }}
             />

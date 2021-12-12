@@ -7,7 +7,7 @@ import EventListNavigator from "../EventList";
 
 const Tab = createBottomTabNavigator();
 
-export default function Main({ navigation }) {
+export default function MainNavigation() {
   return (
     <Tab.Navigator
       initialRouteName="Feed"
