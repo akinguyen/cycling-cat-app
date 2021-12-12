@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import AuthContext from "./AuthContext";
-import SignIn from "./src/SignIn";
+import SignUpNavigator from "./src/SignIn";
 import MainNavigation from "./src/MainNavigation";
 
 const Stack = createStackNavigator();
@@ -103,8 +103,8 @@ export default function App({ navigation }) {
           ) : state.userToken == null ? (
             // No token found, user isn't signed in
             <Stack.Screen
-              name="SignIn"
-              component={SignIn}
+              name="Login"
+              component={SignUpNavigator}
               options={{
                 title: "Sign in",
                 // When logging out, a pop animation feels intuitive

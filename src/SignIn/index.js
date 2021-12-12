@@ -4,6 +4,7 @@ import styles from "./styles";
 import AuthContext from "../../AuthContext";
 import { createStackNavigator } from "@react-navigation/stack";
 import SignUp from "../SignUp";
+import axios from "axios";
 
 function SignIn({ navigation }) {
   const { signIn } = React.useContext(AuthContext);
@@ -50,9 +51,15 @@ function SignIn({ navigation }) {
         <View style={{ marginRight: 20 }}>
           <Button
             title="Sign in"
-            onPress={() =>
-              signIn({ username: textEmail, password: textPassword })
-            }
+            onPress={() => {
+              axios
+                .post("https://cycling-cat-api.herokuapp.com/user/login", {
+                  email: textEmail,
+                  password: textPassword,
+                })
+                .then((result) => signIn(result))
+                .catch((err) => console.log(err));
+            }}
             color="#7ED957"
           />
         </View>
