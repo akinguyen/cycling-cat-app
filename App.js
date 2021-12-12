@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MainNavigation from "./src/MainNavigation";
-import Provider, { Context } from "./state/Provider";
+import { Context } from "./state/Provider";
 import AuthNavigation from "./src/AuthNavigation";
 
 const Stack = createStackNavigator();
@@ -14,7 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {state.userData == null ? (
+        {!state.isSignedIn ? (
           // No token found, user isn't signed in
           <Stack.Screen
             name="Auth"

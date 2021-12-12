@@ -50,8 +50,6 @@ export default function SignIn({ navigation }) {
           <Button
             title="Sign in"
             onPress={() => {
-              console.log("bello");
-
               axios
                 .post("https://cycling-cat-api.herokuapp.com/user/login", {
                   email: textEmail,
