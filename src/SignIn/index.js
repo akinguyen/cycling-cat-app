@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Text, View, Button, TextInput, Image } from "react-native";
+import { Context } from "../../state/Provider";
 import styles from "./styles";
-import AuthContext from "../../AuthContext";
 
 export default function SignIn({ navigation }) {
-  const { signIn } = React.useContext(AuthContext);
+  const [state, dispatch] = useContext(Context);
 
   const [textEmail, settextEmail] = useState("");
   const onEnterEmail = (value) => {
@@ -48,9 +48,16 @@ export default function SignIn({ navigation }) {
         <View style={{ marginRight: 20 }}>
           <Button
             title="Sign in"
-            onPress={() =>
-              signIn({ username: textEmail, password: textPassword })
-            }
+            onPress={() => {
+              let userData = {};
+
+              // TODO
+
+              dispatch({
+                type: "SIGN_IN",
+                userData,
+              }); // dispatch(action)
+            }}
             color="#7ED957"
           />
         </View>
