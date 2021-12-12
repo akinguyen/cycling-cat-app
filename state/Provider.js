@@ -1,7 +1,6 @@
 // Provider.js
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import reducer from "./reducer";
-
 export const Context = createContext();
 
 // look here

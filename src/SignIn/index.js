@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Text, View, Button, TextInput, Image } from "react-native";
 import { Context } from "../../state/Provider";
 import styles from "./styles";
-import { createStackNavigator } from "@react-navigation/stack";
-import SignUp from "../SignUp";
 import axios from "axios";
 
 export default function SignIn({ navigation }) {
@@ -52,6 +50,8 @@ export default function SignIn({ navigation }) {
           <Button
             title="Sign in"
             onPress={() => {
+              console.log("bello");
+              /*
               axios
                 .post("https://cycling-cat-api.herokuapp.com/user/login", {
                   email: textEmail,
@@ -64,6 +64,11 @@ export default function SignIn({ navigation }) {
                   });
                 })
                 .catch((err) => console.log(err));
+                */
+              dispatch({
+                type: "SIGN_IN",
+                userData: {},
+              });
             }}
             color="#7ED957"
           />
@@ -79,24 +84,3 @@ export default function SignIn({ navigation }) {
     </View>
   );
 }
-
-const Stack = createStackNavigator();
-
-const SignUpNavigator = () => {
-  return (
-    <Stack.Navigator initialRouteName="SignIn">
-      <Stack.Screen
-        name="SignIn"
-        component={SignIn}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="SignUp"
-        component={SignUp}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
-};
-
-export default SignUpNavigator;
