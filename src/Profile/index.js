@@ -55,17 +55,17 @@ export default function Profile({ navigation }) {
       <ScrollView>
         <View style={styles.BackGroundAll}>
           <View style={styles.BackGroundTop}>
-            <TouchableOpacity
-              onPress={() => {
-                dispatch({
-                  type: "SIGN_OUT",
-                });
-              }}
-            >
-              <View style={styles.points}>
-                <Text style={styles.pts}>Sign Out</Text>
-              </View>
-            </TouchableOpacity>
+            <View style={styles.signout}>
+              <TouchableOpacity
+                onPress={() => {
+                  dispatch({
+                    type: "SIGN_OUT",
+                  });
+                }}
+              >
+                <MaterialCommunityIcons name="logout" size={35} />
+              </TouchableOpacity>
+            </View>
 
             <Image
               source={{
