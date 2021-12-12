@@ -10,13 +10,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
-import AuthContext from "../../AuthContext";
 
 export default function Profile({ navigation }) {
-  const { signOut } = React.useContext(AuthContext);
+  const [state, dispatch] = useContext(Context);
 
   const [description, setDescription] = useState("");
-  const [name, setName] = useState("");
+  const [name, setName] = useState(state.userData.name); // look here
   const [birth, setBirth] = useState("");
   const [typeOfSchool, setTypeOfSchool] = useState("");
   const [nameOfSchool, setNameOfSchool] = useState("");
@@ -56,11 +55,18 @@ export default function Profile({ navigation }) {
       <ScrollView>
         <View style={styles.BackGroundAll}>
           <View style={styles.BackGroundTop}>
-            <View style={styles.signout}>
-              <TouchableOpacity onPress={signOut}>
-                <MaterialCommunityIcons name="logout" size={35} />
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity
+              onPress={() => {
+                dispatch({
+                  type: "SIGN_OUT",
+                });
+              }}
+            >
+              <View style={styles.points}>
+                <Text style={styles.pts}>Sign Out</Text>
+              </View>
+            </TouchableOpacity>
+
             <Image
               source={{
                 uri: "https://s.luyengame.net/games/pikachu/image.jpg",
