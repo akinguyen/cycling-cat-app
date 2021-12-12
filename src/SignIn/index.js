@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Text, View, Button, TextInput, Image } from "react-native";
 import { Context } from "../../state/Provider";
 import styles from "./styles";
+import { createStackNavigator } from "@react-navigation/stack";
+import SignUp from "../SignUp";
+import axios from "axios";
 
 export default function SignIn({ navigation }) {
   const [state, dispatch] = useContext(Context);
@@ -49,14 +52,18 @@ export default function SignIn({ navigation }) {
           <Button
             title="Sign in"
             onPress={() => {
-              let userData = {};
-
-              // TODO
-
-              dispatch({
-                type: "SIGN_IN",
-                userData,
-              }); // dispatch(action)
+              axios
+                .post("https://cycling-cat-api.herokuapp.com/user/login", {
+                  email: textEmail,
+                  password: textPassword,
+                })
+                .then((result) => {
+                  dispatch({
+                    type: "SIGN_IN",
+                    userData: result.data,
+                  });
+                })
+                .catch((err) => console.log(err));
             }}
             color="#7ED957"
           />
