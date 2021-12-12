@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   Text,
   View,
@@ -10,13 +10,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
-import AuthContext from "../../AuthContext";
 
 export default function Profile({ navigation }) {
-  const { signOut } = React.useContext(AuthContext);
+  const [state, dispatch] = useContext(Context);
 
   const [description, setDescription] = useState("");
-  const [name, setName] = useState("");
+  const [name, setName] = useState(state.userData.name); // look here
   const [birth, setBirth] = useState("");
   const [typeOfSchool, setTypeOfSchool] = useState("");
   const [nameOfSchool, setNameOfSchool] = useState("");
@@ -56,7 +55,13 @@ export default function Profile({ navigation }) {
       <ScrollView>
         <View style={styles.BackGroundAll}>
           <View style={styles.BackGroundTop}>
-            <TouchableOpacity onPress={signOut}>
+            <TouchableOpacity
+              onPress={() => {
+                dispatch({
+                  type: "SIGN_OUT",
+                });
+              }}
+            >
               <View style={styles.points}>
                 <Text style={styles.pts}>Sign Out</Text>
               </View>
