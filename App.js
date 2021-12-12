@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MainNavigation from "./src/MainNavigation";
-import Provider, { Context } from "./state/Provider";
+import { Context } from "./state/Provider";
 import AuthNavigation from "./src/AuthNavigation";
 
 const Stack = createStackNavigator();
@@ -12,30 +12,28 @@ export default function App() {
   const [state, dispatch] = useContext(Context);
 
   return (
-    <Provider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          {state.userData == null ? (
-            // No token found, user isn't signed in
-            <Stack.Screen
-              name="Auth"
-              component={AuthNavigation}
-              options={{
-                headerShown: false,
-              }}
-            />
-          ) : (
-            // User is signed in
-            <Stack.Screen
-              name="Home"
-              component={MainNavigation}
-              options={{
-                headerShown: false,
-              }}
-            />
-          )}
-        </Stack.Navigator>
-      </NavigationContainer>
-    </Provider>
+    <NavigationContainer>
+      <Stack.Navigator>
+        {!state.isSignedIn ? (
+          // No token found, user isn't signed in
+          <Stack.Screen
+            name="Auth"
+            component={AuthNavigation}
+            options={{
+              headerShown: false,
+            }}
+          />
+        ) : (
+          // User is signed in
+          <Stack.Screen
+            name="Home"
+            component={MainNavigation}
+            options={{
+              headerShown: false,
+            }}
+          />
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

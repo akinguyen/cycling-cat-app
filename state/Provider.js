@@ -6,6 +6,7 @@ export const Context = createContext();
 // look here
 const initialState = {
   userData: null,
+  isSignedIn: false,
 };
 
 export default function Provider(props) {
