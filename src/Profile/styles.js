@@ -95,6 +95,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
+  signout: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+  },
 });
 
 export default styles;

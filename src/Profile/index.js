@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Context } from "../../state/Provider";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   Text,
   View,
