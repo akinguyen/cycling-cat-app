@@ -46,9 +46,7 @@ function EventList({ navigation }) {
             style={styles.groupinfo}
           >
             <Image
-              source={{
-                uri: "https://s.luyengame.net/games/pikachu/image.jpg",
-              }}
+              source={require("../../asset/logo.png")}
               style={styles.circle}
             />
 
@@ -62,9 +60,9 @@ function EventList({ navigation }) {
                   </Text>
                 </Text>
                 <Text style={{ fontWeight: "bold" }}>
-                  Sport:{" "}
+                  Category:{" "}
                   <Text style={{ fontWeight: "normal" }}>
-                    {ItemData.item.sport}
+                    {ItemData.item.category}
                   </Text>
                 </Text>
                 <Text style={{ fontWeight: "bold" }}>

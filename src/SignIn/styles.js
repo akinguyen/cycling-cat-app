@@ -10,17 +10,18 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    marginLeft: 20,
+    //marginLeft: 20,
     marginRight: 20,
     borderWidth: 2,
     padding: 10,
     borderColor: "black",
+    width: 300,
   },
   username: {
     marginBottom: 10,
     fontSize: 17,
     fontWeight: "bold",
-    textAlign: "center",
+    //textAlign: "center",
     color: "black",
   },
 });

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   BackGroundAll: {
-    backgroundColor: "white",
+    //backgroundColor: "white",
     height: "40%",
     flexDirection: "column",
     alignItems: "center",
@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
 
   BackGroundMid: {
     backgroundColor: "#CCFF99",
-    width: "95%",
+    width: 370,
     height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
-    marginTop: 30,
+    marginTop: 7,
   },
 
   BackGroundBottom: {
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-evenly",
     marginTop: 30,
-    marginBottom: 50,
   },
 
   points: {
@@ -99,6 +98,22 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     top: 0,
+  },
+  button: {
+    color: "#CCFF99",
+    marginTop: 50,
+    width: 300,
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  back: {
+    width: 70,
+    height: 40,
+  },
+  infocontainer: {
+    width: "95%",
+    marginTop: 30,
+    alignItems: "center",
   },
 });
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Profile from "../Profile";
+import ProfileNavigator from "../Profile";
 import MyEventNavigator from "../MyEvent";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -30,7 +30,7 @@ export default function MainNavigation() {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileNavigator}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
