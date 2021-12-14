@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-evenly",
     marginTop: 30,
-    marginBottom: 50,
+    marginBottom: 30,
   },
 
   points: {

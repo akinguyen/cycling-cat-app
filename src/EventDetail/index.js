@@ -132,9 +132,11 @@ export default function EventDetail({ navigation, route }) {
           <Button
             title="JOIN"
             onPress={() => {
-              /**
-               *  axios.post(".../events/join". {eventId: id, userId: state.userData.id })
-               */
+              axios.post("https://cycling-cat-api.herokuapp.com/events/join", {
+                eventId: id,
+                userId: state.userData.id,
+              });
+
               navigation.goBack();
             }}
             color="#339900"

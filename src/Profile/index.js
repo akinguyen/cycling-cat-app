@@ -15,7 +15,7 @@ import { Context } from "../../state/Provider";
 export default function Profile({ navigation }) {
   const [state, dispatch] = useContext(Context);
   // state.userData.events.length
-
+  const [length, setLength] = useState(state.userData.events.length);
   const [description, setDescription] = useState("");
   const [name, setName] = useState(state.userData.info.name); // look here
   const [birth, setBirth] = useState("");
@@ -129,7 +129,7 @@ export default function Profile({ navigation }) {
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Year/Grade:</Text>
+            <Text style={styles.text}>Number of events joined:</Text>
             <TextInput
               keyboardType="numeric"
               value={grade}
@@ -147,6 +147,10 @@ export default function Profile({ navigation }) {
               placeholder="Enter your student ID"
               style={styles.input}
             />
+          </View>
+          <View style={styles.BackGroundMid1}>
+            <Text style={styles.text}>Number of events joined:</Text>
+            <Text>{length}</Text>
           </View>
         </View>
       </ScrollView>
