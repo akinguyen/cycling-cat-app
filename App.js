@@ -7,7 +7,7 @@ import AuthContext from "./AuthContext";
 import SignIn from "./src/SignIn";
 import MainNavigation from "./src/MainNavigation";
 import axios from "axios";
-
+import ImagePicker from "./src/ImagePicker";
 const Stack = createStackNavigator();
 
 function SplashScreen() {
@@ -123,6 +123,7 @@ export default function App({ navigation }) {
               }}
             />
           )}
+          <Stack.Screen name="ImagePicker" component={ImagePicker} />
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>
