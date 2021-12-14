@@ -41,7 +41,7 @@ export default function ImagePicker({ navigation }) {
     <div className={classes.container}>
       <label className={classes.lableAva} htmlFor="contained-button-file">
         <div className={classes.buttonContainer}>
-          <div className={classes.button}>
+          <div className={(classes, button)}>
             <p className={classes.buttonText}>Choose Image</p>
           </div>
         </div>
