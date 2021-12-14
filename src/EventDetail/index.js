@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Text,
   View,
@@ -14,13 +14,16 @@ import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
+import { Context } from "../../state/Provider";
 
 export default function EventDetail({ navigation, route }) {
+  const [state, dispatch] = useContext(Context);
   const { id } = route.params;
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
+  const [participants, setParticipants] = useState([]);
   const [isVisibleDes, setIsVisibleDes] = useState(false);
 
   const onEnterDescription = (value) => {
@@ -39,6 +42,18 @@ export default function EventDetail({ navigation, route }) {
     setTime(value);
   };
 
+  const onSetParticipants = () => {
+    const find = participants.find((user) => user._id == state.userData._id);
+    if (!find) {
+      setParticipants(
+        participants.push({
+          name: state.userData.info.name,
+          _id: state.userData._id,
+        })
+      );
+    }
+  };
+
   axios.create({
     baseURL: "https://cycling-cat-api.herokuapp.com",
   });
@@ -52,6 +67,7 @@ export default function EventDetail({ navigation, route }) {
         setLocation(response.data.location);
         setCategory(response.data.category);
         setTime(response.data.time);
+        setParticipants(response.data.participants);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -129,7 +145,17 @@ export default function EventDetail({ navigation, route }) {
         <View style={styles.back}>
           <Button
             title="JOIN"
-            onPress={() => navigation.goBack()}
+            onPress={() => {
+              onSetParticipants();
+              axios
+                .patch("https://cycling-cat-api.herokuapp.com/events/" + id, {
+                  newParticipants: participants,
+                })
+                .then((result) => {
+                  navigation.push("EventList");
+                })
+                .catch((err) => console.log(err));
+            }}
             color="#339900"
           />
         </View>

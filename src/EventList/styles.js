@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: "10%",
+    //padding: "10%",
     alignItems: "center",
   },
 
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 
   infobox: {
     height: 100,
-    width: 200,
+    width: 190,
     borderTopRightRadius: 100,
     borderBottomRightRadius: 100,
     backgroundColor: "#CCFF99",

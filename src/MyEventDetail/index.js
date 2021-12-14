@@ -85,28 +85,34 @@ export default function MyEventDetail({ navigation, route }) {
           </View>
         </View>
         <View style={styles.button}>
-          <View style={{ height: 40 }}>
+          <View style={{ height: 40, width: 80 }}>
             <Button
               title="EDIT"
               onPress={() => navigation.navigate("EditEvent", { id: id })}
               color="#339900"
             />
           </View>
-          <View style={{ height: 40 }}>
+          <View style={{ height: 40, width: 80 }}>
             <Button
               title="GOING"
-              onPress={() => navigation.navigate("CheckParticipation")}
+              onPress={() =>
+                navigation.navigate("CheckParticipation", { id: id })
+              }
               color="#339900"
             />
           </View>
         </View>
-        <View style={{ height: 40 }}>
-          <Button
-            title="BACK"
-            onPress={() => navigation.push("MyEvent")}
-            color="#339900"
-          />
-        </View>
+      </View>
+      <View
+        style={
+          (styles.button, { marginTop: 50, width: 80, alignSelf: "center" })
+        }
+      >
+        <Button
+          title="BACK"
+          onPress={() => navigation.push("MyEvent")}
+          color="#339900"
+        />
       </View>
     </ScrollView>
   );
