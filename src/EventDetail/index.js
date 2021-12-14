@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Text,
   View,
   SafeAreaView,
   ScrollView,
-  Image,
   Button,
-  TextInput,
   Modal,
   TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
+import { Context } from "../../state/Provider";
 
 export default function EventDetail({ navigation, route }) {
+  const [state, dispatch] = useContext(Context);
+  // state.userData.id
   const { id } = route.params;
   const [description, setDescription] = useState("");
   const [sport, setSport] = useState("");
@@ -132,7 +131,12 @@ export default function EventDetail({ navigation, route }) {
         <View style={styles.back}>
           <Button
             title="JOIN"
-            onPress={() => navigation.goBack()}
+            onPress={() => {
+              /**
+               *  axios.post(".../events/join". {eventId: id, userId: state.userData.id })
+               */
+              navigation.goBack();
+            }}
             color="#339900"
           />
         </View>

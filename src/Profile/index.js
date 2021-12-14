@@ -14,9 +14,10 @@ import { Context } from "../../state/Provider";
 
 export default function Profile({ navigation }) {
   const [state, dispatch] = useContext(Context);
+  // state.userData.events.length
 
   const [description, setDescription] = useState("");
-  const [name, setName] = useState(state.userData.name); // look here
+  const [name, setName] = useState(state.userData.info.name); // look here
   const [birth, setBirth] = useState("");
   const [typeOfSchool, setTypeOfSchool] = useState("");
   const [nameOfSchool, setNameOfSchool] = useState("");
