@@ -19,6 +19,7 @@ const StackEvent = createStackNavigator();
 function EventList({ navigation }) {
   const [list, setList] = useState([]);
   useEffect(() => {
+    // userData.id => events/:userId
     axios
       .get("https://cycling-cat-api.herokuapp.com/events")
       .then((response) => {
@@ -45,9 +46,7 @@ function EventList({ navigation }) {
             style={styles.groupinfo}
           >
             <Image
-              source={{
-                uri: "https://s.luyengame.net/games/pikachu/image.jpg",
-              }}
+              source={require("../../asset/logo.png")}
               style={styles.circle}
             />
 
@@ -61,9 +60,9 @@ function EventList({ navigation }) {
                   </Text>
                 </Text>
                 <Text style={{ fontWeight: "bold" }}>
-                  Sport:{" "}
+                  Category:{" "}
                   <Text style={{ fontWeight: "normal" }}>
-                    {ItemData.item.sport}
+                    {ItemData.item.category}
                   </Text>
                 </Text>
                 <Text style={{ fontWeight: "bold" }}>
