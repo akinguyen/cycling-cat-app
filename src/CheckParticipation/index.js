@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Text, View, ScrollView } from "react-native";
-
+import { Button, Text, View, ScrollView, TouchableOpacity } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./styles";
 
 export default function CheckParticipation({ navigation }) {
@@ -23,8 +23,20 @@ export default function CheckParticipation({ navigation }) {
             }}
           >
             <Text> 1. A: PROFILE </Text>
-            <Button title="YES" />
-            <Button title="NO" />
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <MaterialCommunityIcons
+                name="check-outline"
+                size={26}
+                color="green"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <MaterialCommunityIcons
+                name="close-outline"
+                size={26}
+                color="red"
+              />
+            </TouchableOpacity>
           </View>
           <View
             style={{
@@ -35,8 +47,20 @@ export default function CheckParticipation({ navigation }) {
             }}
           >
             <Text> 2. B: PROFILE </Text>
-            <Button title="YES" />
-            <Button title="NO" />
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <MaterialCommunityIcons
+                name="check-outline"
+                size={26}
+                color="green"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <MaterialCommunityIcons
+                name="close-outline"
+                size={26}
+                color="red"
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </View>

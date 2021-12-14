@@ -15,10 +15,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
 
-export default function EventDetail({ navigation, route }) {
+export default function MyEventDetail({ navigation, route }) {
   const { id } = route.params;
   const [description, setDescription] = useState("");
-  const [sport, setSport] = useState("");
+  const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
   const [isVisibleDes, setIsVisibleDes] = useState(false);
@@ -27,8 +27,8 @@ export default function EventDetail({ navigation, route }) {
     setDescription(value);
   };
 
-  const onEnterSport = (value) => {
-    setSport(value);
+  const onEnterCategory = (value) => {
+    setCategory(value);
   };
 
   const onEnterLocation = (value) => {
@@ -39,10 +39,6 @@ export default function EventDetail({ navigation, route }) {
     setTime(value);
   };
 
-  axios.create({
-    baseURL: "https://cycling-cat-api.herokuapp.com",
-  });
-
   useEffect(() => {
     axios
       .get("https://cycling-cat-api.herokuapp.com/events/" + id)
@@ -50,7 +46,7 @@ export default function EventDetail({ navigation, route }) {
         console.log(response.data);
         setDescription(response.data.description);
         setLocation(response.data.location);
-        setSport(response.data.sport);
+        setCategory(response.data.category);
         setTime(response.data.time);
       })
       .catch((error) => console.log(error));
@@ -125,7 +121,7 @@ export default function EventDetail({ navigation, route }) {
         <View style={styles.back}>
           <Button
             title="BACK"
-            onPress={() => navigation.goBack()}
+            onPress={() => navigation.push("MyEvent")}
             color="#339900"
           />
         </View>
