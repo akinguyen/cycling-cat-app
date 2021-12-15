@@ -32,7 +32,7 @@ function EventList({ navigation }) {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <FlatList
         keyExtractor={(item, index) => item._id}
         data={list}
@@ -76,7 +76,7 @@ function EventList({ navigation }) {
           </TouchableOpacity>
         )}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 

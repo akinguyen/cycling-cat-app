@@ -14,6 +14,7 @@ import MyEventDetail from "../MyEventDetail";
 import { createStackNavigator } from "@react-navigation/stack";
 import CheckParticipation from "../CheckParticipation";
 import EditEvent from "../EditEvent";
+import ParticipantsInfo from "../ParticipantsInfo";
 import CreateEvent from "../CreateEvent";
 import { Context } from "../../state/Provider";
 import axios from "axios";
@@ -37,7 +38,7 @@ function MyEvent({ navigation }) {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.button}>
         <Button
           title="ADD"
@@ -47,6 +48,7 @@ function MyEvent({ navigation }) {
       </View>
       <View style={styles.scroll}>
         <FlatList
+          contentContainerStyle={styles.scroll}
           keyExtractor={(item, index) => item._id}
           data={list}
           renderItem={(ItemData) => (
@@ -90,7 +92,7 @@ function MyEvent({ navigation }) {
           )}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -112,6 +114,11 @@ const MyEventNavigator = () => {
       <StackMyEvent.Screen
         name="CheckParticipation"
         component={CheckParticipation}
+        options={{ headerShown: false }}
+      />
+      <StackMyEvent.Screen
+        name="ParticipantsInfo"
+        component={ParticipantsInfo}
         options={{ headerShown: false }}
       />
       <StackMyEvent.Screen
