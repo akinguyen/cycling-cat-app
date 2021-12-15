@@ -10,6 +10,7 @@ import {
 import { Context } from "../../state/Provider";
 import styles from "./styles";
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function SignIn({ navigation }) {
   const [state, dispatch] = useContext(Context);
@@ -60,35 +61,36 @@ export default function SignIn({ navigation }) {
             style={styles.input}
           />
         </View>
-        <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-          <View style={{ marginRight: 20 }}>
-            <Button
-              title="Sign in"
-              onPress={() => {
-                axios
-                  .post("https://cycling-cat-api.herokuapp.com/user/login", {
-                    email: textEmail,
-                    password: textPassword,
-                  })
-                  .then((result) => {
-                    dispatch({
-                      type: "SIGN_IN",
-                      userData: result.data.userData,
-                    });
-                    console.log(result.data);
-                  })
-                  .catch((err) => console.log(err));
-              }}
-              color="#7ED957"
-            />
-          </View>
-          <View style={{}}>
-            <Button
-              title="Sign up"
-              onPress={() => navigation.navigate("SignUp")}
-              color="#7ED957"
-            />
-          </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-around",
+            width: 300,
+          }}
+        >
+          <Button
+            title="Sign in"
+            onPress={() => {
+              axios
+                .post("https://cycling-cat-api.herokuapp.com/user/login", {
+                  email: textEmail,
+                  password: textPassword,
+                })
+                .then((result) => {
+                  dispatch({
+                    type: "SIGN_IN",
+                    userData: result.data.userData,
+                  });
+                })
+                .catch((err) => console.log(err));
+            }}
+            color="#7ED957"
+          />
+          <Button
+            title="Sign up"
+            onPress={() => navigation.navigate("SignUp")}
+            color="#7ED957"
+          />
         </View>
       </View>
     </KeyboardAvoidingView>

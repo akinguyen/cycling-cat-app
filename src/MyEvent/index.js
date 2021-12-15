@@ -3,8 +3,6 @@ import {
   Text,
   View,
   Image,
-  SafeAreaView,
-  ScrollView,
   Button,
   TouchableOpacity,
   FlatList,
@@ -18,6 +16,7 @@ import ParticipantsInfo from "../ParticipantsInfo";
 import CreateEvent from "../CreateEvent";
 import { Context } from "../../state/Provider";
 import axios from "axios";
+import { reverse } from "lodash";
 
 function MyEvent({ navigation }) {
   const [state, dispatch] = useContext(Context);
@@ -29,8 +28,7 @@ function MyEvent({ navigation }) {
         "https://cycling-cat-api.herokuapp.com/myevents/" + state.userData._id
       )
       .then((response) => {
-        console.log(response.data);
-        setList(response.data);
+        setList(reverse(response.data));
       })
       .catch((err) => {
         console.log(err);
@@ -46,9 +44,8 @@ function MyEvent({ navigation }) {
           color="#FAD46B"
         />
       </View>
-      <View style={styles.scroll}>
+      <View style={{ flex: 1 }}>
         <FlatList
-          contentContainerStyle={styles.scroll}
           keyExtractor={(item, index) => item._id}
           data={list}
           renderItem={(ItemData) => (
@@ -58,34 +55,36 @@ function MyEvent({ navigation }) {
                   id: ItemData.item._id.toString(),
                 })
               }
-              style={styles.groupinfo}
+              style={{ alignItems: "center" }}
             >
-              <Image
-                source={require("../../asset/logo.png")}
-                style={styles.circle}
-              />
+              <View style={styles.groupinfo}>
+                <Image
+                  source={require("../../asset/logo.png")}
+                  style={styles.circle}
+                />
 
-              <View style={styles.infoname}>
-                <Text style={styles.event}>Event </Text>
-                <View style={styles.infobox}>
-                  <Text style={{ fontWeight: "bold" }}>
-                    Location:{" "}
-                    <Text style={{ fontWeight: "normal" }}>
-                      {ItemData.item.location}
+                <View style={styles.infoname}>
+                  <Text style={styles.event}>Event </Text>
+                  <View style={styles.infobox}>
+                    <Text style={{ fontWeight: "bold" }}>
+                      Location:{" "}
+                      <Text style={{ fontWeight: "normal" }}>
+                        {ItemData.item.location}
+                      </Text>
                     </Text>
-                  </Text>
-                  <Text style={{ fontWeight: "bold" }}>
-                    Category:{" "}
-                    <Text style={{ fontWeight: "normal" }}>
-                      {ItemData.item.category}
+                    <Text style={{ fontWeight: "bold" }}>
+                      Category:{" "}
+                      <Text style={{ fontWeight: "normal" }}>
+                        {ItemData.item.category}
+                      </Text>
                     </Text>
-                  </Text>
-                  <Text style={{ fontWeight: "bold" }}>
-                    Time:{" "}
-                    <Text style={{ fontWeight: "normal" }}>
-                      {ItemData.item.time}
+                    <Text style={{ fontWeight: "bold" }}>
+                      Time:{" "}
+                      <Text style={{ fontWeight: "normal" }}>
+                        {ItemData.item.time}
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
             </TouchableOpacity>

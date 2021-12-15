@@ -23,7 +23,6 @@ function EventList({ navigation }) {
     axios
       .get("https://cycling-cat-api.herokuapp.com/events")
       .then((response) => {
-        console.log(response.data);
         setList(response.data);
       })
       .catch((err) => {
@@ -43,34 +42,36 @@ function EventList({ navigation }) {
                 id: ItemData.item._id.toString(),
               })
             }
-            style={styles.groupinfo}
+            style={styles.groupcontainer}
           >
-            <Image
-              source={require("../../asset/logo.png")}
-              style={styles.circle}
-            />
+            <View style={styles.groupinfo}>
+              <Image
+                source={require("../../asset/logo.png")}
+                style={styles.circle}
+              />
 
-            <View style={styles.infoname}>
-              <Text style={styles.event}>Event </Text>
-              <View style={styles.infobox}>
-                <Text style={{ fontWeight: "bold" }}>
-                  Location:{" "}
-                  <Text style={{ fontWeight: "normal" }}>
-                    {ItemData.item.location}
+              <View style={styles.infoname}>
+                <Text style={styles.event}>Event </Text>
+                <View style={styles.infobox}>
+                  <Text style={{ fontWeight: "bold" }}>
+                    Location:{" "}
+                    <Text style={{ fontWeight: "normal" }}>
+                      {ItemData.item.location}
+                    </Text>
                   </Text>
-                </Text>
-                <Text style={{ fontWeight: "bold" }}>
-                  Category:{" "}
-                  <Text style={{ fontWeight: "normal" }}>
-                    {ItemData.item.category}
+                  <Text style={{ fontWeight: "bold" }}>
+                    Category:{" "}
+                    <Text style={{ fontWeight: "normal" }}>
+                      {ItemData.item.category}
+                    </Text>
                   </Text>
-                </Text>
-                <Text style={{ fontWeight: "bold" }}>
-                  Time:{" "}
-                  <Text style={{ fontWeight: "normal" }}>
-                    {ItemData.item.time}
+                  <Text style={{ fontWeight: "bold" }}>
+                    Time:{" "}
+                    <Text style={{ fontWeight: "normal" }}>
+                      {ItemData.item.time}
+                    </Text>
                   </Text>
-                </Text>
+                </View>
               </View>
             </View>
           </TouchableOpacity>

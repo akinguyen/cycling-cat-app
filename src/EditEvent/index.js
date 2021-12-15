@@ -131,8 +131,6 @@ export default function EditProfile({ navigation, route }) {
                           navigation.push("MyEventDetail", { id: id });
                         })
                         .catch((err) => console.log(err));
-
-                      //console.log(state.userData._id);
                     }}
                     color="#339900"
                   />

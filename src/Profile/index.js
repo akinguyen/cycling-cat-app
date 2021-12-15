@@ -120,11 +120,6 @@ const ProfileNavigator = () => {
         component={Profile}
         options={{ headerShown: false }}
       />
-      <ProfileStack.Screen
-        name="EditProfile"
-        component={EditProfile}
-        options={{ headerShown: false }}
-      />
     </ProfileStack.Navigator>
   );
 };

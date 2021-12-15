@@ -17,7 +17,6 @@ import axios from "axios";
 
 export default function EditProfile({ navigation }) {
   const [state, dispatch] = useContext(Context);
-  console.log(state.userData.info);
   const [name, setName] = useState(state.userData.info.name); // look here
   const [birth, setBirth] = useState(state.userData.info.birthday);
   const [school, setschool] = useState(state.userData.info.school);
@@ -50,18 +49,6 @@ export default function EditProfile({ navigation }) {
         <ScrollView>
           <View style={styles.BackGroundAll}>
             <View style={styles.BackGroundTop}>
-              <View style={styles.signout}>
-                <TouchableOpacity
-                  onPress={() => {
-                    dispatch({
-                      type: "SIGN_OUT",
-                    });
-                  }}
-                >
-                  <MaterialCommunityIcons name="logout" size={35} />
-                </TouchableOpacity>
-              </View>
-
               <Image
                 source={require("../../asset/logo.png")}
                 style={styles.avatar}
@@ -134,15 +121,13 @@ export default function EditProfile({ navigation }) {
                           }
                         )
                         .then((result) => {
-                          navigation.navigate("ProfileDetail");
+                          navigation.goBack();
                           dispatch({
                             type: "EDIT",
                             userData: result.data.user,
                           });
                         })
                         .catch((err) => console.log(err));
-
-                      //console.log(state.userData._id);
                     }}
                     color="#339900"
                   />
