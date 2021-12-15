@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Text,
   View,
@@ -13,10 +13,12 @@ import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
+import { Context } from "../../state/Provider";
 
 export default function CreateEvent({ navigation }) {
+  const [state, dispatch] = useContext(Context);
   const [description, setDescription] = useState("");
-  const [sport, setSport] = useState("");
+  const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
   const [disabled, setDisabled] = useState(true);
@@ -25,8 +27,8 @@ export default function CreateEvent({ navigation }) {
     setDescription(value);
   };
 
-  const onEnterSport = (value) => {
-    setSport(value);
+  const onEnterCategory = (value) => {
+    setCategory(value);
   };
 
   const onEnterLocation = (value) => {
@@ -46,9 +48,6 @@ export default function CreateEvent({ navigation }) {
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.BackGroundTop}>
-          <View style={styles.points}>
-            <Text style={styles.pts}>PTS</Text>
-          </View>
           <Text style={styles.title}>CREATE</Text>
         </View>
 
@@ -64,11 +63,11 @@ export default function CreateEvent({ navigation }) {
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Sport:</Text>
+            <Text style={styles.text}>Category:</Text>
             <TextInput
-              value={sport}
-              onChangeText={onEnterSport}
-              placeholder="enter your favourite sport"
+              value={category}
+              onChangeText={onEnterCategory}
+              placeholder="enter category"
               style={styles.input}
             />
           </View>
@@ -108,13 +107,14 @@ export default function CreateEvent({ navigation }) {
             <Button
               title="POST"
               onPress={() => {
-                navigation.goBack();
+                navigation.push("MyEvent");
                 axios
                   .post("https://cycling-cat-api.herokuapp.com/events", {
                     description: description,
                     location: location,
-                    sport: sport,
+                    category: category,
                     time: time,
+                    creatorID: state.userData._id,
                   })
                   .then((result) => console.log(result.data))
                   .catch((err) => console.log(err));

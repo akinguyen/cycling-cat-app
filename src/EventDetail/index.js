@@ -14,10 +14,10 @@ import { Context } from "../../state/Provider";
 
 export default function EventDetail({ navigation, route }) {
   const [state, dispatch] = useContext(Context);
-  // state.userData.id
+
   const { id } = route.params;
   const [description, setDescription] = useState("");
-  const [sport, setSport] = useState("");
+  const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
   const [isVisibleDes, setIsVisibleDes] = useState(false);
@@ -26,8 +26,8 @@ export default function EventDetail({ navigation, route }) {
     setDescription(value);
   };
 
-  const onEnterSport = (value) => {
-    setSport(value);
+  const onEnterCategory = (value) => {
+    setCategory(value);
   };
 
   const onEnterLocation = (value) => {
@@ -49,7 +49,7 @@ export default function EventDetail({ navigation, route }) {
         console.log(response.data);
         setDescription(response.data.description);
         setLocation(response.data.location);
-        setSport(response.data.sport);
+        setCategory(response.data.category);
         setTime(response.data.time);
       })
       .catch((error) => console.log(error));
@@ -58,9 +58,6 @@ export default function EventDetail({ navigation, route }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.BackGroundTop}>
-        <View style={styles.points}>
-          <Text style={styles.pts}>PTS</Text>
-        </View>
         <Text style={styles.title}>EVENT</Text>
       </View>
       <View style={styles.infocontainer}>
@@ -100,9 +97,9 @@ export default function EventDetail({ navigation, route }) {
         </TouchableOpacity>
 
         <View style={styles.BackGroundMid}>
-          <Text style={styles.text}>Sport:</Text>
+          <Text style={styles.text}>Category:</Text>
           <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
-            <Text>{sport}</Text>
+            <Text>{category}</Text>
           </View>
         </View>
 

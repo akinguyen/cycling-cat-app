@@ -1,25 +1,34 @@
 import React from "react";
-import ProfileNavigator from "../Profile";
-import MyEventNavigator from "../MyEvent";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Profile from "./src/Profile";
+import EventList from "./src/EventList";
+import MyEvent from "./src/MyEvent";
+import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import EventListNavigator from "../EventList";
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 
-export default function MainNavigation() {
+function MyTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Feed"
       screenOptions={{
         tabBarActiveTintColor: "#7ED957",
-        headerStyle: { backgroundColor: "#808080" },
-        headerTitleStyle: { color: "#fff" },
       }}
     >
       <Tab.Screen
         name="Feed"
-        component={EventListNavigator}
+        component={EventList}
         options={{
           title: "Daily Events",
           tabBarLabel: "New events",
@@ -30,7 +39,7 @@ export default function MainNavigation() {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileNavigator}
+        component={Profile}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
@@ -40,7 +49,7 @@ export default function MainNavigation() {
       />
       <Tab.Screen
         name="My events"
-        component={MyEventNavigator}
+        component={MyEvent}
         options={{
           tabBarLabel: "My events",
           tabBarIcon: ({ color, size }) => (

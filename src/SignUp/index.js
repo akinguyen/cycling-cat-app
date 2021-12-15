@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Text, View, Button, TextInput, Image } from "react-native";
 import styles from "./styles";
 import { Context } from "../../state/Provider";
+import axios from "axios";
 
 export default function SignUp({ navigation }) {
   const [state, dispatch] = useContext(Context);
@@ -20,6 +21,8 @@ export default function SignUp({ navigation }) {
   const onEnterCfPassword = (value) => {
     settextCfPassword(value);
   };
+
+  const [text, setText] = useState("");
   return (
     <View style={styles.container}>
       <Image
@@ -58,10 +61,45 @@ export default function SignUp({ navigation }) {
           style={styles.input}
         />
       </View>
+
+      <View>
+        <Text>{text}</Text>
+      </View>
+
       <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-        <View style={{ marginRight: 20 }}>
+        <View style={{ marginRight: 0 }}>
           <Button
-            title="Finish"
+            title="FINISH"
+            onPress={() => {
+              if (textPassword == textCfPassword) {
+                axios
+                  .post("https://cycling-cat-api.herokuapp.com/user/signup", {
+                    email: textEmail,
+                    password: textPassword,
+                  })
+                  .then((result) => {
+                    console.log(result.data);
+                    setText(result.data.message);
+                  })
+                  .catch((err) => console.log(err));
+              } else {
+                setText("Confirm password not match!");
+              }
+            }}
+            color="#7ED957"
+          />
+        </View>
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-around",
+          marginTop: 10,
+        }}
+      >
+        <View style={{ marginRight: 0 }}>
+          <Button
+            title="BACK"
             onPress={() => navigation.goBack()}
             color="#7ED957"
           />

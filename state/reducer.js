@@ -10,7 +10,11 @@ export default function reducer(prevState, action) {
       return {
         ...prevState,
         isSignedIn: false,
-        userData: null,
+      };
+    case "EDIT":
+      return {
+        ...prevState,
+        userData: action.userData,
       };
     default:
       return prevState;

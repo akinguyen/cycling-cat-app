@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   BackGroundAll: {
-    backgroundColor: "white",
+    //backgroundColor: "white",
     height: "40%",
     flexDirection: "column",
     alignItems: "center",
@@ -11,14 +11,14 @@ const styles = StyleSheet.create({
   BackGroundTop: {
     backgroundColor: "#CCFF99",
     width: "100%",
-    height: "20%",
+    height: "50%",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
   },
 
   BackGroundMid: {
     backgroundColor: "#CCFF99",
-    width: "95%",
+    width: 370,
     height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
@@ -54,13 +54,12 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    alignItems: "center",
   },
 
   avatar: {
     height: 127,
     width: 127,
-    marginBottom: 0,
+    marginBottom: -15,
   },
 
   BackGroundMid1: {
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-evenly",
     marginTop: 30,
-    marginBottom: 60,
+    marginBottom: 50,
   },
 
   points: {
@@ -80,25 +79,6 @@ const styles = StyleSheet.create({
     width: 60,
     marginRight: 10,
     alignItems: "center",
-    marginTop: 0,
-  },
-
-  infocontainer: {
-    width: "95%",
-    marginTop: 30,
-    alignItems: "center",
-  },
-
-  button: {
-    color: "#CCFF99",
-    marginTop: 50,
-    width: 300,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-
-  title: {
-    fontSize: 50,
   },
 
   pts: {
@@ -109,26 +89,32 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
 
-  post: {
-    height: 40,
-    marginTop: 10,
-  },
-
-  back: {
-    width: 70,
-    height: 40,
-  },
-
-  cancel: {
-    width: 90,
-    height: 40,
-  },
-
   input: {
     height: 40,
     margin: 5,
     borderWidth: 1,
     padding: 10,
+  },
+  signout: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+  },
+  infocontainer: {
+    width: "95%",
+    marginTop: 30,
+    alignItems: "center",
+  },
+  button: {
+    color: "#CCFF99",
+    marginTop: 50,
+    width: 300,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  back: {
+    width: 85,
+    height: 40,
   },
 });
 

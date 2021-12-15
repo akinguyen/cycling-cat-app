@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   Text,
@@ -8,25 +8,20 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Button,
 } from "react-native";
 import styles from "./styles";
+import EditProfile from "../EditProfile";
 import { Context } from "../../state/Provider";
+import { createStackNavigator } from "@react-navigation/stack";
 
-export default function Profile({ navigation }) {
+function Profile({ navigation }) {
   const [state, dispatch] = useContext(Context);
-  // state.userData.events.length
-  const [length, setLength] = useState(state.userData.events.length);
-  const [description, setDescription] = useState("");
-  const [name, setName] = useState(state.userData.info.name); // look here
+  console.log(state.userData.info);
+  const [name, setName] = useState(""); // look here
   const [birth, setBirth] = useState("");
-  const [typeOfSchool, setTypeOfSchool] = useState("");
-  const [nameOfSchool, setNameOfSchool] = useState("");
-  const [grade, setGrade] = useState("");
+  const [school, setschool] = useState("");
   const [id, setId] = useState("");
-
-  const onEnterDescription = (value) => {
-    setDescription(value);
-  };
 
   const onEnterName = (value) => {
     setName(value);
@@ -36,124 +31,106 @@ export default function Profile({ navigation }) {
     setBirth(value);
   };
 
-  const onEnterTypeOfSchool = (value) => {
-    setTypeOfSchool(value);
-  };
-
-  const onEnterNameOfSchool = (value) => {
-    setNameOfSchool(value);
-  };
-
-  const onEnterGrade = (value) => {
-    setGrade(value);
+  const onSetSchool = (value) => {
+    setschool(value);
   };
 
   const onEnterId = (value) => {
     setId(value);
   };
 
+  useEffect(() => {
+    setBirth(state.userData.info.birthday);
+    setId(state.userData.info.stuID);
+    setName(state.userData.info.name);
+    setschool(state.userData.info.school);
+  });
+
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View style={styles.BackGroundAll}>
-          <View style={styles.BackGroundTop}>
-            <View style={styles.signout}>
-              <TouchableOpacity
-                onPress={() => {
-                  dispatch({
-                    type: "SIGN_OUT",
-                  });
-                }}
-              >
-                <MaterialCommunityIcons name="logout" size={35} />
-              </TouchableOpacity>
-            </View>
-
-            <Image
-              source={{
-                uri: "https://s.luyengame.net/games/pikachu/image.jpg",
+      <View style={styles.BackGroundAll}>
+        <View style={styles.BackGroundTop}>
+          <View style={styles.signout}>
+            <TouchableOpacity
+              onPress={() => {
+                dispatch({
+                  type: "SIGN_OUT",
+                });
               }}
-              style={styles.avatar}
-            />
+            >
+              <MaterialCommunityIcons name="logout" size={35} />
+            </TouchableOpacity>
           </View>
 
-          <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Description:</Text>
-            <TextInput
-              value={description}
-              onChangeText={onEnterDescription}
-              placeholder="Enter your description"
-              style={styles.input}
-            />
-          </View>
-
+          <Image
+            source={require("../../asset/logo.png")}
+            style={styles.avatar}
+          />
+        </View>
+        <View style={styles.infocontainer}>
           <View style={styles.BackGroundMid}>
             <Text style={styles.text}>Name:</Text>
-            <TextInput
-              value={name}
-              onChangeText={onEnterName}
-              placeholder="Enter your name"
-              style={styles.input}
-            />
+            <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
+              <Text>{name}</Text>
+            </View>
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Date of birth:</Text>
-            <TextInput
-              keyboardType="numbers-and-punctuation"
-              value={birth}
-              onChangeText={onEnterBirth}
-              placeholder="Enter your date of birth"
-              style={styles.input}
-            />
+            <Text style={styles.text}>Birthday:</Text>
+            <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
+              <Text>{birth}</Text>
+            </View>
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Type of school:</Text>
-            <TextInput
-              value={typeOfSchool}
-              onChangeText={onEnterTypeOfSchool}
-              placeholder="Enter the type of you school"
-              style={styles.input}
-            />
+            <Text style={styles.text}>School:</Text>
+            <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
+              <Text>{school}</Text>
+            </View>
           </View>
 
           <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Name of school:</Text>
-            <TextInput
-              value={nameOfSchool}
-              onChangeText={onEnterNameOfSchool}
-              placeholder="Enter your school name"
-              style={styles.input}
-            />
-          </View>
-
-          <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Number of events joined:</Text>
-            <TextInput
-              keyboardType="numeric"
-              value={grade}
-              onChangeText={onEnterGrade}
-              placeholder="Enter your grade"
-              style={styles.input}
-            />
-          </View>
-
-          <View style={styles.BackGroundMid1}>
             <Text style={styles.text}>Student ID:</Text>
-            <TextInput
-              value={id}
-              onChangeText={onEnterId}
-              placeholder="Enter your student ID"
-              style={styles.input}
-            />
+            <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
+              <Text>{id}</Text>
+            </View>
           </View>
-          <View style={styles.BackGroundMid1}>
+          <View style={styles.BackGroundMid}>
             <Text style={styles.text}>Number of events joined:</Text>
-            <Text>{length}</Text>
+            <Text>{state.userData.events.length}</Text>
           </View>
         </View>
-      </ScrollView>
+        <View style={styles.button}>
+          <View style={styles.back}>
+            <Button
+              title="EDIT"
+              onPress={() => navigation.navigate("EditProfile")}
+              color="#339900"
+            />
+          </View>
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
+
+const ProfileStack = createStackNavigator();
+
+const ProfileNavigator = () => {
+  return (
+    <ProfileStack.Navigator initialRouteName="ProfileDetail">
+      <ProfileStack.Screen
+        name="ProfileDetail"
+        component={Profile}
+        options={{ headerShown: false }}
+      />
+      <ProfileStack.Screen
+        name="EditProfile"
+        component={EditProfile}
+        options={{ headerShown: false }}
+      />
+    </ProfileStack.Navigator>
+  );
+};
+
+export default ProfileNavigator;
