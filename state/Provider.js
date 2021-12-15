@@ -7,6 +7,7 @@ export const Context = createContext();
 const initialState = {
   userData: null,
   isSignedIn: false,
+  eventCount: 0,
 };
 
 export default function Provider(props) {

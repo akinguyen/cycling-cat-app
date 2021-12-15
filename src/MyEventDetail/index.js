@@ -109,7 +109,6 @@ export default function MyEventDetail({ navigation, route }) {
             <Text>{location}</Text>
           </View>
         </View>
-<<<<<<< HEAD
 
         <View style={styles.BackGroundMid}>
           <Text style={styles.text}>Time:</Text>
@@ -128,12 +127,11 @@ export default function MyEventDetail({ navigation, route }) {
         </View>
         <View style={styles.back}>
           <Button
-            title="JOIN"
+            title="BACK"
             onPress={() => navigation.goBack()}
             color="#339900"
           />
         </View>
-=======
         <View style={styles.button}>
           <View style={{ height: 40, width: 80 }}>
             <Button
@@ -163,7 +161,6 @@ export default function MyEventDetail({ navigation, route }) {
           onPress={() => navigation.push("MyEvent")}
           color="#339900"
         />
->>>>>>> 22f5c92f7d2023d4370ecc3102059158e5caf97d
       </View>
     </SafeAreaView>
   );

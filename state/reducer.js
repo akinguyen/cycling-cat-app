@@ -16,6 +16,11 @@ export default function reducer(prevState, action) {
         ...prevState,
         userData: action.userData,
       };
+    case "PLUS_EVENT_COUNT":
+      return {
+        ...prevState,
+        eventCount: prevState.eventCount + 1,
+      };
     default:
       return prevState;
   }
