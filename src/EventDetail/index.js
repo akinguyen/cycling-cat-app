@@ -14,12 +14,16 @@ import { Context } from "../../state/Provider";
 
 export default function EventDetail({ navigation, route }) {
   const [state, dispatch] = useContext(Context);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 22f5c92f7d2023d4370ecc3102059158e5caf97d
   const { id } = route.params;
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
+  const [participants, setParticipants] = useState([]);
   const [isVisibleDes, setIsVisibleDes] = useState(false);
 
   const onEnterDescription = (value) => {
@@ -38,6 +42,18 @@ export default function EventDetail({ navigation, route }) {
     setTime(value);
   };
 
+  const onSetParticipants = () => {
+    const find = participants.find((user) => user._id == state.userData._id);
+    if (!find) {
+      setParticipants(
+        participants.push({
+          name: state.userData.info.name,
+          _id: state.userData._id,
+        })
+      );
+    }
+  };
+
   axios.create({
     baseURL: "https://cycling-cat-api.herokuapp.com",
   });
@@ -51,6 +67,7 @@ export default function EventDetail({ navigation, route }) {
         setLocation(response.data.location);
         setCategory(response.data.category);
         setTime(response.data.time);
+        setParticipants(response.data.participants);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -129,12 +146,24 @@ export default function EventDetail({ navigation, route }) {
           <Button
             title="JOIN"
             onPress={() => {
+<<<<<<< HEAD
               axios.post("https://cycling-cat-api.herokuapp.com/events/join", {
                 eventId: id,
                 userId: state.userData.id,
               });
 
               navigation.goBack();
+=======
+              onSetParticipants();
+              axios
+                .patch("https://cycling-cat-api.herokuapp.com/events/" + id, {
+                  newParticipants: participants,
+                })
+                .then((result) => {
+                  navigation.push("EventList");
+                })
+                .catch((err) => console.log(err));
+>>>>>>> 22f5c92f7d2023d4370ecc3102059158e5caf97d
             }}
             color="#339900"
           />

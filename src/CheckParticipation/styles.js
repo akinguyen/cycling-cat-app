@@ -9,10 +9,11 @@ const styles = StyleSheet.create({
   },
 
   back: {
-    height: 200,
+    height: 150,
     width: "100%",
     backgroundColor: "#CCFF99",
     alignItems: "center",
+    justifyContent: "center",
   },
 
   avt: {
@@ -21,23 +22,20 @@ const styles = StyleSheet.create({
     borderRadius: 200,
     backgroundColor: "white",
     borderWidth: 1,
-    marginTop: 50,
+    //marginTop: 50,
     alignItems: "center",
-  },
-
-  white: {
-    backgroundColor: "white",
-    marginTop: 20,
   },
 
   bar: {
-    flexDirection: "row",
+    //flexDirection: "row",
     height: 50,
-    backgroundColor: "#CCFF99",
+    backgroundColor: "#FFFF66",
     alignItems: "center",
-    borderWidth: 1,
-    width: "33.5%",
+    //borderWidth: 1,
+    //width: "33.5%",
     justifyContent: "center",
+    width: "100%",
+    marginTop: 20,
   },
 
   menu: {
