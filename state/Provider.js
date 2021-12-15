@@ -8,6 +8,8 @@ const initialState = {
   userData: null,
   isSignedIn: false,
   eventCount: 0,
+  joined: "joined",
+  not: 0,
 };
 
 export default function Provider(props) {

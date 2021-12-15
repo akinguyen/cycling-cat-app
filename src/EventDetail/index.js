@@ -52,6 +52,7 @@ export default function EventDetail({ navigation, route }) {
         })
       );
     }
+    return participants;
   };
 
   axios.create({
@@ -161,6 +162,9 @@ export default function EventDetail({ navigation, route }) {
                   );
                   dispatch({
                     type: "PLUS_EVENT_COUNT",
+                  });
+                  dispatch({
+                    type: "JOIN_OR_NOT",
                   });
                   navigation.push("EventList");
                 })

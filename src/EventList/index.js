@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Text,
   View,
@@ -13,6 +13,7 @@ import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import EventDetail from "../EventDetail";
 import axios from "axios";
+import { Context } from "../../state/Provider";
 
 const StackEvent = createStackNavigator();
 
@@ -30,7 +31,7 @@ function EventList({ navigation }) {
         console.log(err);
       });
   }, []);
-
+  const [state, dispatch] = useContext(Context);
   return (
     <View style={styles.container}>
       <FlatList
@@ -52,6 +53,7 @@ function EventList({ navigation }) {
 
             <View style={styles.infoname}>
               <Text style={styles.event}>Event </Text>
+              <Text>{state.joined}</Text>
               <View style={styles.infobox}>
                 <Text style={{ fontWeight: "bold" }}>
                   Location:{" "}

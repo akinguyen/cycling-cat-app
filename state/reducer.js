@@ -21,6 +21,11 @@ export default function reducer(prevState, action) {
         ...prevState,
         eventCount: prevState.eventCount + 1,
       };
+    case "JOIN_OR_NOT":
+      return {
+        ...prevState,
+        not: prevState.not + "joined",
+      };
     default:
       return prevState;
   }
