@@ -52,6 +52,7 @@ export default function EventDetail({ navigation, route }) {
         })
       );
     }
+    return participants;
   };
 
   axios.create({
