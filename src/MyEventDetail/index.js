@@ -116,20 +116,6 @@ export default function MyEventDetail({ navigation, route }) {
         </View>
       </View>
       <View style={styles.button}>
-        <View style={styles.back}>
-          <Button
-            title="BACK"
-            onPress={() => navigation.push("MyEvent")}
-            color="#339900"
-          />
-        </View>
-        <View style={styles.back}>
-          <Button
-            title="BACK"
-            onPress={() => navigation.goBack()}
-            color="#339900"
-          />
-        </View>
         <View style={styles.button}>
           <View style={{ height: 40, width: 80 }}>
             <Button
@@ -149,11 +135,7 @@ export default function MyEventDetail({ navigation, route }) {
           </View>
         </View>
       </View>
-      <View
-        style={
-          (styles.button, { marginTop: 50, width: 80, alignSelf: "center" })
-        }
-      >
+      <View style={{ marginTop: 0, width: 80, alignSelf: "center" }}>
         <Button
           title="BACK"
           onPress={() => navigation.push("MyEvent")}

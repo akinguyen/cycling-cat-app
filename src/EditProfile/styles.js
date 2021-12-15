@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   BackGroundAll: {
     //backgroundColor: "white",
-    height: "40%",
+    height: "100%",
     flexDirection: "column",
     alignItems: "center",
   },
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   BackGroundTop: {
     backgroundColor: "#CCFF99",
     width: "100%",
-    height: "50%",
+    height: "20%",
     alignItems: "center",
     justifyContent: "flex-end",
   },

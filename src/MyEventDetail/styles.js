@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 
   button: {
     color: "#CCFF99",
-    marginTop: 20,
+    marginTop: 10,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",

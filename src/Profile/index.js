@@ -48,7 +48,7 @@ function Profile({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <View>
         <View style={styles.BackGroundAll}>
           <View style={styles.BackGroundTop}>
             <View style={styles.signout}>
@@ -113,7 +113,7 @@ function Profile({ navigation }) {
             </View>
           </View>
         </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }

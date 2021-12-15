@@ -47,7 +47,7 @@ export default function EditProfile({ navigation }) {
       enabled={true}
     >
       <SafeAreaView style={styles.container}>
-        <ScrollView>
+        <View>
           <View style={styles.BackGroundAll}>
             <View style={styles.BackGroundTop}>
               <View style={styles.signout}>
@@ -150,7 +150,7 @@ export default function EditProfile({ navigation }) {
               </View>
             </View>
           </View>
-        </ScrollView>
+        </View>
       </SafeAreaView>
     </KeyboardAvoidingView>
   );

@@ -153,19 +153,6 @@ export default function EventDetail({ navigation, route }) {
                   newParticipants: participants,
                 })
                 .then((result) => {
-                  axios.post(
-                    "https://cycling-cat-api.herokuapp.com/events/join",
-                    {
-                      eventId: id,
-                      userId: state.userData._id,
-                    }
-                  );
-                  dispatch({
-                    type: "PLUS_EVENT_COUNT",
-                  });
-                  dispatch({
-                    type: "JOIN_OR_NOT",
-                  });
                   navigation.push("EventList");
                 })
                 .catch((err) => console.log(err));
