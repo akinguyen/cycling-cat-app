@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Text,
   View,
@@ -13,12 +13,26 @@ import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import EventDetail from "../EventDetail";
 import axios from "axios";
+import { Context } from "../../state/Provider";
 
 const StackEvent = createStackNavigator();
 
 function EventList({ navigation }) {
+  const [joined, setJoined] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://cycling-cat-api.herokuapp.com/events/join")
+      .then((response) => {
+        console.log(response.data);
+        setList(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const [list, setList] = useState([]);
   useEffect(() => {
+    // userData.id => events/:userId
     axios
       .get("https://cycling-cat-api.herokuapp.com/events")
       .then((response) => {
@@ -29,9 +43,9 @@ function EventList({ navigation }) {
         console.log(err);
       });
   }, []);
-
+  const [state, dispatch] = useContext(Context);
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <FlatList
         keyExtractor={(item, index) => item._id}
         data={list}
@@ -45,14 +59,13 @@ function EventList({ navigation }) {
             style={styles.groupinfo}
           >
             <Image
-              source={{
-                uri: "https://s.luyengame.net/games/pikachu/image.jpg",
-              }}
+              source={require("../../asset/logo.png")}
               style={styles.circle}
             />
 
             <View style={styles.infoname}>
               <Text style={styles.event}>Event </Text>
+              <Text>{state.joined}</Text>
               <View style={styles.infobox}>
                 <Text style={{ fontWeight: "bold" }}>
                   Location:{" "}
@@ -61,9 +74,9 @@ function EventList({ navigation }) {
                   </Text>
                 </Text>
                 <Text style={{ fontWeight: "bold" }}>
-                  Sport:{" "}
+                  Category:{" "}
                   <Text style={{ fontWeight: "normal" }}>
-                    {ItemData.item.sport}
+                    {ItemData.item.category}
                   </Text>
                 </Text>
                 <Text style={{ fontWeight: "bold" }}>
@@ -77,7 +90,7 @@ function EventList({ navigation }) {
           </TouchableOpacity>
         )}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 

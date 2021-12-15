@@ -1,45 +1,92 @@
-import React from "react";
-import { Button, Text, View, ScrollView } from "react-native";
-
+import React, { useState, useEffect } from "react";
+import {
+  Button,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+  FlatList,
+} from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./styles";
+import axios from "axios";
 
-export default function CheckParticipation({ navigation }) {
+export default function CheckParticipation({ navigation, route }) {
+  const { id } = route.params;
+  const [list, setList] = useState([]);
+  const [listInfo, setListInfo] = useState([]);
+
+  const onSetListInfo = (value) => {
+    setListInfo(listInfo.push(value));
+  };
+
+  useEffect(() => {
+    axios
+      .get("https://cycling-cat-api.herokuapp.com/events/" + id)
+      .then((response) => {
+        //console.log(response.data.participants);
+        setList(response.data.participants);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.back}>
-        <View style={styles.avt}></View>
+        <Image source={require("../../asset/logo.png")} style={styles.avt} />
       </View>
-      <View style={styles.white}>
-        <Text style={styles.text}> EVENT 1</Text>
-        <Text style={styles.parti}> Participation </Text>
-        <Text> </Text>
-        <View style={{ marginBottom: 100 }}>
+      <View style={styles.bar}>
+        <Text>PARTICIPANTS</Text>
+      </View>
+      <FlatList
+        contentContainerStyle={{ width: "100%" }}
+        data={list}
+        keyExtractor={(item, index) => item._id}
+        renderItem={(user) => (
           <View
             style={{
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-around",
-              width: "90%",
+              width: "95%",
             }}
           >
-            <Text> 1. A: PROFILE </Text>
-            <Button title="YES" />
-            <Button title="NO" />
+            <Text>
+              {" "}
+              {user.index + 1}. {user.item.name}{" "}
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("ParticipantsInfo", {
+                  userId: user.item._id,
+                });
+              }}
+            >
+              <MaterialCommunityIcons name="account" size={26} color="black" />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                //navigation.goBack()
+                console.log(list);
+              }}
+            >
+              <MaterialCommunityIcons
+                name="check-outline"
+                size={26}
+                color="green"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <MaterialCommunityIcons
+                name="close-outline"
+                size={26}
+                color="red"
+              />
+            </TouchableOpacity>
           </View>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-around",
-              width: "90%",
-            }}
-          >
-            <Text> 2. B: PROFILE </Text>
-            <Button title="YES" />
-            <Button title="NO" />
-          </View>
-        </View>
-      </View>
+        )}
+      />
       <View style={{ marginTop: 20 }}>
         <Button
           title="BACK"

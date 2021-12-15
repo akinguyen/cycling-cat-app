@@ -2,26 +2,28 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-around",
+    top: 10,
     alignItems: "center",
     paddingTop: 0,
     padding: 0,
-    backgroundColor:"white",
+    backgroundColor: "white",
   },
   input: {
     height: 40,
-    marginLeft: 20,
+    //marginLeft: 20,
     marginRight: 20,
     borderWidth: 2,
     padding: 10,
     borderColor: "black",
+    width: 300,
   },
   username: {
-    margin: 20,
+    marginBottom: 10,
     fontSize: 17,
     fontWeight: "bold",
-    textAlign: "center",
+    //textAlign: "center",
     color: "black",
   },
 });
+
 export default styles;

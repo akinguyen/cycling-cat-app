@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   BackGroundAll: {
-    backgroundColor: "white",
+    //backgroundColor: "white",
     height: "40%",
     flexDirection: "column",
     alignItems: "center",
@@ -11,17 +11,18 @@ const styles = StyleSheet.create({
   BackGroundTop: {
     backgroundColor: "#CCFF99",
     width: "100%",
-    height: "20%",
+    height: "50%",
     alignItems: "center",
+    justifyContent: "center",
   },
 
   BackGroundMid: {
     backgroundColor: "#CCFF99",
-    width: "95%",
+    width: 370,
     height: 85,
     flexDirection: "column",
     justifyContent: "space-evenly",
-    marginTop: 30,
+    marginTop: 7,
   },
 
   BackGroundBottom: {
@@ -53,13 +54,12 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    alignItems: "center",
   },
 
   avatar: {
     height: 127,
     width: 127,
-    marginBottom: 0,
+    marginBottom: -15,
   },
 
   BackGroundMid1: {
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-evenly",
     marginTop: 30,
-    marginBottom: 60,
+    marginBottom: 50,
   },
 
   points: {
@@ -79,38 +79,14 @@ const styles = StyleSheet.create({
     width: 60,
     marginRight: 10,
     alignItems: "center",
-    marginTop: 0,
-  },
-
-  infocontainer: {
-    width: "95%",
-    marginTop: 30,
-    alignItems: "center",
-  },
-
-  button: {
-    color: "#CCFF99",
-    marginTop: 20,
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-around",
   },
 
   pts: {
     fontWeight: "bold",
   },
 
-  title: {
-    fontSize: 50,
-  },
-
   text: {
     marginLeft: 10,
-  },
-
-  Ok: {
-    height: 40,
-    marginTop: 50,
   },
 
   input: {
@@ -118,6 +94,27 @@ const styles = StyleSheet.create({
     margin: 5,
     borderWidth: 1,
     padding: 10,
+  },
+  signout: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+  },
+  infocontainer: {
+    width: "95%",
+    marginTop: 30,
+    alignItems: "center",
+  },
+  button: {
+    color: "#CCFF99",
+    marginTop: 50,
+    width: 300,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  back: {
+    width: 85,
+    height: 40,
   },
 });
 

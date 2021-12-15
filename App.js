@@ -1,68 +1,39 @@
-﻿import React from "react";
+﻿import "react-native-gesture-handler";
+import React, { useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Profile from "./src/Profile";
-import MyEventNavigator from "./src/MyEvent";
-import { Text, View } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import EventListNavigator from "./src/EventList";
+import MainNavigation from "./src/MainNavigation";
+import { Context } from "./state/Provider";
+import AuthNavigation from "./src/AuthNavigation";
+
+const Stack = createStackNavigator();
 
 export default function App() {
+  const [state, dispatch] = useContext(Context);
+
   return (
     <NavigationContainer>
-      <MyTabs />
+      <Stack.Navigator>
+        {!state.isSignedIn ? (
+          // No token found, user isn't signed in
+          <Stack.Screen
+            name="Auth"
+            component={AuthNavigation}
+            options={{
+              headerShown: false,
+            }}
+          />
+        ) : (
+          // User is signed in
+          <Stack.Screen
+            name="Home"
+            component={MainNavigation}
+            options={{
+              headerShown: false,
+            }}
+          />
+        )}
+      </Stack.Navigator>
     </NavigationContainer>
-  );
-}
-
-const Tab = createBottomTabNavigator();
-
-function MyTabs() {
-  return (
-    <Tab.Navigator
-      initialRouteName="Feed"
-      screenOptions={{
-        tabBarActiveTintColor: "#7ED957",
-        headerStyle: { backgroundColor: "#808080" },
-        headerTitleStyle: { color: "#fff" },
-      }}
-    >
-      <Tab.Screen
-        name="Feed"
-        component={EventListNavigator}
-        options={{
-          title: "Daily Events",
-          tabBarLabel: "New events",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: "Profile",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="My events"
-        component={MyEventNavigator}
-        options={{
-          tabBarLabel: "My events",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="book-open-outline"
-              color={color}
-              size={size}
-            />
-          ),
-        }}
-      />
-    </Tab.Navigator>
   );
 }

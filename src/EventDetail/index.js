@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Text,
   View,
@@ -14,21 +14,24 @@ import styles from "./styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
+import { Context } from "../../state/Provider";
 
 export default function EventDetail({ navigation, route }) {
+  const [state, dispatch] = useContext(Context);
   const { id } = route.params;
   const [description, setDescription] = useState("");
-  const [sport, setSport] = useState("");
+  const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
+  const [participants, setParticipants] = useState([]);
   const [isVisibleDes, setIsVisibleDes] = useState(false);
 
   const onEnterDescription = (value) => {
     setDescription(value);
   };
 
-  const onEnterSport = (value) => {
-    setSport(value);
+  const onEnterCategory = (value) => {
+    setCategory(value);
   };
 
   const onEnterLocation = (value) => {
@@ -37,6 +40,19 @@ export default function EventDetail({ navigation, route }) {
 
   const onEnterTime = (value) => {
     setTime(value);
+  };
+
+  const onSetParticipants = () => {
+    const find = participants.find((user) => user._id == state.userData._id);
+    if (!find) {
+      setParticipants(
+        participants.push({
+          name: state.userData.info.name,
+          _id: state.userData._id,
+        })
+      );
+    }
+    return participants;
   };
 
   axios.create({
@@ -50,8 +66,9 @@ export default function EventDetail({ navigation, route }) {
         console.log(response.data);
         setDescription(response.data.description);
         setLocation(response.data.location);
-        setSport(response.data.sport);
+        setCategory(response.data.category);
         setTime(response.data.time);
+        setParticipants(response.data.participants);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -59,9 +76,6 @@ export default function EventDetail({ navigation, route }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.BackGroundTop}>
-        <View style={styles.points}>
-          <Text style={styles.pts}>PTS</Text>
-        </View>
         <Text style={styles.title}>EVENT</Text>
       </View>
       <View style={styles.infocontainer}>
@@ -101,9 +115,9 @@ export default function EventDetail({ navigation, route }) {
         </TouchableOpacity>
 
         <View style={styles.BackGroundMid}>
-          <Text style={styles.text}>Sport:</Text>
+          <Text style={styles.text}>Category:</Text>
           <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
-            <Text>{sport}</Text>
+            <Text>{category}</Text>
           </View>
         </View>
 
@@ -132,7 +146,30 @@ export default function EventDetail({ navigation, route }) {
         <View style={styles.back}>
           <Button
             title="JOIN"
-            onPress={() => navigation.goBack()}
+            onPress={() => {
+              onSetParticipants();
+              axios
+                .patch("https://cycling-cat-api.herokuapp.com/events/" + id, {
+                  newParticipants: participants,
+                })
+                .then((result) => {
+                  axios.post(
+                    "https://cycling-cat-api.herokuapp.com/events/join",
+                    {
+                      eventId: id,
+                      userId: state.userData._id,
+                    }
+                  );
+                  dispatch({
+                    type: "PLUS_EVENT_COUNT",
+                  });
+                  dispatch({
+                    type: "JOIN_OR_NOT",
+                  });
+                  navigation.push("EventList");
+                })
+                .catch((err) => console.log(err));
+            }}
             color="#339900"
           />
         </View>

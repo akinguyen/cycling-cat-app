@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   Text,
@@ -15,41 +15,29 @@ import styles from "./styles";
 import { Context } from "../../state/Provider";
 import axios from "axios";
 
-export default function EditProfile({ navigation, route }) {
-  const { id } = route.params;
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [location, setLocation] = useState("");
-  const [time, setTime] = useState("");
+export default function EditProfile({ navigation }) {
+  const [state, dispatch] = useContext(Context);
+  console.log(state.userData.info);
+  const [name, setName] = useState(state.userData.info.name); // look here
+  const [birth, setBirth] = useState(state.userData.info.birthday);
+  const [school, setschool] = useState(state.userData.info.school);
+  const [id, setId] = useState(state.userData.info.stuID);
 
-  const onEnterDescription = (value) => {
-    setDescription(value);
+  const onEnterName = (value) => {
+    setName(value);
   };
 
-  const onEnterCategory = (value) => {
-    setCategory(value);
+  const onEnterBirth = (value) => {
+    setBirth(value);
   };
 
-  const onEnterLocation = (value) => {
-    setLocation(value);
+  const onSetSchool = (value) => {
+    setschool(value);
   };
 
-  const onEnterTime = (value) => {
-    setTime(value);
+  const onEnterId = (value) => {
+    setId(value);
   };
-
-  useEffect(() => {
-    axios
-      .get("https://cycling-cat-api.herokuapp.com/events/" + id)
-      .then((response) => {
-        console.log(response.data);
-        setDescription(response.data.description);
-        setLocation(response.data.location);
-        setCategory(response.data.category);
-        setTime(response.data.time);
-      })
-      .catch((error) => console.log(error));
-  }, []);
 
   return (
     <KeyboardAvoidingView
@@ -62,45 +50,60 @@ export default function EditProfile({ navigation, route }) {
         <ScrollView>
           <View style={styles.BackGroundAll}>
             <View style={styles.BackGroundTop}>
-              <Text style={{ fontSize: 50 }}>EDIT</Text>
+              <View style={styles.signout}>
+                <TouchableOpacity
+                  onPress={() => {
+                    dispatch({
+                      type: "SIGN_OUT",
+                    });
+                  }}
+                >
+                  <MaterialCommunityIcons name="logout" size={35} />
+                </TouchableOpacity>
+              </View>
+
+              <Image
+                source={require("../../asset/logo.png")}
+                style={styles.avatar}
+              />
             </View>
             <View style={styles.infocontainer}>
               <View style={styles.BackGroundMid}>
-                <Text style={styles.text}>Description:</Text>
+                <Text style={styles.text}>Name:</Text>
                 <TextInput
-                  value={description}
-                  onChangeText={onEnterDescription}
+                  value={name}
+                  onChangeText={onEnterName}
                   placeholder="Enter your name"
                   style={styles.input}
                 />
               </View>
 
               <View style={styles.BackGroundMid}>
-                <Text style={styles.text}>Category:</Text>
+                <Text style={styles.text}>Birthday:</Text>
                 <TextInput
                   keyboardType="numbers-and-punctuation"
-                  value={category}
-                  onChangeText={onEnterCategory}
+                  value={birth}
+                  onChangeText={onEnterBirth}
                   placeholder="Enter your date of birth"
                   style={styles.input}
                 />
               </View>
 
               <View style={styles.BackGroundMid}>
-                <Text style={styles.text}>Location:</Text>
+                <Text style={styles.text}>School:</Text>
                 <TextInput
-                  value={location}
-                  onChangeText={onEnterLocation}
+                  value={school}
+                  onChangeText={onSetSchool}
                   placeholder="Enter the type of you school"
                   style={styles.input}
                 />
               </View>
 
               <View style={styles.BackGroundMid}>
-                <Text style={styles.text}>Time:</Text>
+                <Text style={styles.text}>Student ID:</Text>
                 <TextInput
-                  value={time}
-                  onChangeText={onEnterTime}
+                  value={id}
+                  onChangeText={onEnterId}
                   placeholder="Enter your student ID"
                   style={styles.input}
                 />
@@ -119,16 +122,23 @@ export default function EditProfile({ navigation, route }) {
                     onPress={() => {
                       axios
                         .patch(
-                          "https://cycling-cat-api.herokuapp.com/events/" + id,
+                          "https://cycling-cat-api.herokuapp.com/user/" +
+                            state.userData._id,
                           {
-                            newDescription: description,
-                            newCategory: category,
-                            newLocation: location,
-                            newTime: time,
+                            newInfo: {
+                              newName: name,
+                              newSchool: school,
+                              newStuID: id,
+                              newBirthday: birth,
+                            },
                           }
                         )
                         .then((result) => {
-                          navigation.push("MyEventDetail", { id: id });
+                          navigation.navigate("ProfileDetail");
+                          dispatch({
+                            type: "EDIT",
+                            userData: result.data.user,
+                          });
                         })
                         .catch((err) => console.log(err));
 

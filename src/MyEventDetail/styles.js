@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "20%",
     alignItems: "center",
+    justifyContent: "center",
   },
 
   BackGroundMid: {
@@ -55,7 +56,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-
+  scroll: {
+    flex: 1,
+  },
   avatar: {
     height: 127,
     width: 127,
