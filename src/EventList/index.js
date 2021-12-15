@@ -18,6 +18,18 @@ import { Context } from "../../state/Provider";
 const StackEvent = createStackNavigator();
 
 function EventList({ navigation }) {
+  const [joined, setJoined] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://cycling-cat-api.herokuapp.com/events/join")
+      .then((response) => {
+        console.log(response.data);
+        setList(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const [list, setList] = useState([]);
   useEffect(() => {
     // userData.id => events/:userId

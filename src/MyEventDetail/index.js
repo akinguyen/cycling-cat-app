@@ -55,45 +55,43 @@ export default function MyEventDetail({ navigation, route }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.BackGroundTop}>
-        <View style={styles.points}>
-          <Text style={styles.pts}>PTS</Text>
-        </View>
         <Text style={styles.title}>EVENT</Text>
       </View>
       <View style={styles.infocontainer}>
-        <TouchableOpacity onPress={() => setIsVisibleDes(true)}>
-          <View style={styles.BackGroundMid}>
-            <Text style={styles.text}>Description:</Text>
-            <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
-              <Text>{description}</Text>
-            </View>
-            <Modal visible={isVisibleDes} animationType="slide">
+        <TouchableOpacity
+          onPress={() => setIsVisibleDes(true)}
+          style={styles.BackGroundMid}
+        >
+          <Text style={styles.text}>Description:</Text>
+          <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
+            <Text>{description}</Text>
+          </View>
+          <Modal visible={isVisibleDes} animationType="slide">
+            <View
+              style={{
+                justifyContent: "space-evenly",
+                flex: 1,
+                backgroundColor: "#CCFF99",
+                alignItems: "center",
+              }}
+            >
               <View
                 style={{
-                  justifyContent: "space-evenly",
-                  flex: 1,
-                  backgroundColor: "#CCFF99",
+                  height: "70%",
+                  width: "95%",
                   alignItems: "center",
+                  borderWidth: 1,
                 }}
               >
-                <View
-                  style={{
-                    height: "70%",
-                    width: "95%",
-                    alignItems: "center",
-                    borderWidth: 1,
-                  }}
-                >
-                  <ScrollView>
-                    <Text>{description}</Text>
-                  </ScrollView>
-                </View>
-                <View style={{ marginBottom: 20 }}>
-                  <Button onPress={() => setIsVisibleDes(false)} title="BACK" />
-                </View>
+                <ScrollView>
+                  <Text>{description}</Text>
+                </ScrollView>
               </View>
-            </Modal>
-          </View>
+              <View style={{ marginBottom: 20 }}>
+                <Button onPress={() => setIsVisibleDes(false)} title="BACK" />
+              </View>
+            </View>
+          </Modal>
         </TouchableOpacity>
 
         <View style={styles.BackGroundMid}>
