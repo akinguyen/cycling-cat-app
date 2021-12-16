@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Button,
-  Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-  FlatList,
-} from "react-native";
+import { Text, View, TouchableOpacity, Image, FlatList } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./styles";
 import axios from "axios";
@@ -16,10 +8,6 @@ export default function CheckParticipation({ navigation, route }) {
   const { id } = route.params;
   const [list, setList] = useState([]);
   const [listInfo, setListInfo] = useState([]);
-
-  const onSetListInfo = (value) => {
-    setListInfo(listInfo.push(value));
-  };
 
   useEffect(() => {
     axios
