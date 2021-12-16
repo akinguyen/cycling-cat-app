@@ -40,7 +40,7 @@ function MyEvent({ navigation }) {
         <Button
           title="ADD"
           onPress={() => navigation.navigate("CreateEvent")}
-          color="#FAD46B"
+          color="brown"
         />
       </View>
       <View style={{ flex: 1 }}>
