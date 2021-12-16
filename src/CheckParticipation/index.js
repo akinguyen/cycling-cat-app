@@ -25,7 +25,6 @@ export default function CheckParticipation({ navigation, route }) {
     axios
       .get("https://cycling-cat-api.herokuapp.com/events/" + id)
       .then((response) => {
-        //console.log(response.data.participants);
         setList(response.data.participants);
       })
       .catch((err) => console.log(err));
@@ -87,13 +86,6 @@ export default function CheckParticipation({ navigation, route }) {
           </View>
         )}
       />
-      <View style={{ marginTop: 20 }}>
-        <Button
-          title="BACK"
-          onPress={() => navigation.goBack()}
-          color="#339900"
-        />
-      </View>
     </View>
   );
 }
