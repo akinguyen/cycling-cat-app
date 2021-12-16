@@ -38,7 +38,11 @@ export default function MainStackNavigation() {
       <MainStack.Screen
         name="CheckParticipation"
         component={CheckParticipation}
-        options={{ title: "Check Participation", headerShown: true }}
+        options={{
+          title: "Check Participation",
+          headerShown: true,
+          headerBackTitle: "Back",
+        }}
       />
       <MainStack.Screen
         name="ParticipantsInfo"
