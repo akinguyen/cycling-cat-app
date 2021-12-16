@@ -40,24 +40,28 @@ export default function EventDetail({ navigation, route }) {
   };
 
   const onSetParticipants = () => {
-    const find = participants.find((user) => user._id == state.userData._id);
-    if (!find) {
-      setParticipants(
-        participants.push({
-          name: state.userData.info.name,
-          _id: state.userData._id,
-        })
-      );
+    if (participants) {
+      const find = participants.find((user) => user._id == state.userData._id);
+      if (!find) {
+        setParticipants(
+          participants.push({
+            name: state.userData.info.name,
+            _id: state.userData._id,
+          })
+        );
+      }
+      return participants;
     }
-    return participants;
   };
 
   const onSetJoin = () => {
-    const find = participants.find((user) => user._id == state.userData._id);
-    if (find) {
-      setJoin("JOINED");
+    if (participants) {
+      const find = participants.find((user) => user._id == state.userData._id);
+      if (find) {
+        setJoin("JOINED");
+      }
+      //return join;
     }
-    //return join;
   };
 
   useEffect(() => {
@@ -70,10 +74,13 @@ export default function EventDetail({ navigation, route }) {
         setCategory(response.data.category);
         setTime(response.data.time);
         setParticipants(response.data.participants);
-        onSetJoin();
       })
       .catch((error) => console.log(error));
   }, []);
+
+  useEffect(() => {
+    onSetJoin();
+  }, [participants]);
 
   return (
     <SafeAreaView style={styles.container}>
