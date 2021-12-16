@@ -23,32 +23,17 @@ export default function EventDetail({ navigation, route }) {
   const [isVisibleDes, setIsVisibleDes] = useState(false);
   const [join, setJoin] = useState("");
 
-  const onEnterDescription = (value) => {
-    setDescription(value);
-  };
-
-  const onEnterCategory = (value) => {
-    setCategory(value);
-  };
-
-  const onEnterLocation = (value) => {
-    setLocation(value);
-  };
-
-  const onEnterTime = (value) => {
-    setTime(value);
-  };
-
   const onSetParticipants = () => {
     if (participants) {
       const find = participants.find((user) => user._id == state.userData._id);
       if (!find) {
-        setParticipants(
-          participants.push({
-            name: state.userData.info.name,
-            _id: state.userData._id,
-          })
-        );
+        let newParticipant = [...participants];
+
+        newParticipant.push({
+          name: state.userData.info.name,
+          _id: state.userData._id,
+        });
+        return newParticipant;
       }
       return participants;
     }
@@ -157,10 +142,11 @@ export default function EventDetail({ navigation, route }) {
           <Button
             title="JOIN"
             onPress={() => {
-              onSetParticipants();
+              let newParticipants = onSetParticipants();
+              setParticipants(newParticipants);
               axios
                 .patch("https://cycling-cat-api.herokuapp.com/events/" + id, {
-                  newParticipants: participants,
+                  newParticipants,
                 })
                 .then((result) => {
                   dispatch({
