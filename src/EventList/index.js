@@ -1,34 +1,26 @@
-import React, { useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  Button,
-  FlatList,
-} from "react-native";
+import React, { useState } from "react";
+import { Text, View, Image, TouchableOpacity, FlatList } from "react-native";
 import styles from "./styles";
-import { createStackNavigator } from "@react-navigation/stack";
-import EventDetail from "../EventDetail";
 import axios from "axios";
-
-const StackEvent = createStackNavigator();
+import { useFocusEffect } from "@react-navigation/native";
 
 function EventList({ navigation }) {
   const [list, setList] = useState([]);
-  useEffect(() => {
-    // userData.id => events/:userId
-    axios
-      .get("https://cycling-cat-api.herokuapp.com/events")
-      .then((response) => {
-        setList(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      // userData.id => events/:userId
+      axios
+        .get("https://cycling-cat-api.herokuapp.com/events")
+        .then((response) => {
+          setList(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      return () => {};
+    }, [])
+  );
 
   return (
     <View style={styles.container}>
@@ -81,21 +73,4 @@ function EventList({ navigation }) {
   );
 }
 
-const EventListNavigator = () => {
-  return (
-    <StackEvent.Navigator initialRouteName="EventList">
-      <StackEvent.Screen
-        name="EventList"
-        component={EventList}
-        options={{ headerShown: false }}
-      />
-      <StackEvent.Screen
-        name="EventDetail"
-        component={EventDetail}
-        options={{ headerShown: false }}
-      />
-    </StackEvent.Navigator>
-  );
-};
-
-export default EventListNavigator;
+export default EventList;

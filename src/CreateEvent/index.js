@@ -3,15 +3,11 @@ import {
   Text,
   View,
   SafeAreaView,
-  ScrollView,
-  Image,
   Button,
   TextInput,
   KeyboardAvoidingView,
 } from "react-native";
 import styles from "./styles";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
 import { Context } from "../../state/Provider";
 
@@ -21,7 +17,6 @@ export default function CreateEvent({ navigation }) {
   const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
-  const [disabled, setDisabled] = useState(true);
 
   const onEnterDescription = (value) => {
     setDescription(value);
@@ -107,7 +102,7 @@ export default function CreateEvent({ navigation }) {
             <Button
               title="POST"
               onPress={() => {
-                navigation.push("MyEvent");
+                navigation.goBack();
                 axios
                   .post("https://cycling-cat-api.herokuapp.com/events", {
                     description: description,

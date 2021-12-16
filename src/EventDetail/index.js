@@ -153,7 +153,7 @@ export default function EventDetail({ navigation, route }) {
                   newParticipants: participants,
                 })
                 .then((result) => {
-                  navigation.push("EventList");
+                  navigation.goBack();
                 })
                 .catch((err) => console.log(err));
             }}

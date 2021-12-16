@@ -110,7 +110,7 @@ export default function MyEventDetail({ navigation, route }) {
       >
         <Button
           title="BACK"
-          onPress={() => navigation.push("MyEvent")}
+          onPress={() => navigation.goBack()}
           color="#339900"
         />
       </View>

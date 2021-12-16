@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import {
   Text,
   View,
@@ -8,32 +8,31 @@ import {
   FlatList,
 } from "react-native";
 import styles from "./styles";
-import MyEventDetail from "../MyEventDetail";
-import { createStackNavigator } from "@react-navigation/stack";
-import CheckParticipation from "../CheckParticipation";
-import EditEvent from "../EditEvent";
-import ParticipantsInfo from "../ParticipantsInfo";
-import CreateEvent from "../CreateEvent";
 import { Context } from "../../state/Provider";
 import axios from "axios";
 import { reverse } from "lodash";
+import { useFocusEffect } from "@react-navigation/native";
 
 function MyEvent({ navigation }) {
   const [state, dispatch] = useContext(Context);
   const [list, setList] = useState([]);
-  useEffect(() => {
-    // userData.id => events/:userId
-    axios
-      .get(
-        "https://cycling-cat-api.herokuapp.com/myevents/" + state.userData._id
-      )
-      .then((response) => {
-        setList(reverse(response.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      axios
+        .get(
+          "https://cycling-cat-api.herokuapp.com/myevents/" + state.userData._id
+        )
+        .then((response) => {
+          setList(reverse(response.data));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      return () => {};
+    }, [])
+  );
 
   return (
     <View style={styles.container}>
@@ -95,43 +94,4 @@ function MyEvent({ navigation }) {
   );
 }
 
-const StackMyEvent = createStackNavigator();
-
-const MyEventNavigator = () => {
-  return (
-    <StackMyEvent.Navigator initialRouteName="MyEvent">
-      <StackMyEvent.Screen
-        name="MyEvent"
-        component={MyEvent}
-        options={{ headerShown: false }}
-      />
-      <StackMyEvent.Screen
-        name="MyEventDetail"
-        component={MyEventDetail}
-        options={{ headerShown: false }}
-      />
-      <StackMyEvent.Screen
-        name="CheckParticipation"
-        component={CheckParticipation}
-        options={{ headerShown: false }}
-      />
-      <StackMyEvent.Screen
-        name="ParticipantsInfo"
-        component={ParticipantsInfo}
-        options={{ headerShown: false }}
-      />
-      <StackMyEvent.Screen
-        name="EditEvent"
-        component={EditEvent}
-        options={{ headerShown: false }}
-      />
-      <StackMyEvent.Screen
-        name="CreateEvent"
-        component={CreateEvent}
-        options={{ headerShown: false }}
-      />
-    </StackMyEvent.Navigator>
-  );
-};
-
-export default MyEventNavigator;
+export default MyEvent;

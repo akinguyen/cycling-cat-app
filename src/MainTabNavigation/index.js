@@ -1,9 +1,9 @@
 import React from "react";
-import ProfileNavigator from "../Profile";
-import MyEventNavigator from "../MyEvent";
+import Profile from "../Profile";
+import MyEvent from "../MyEvent";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import EventListNavigator from "../EventList";
+import EventList from "../EventList";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,10 +19,10 @@ export default function MainNavigation() {
     >
       <Tab.Screen
         name="Feed"
-        component={EventListNavigator}
+        component={EventList}
         options={{
           title: "Daily Events",
-          tabBarLabel: "New events",
+          tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
@@ -30,7 +30,7 @@ export default function MainNavigation() {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileNavigator}
+        component={Profile}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
@@ -39,10 +39,11 @@ export default function MainNavigation() {
         }}
       />
       <Tab.Screen
-        name="My events"
-        component={MyEventNavigator}
+        name="MyEvent"
+        component={MyEvent}
         options={{
-          tabBarLabel: "My events",
+          title: "My Events",
+          tabBarLabel: "My Events",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="book-open-outline"
