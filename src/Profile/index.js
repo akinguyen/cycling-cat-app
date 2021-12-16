@@ -76,6 +76,13 @@ function Profile({ navigation }) {
               <Text>{id}</Text>
             </View>
           </View>
+
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Participants:</Text>
+            <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
+              <Text>{state.participations}</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.button}>
           <View style={styles.back}>
