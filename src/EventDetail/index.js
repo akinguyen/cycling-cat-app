@@ -145,6 +145,9 @@ export default function EventDetail({ navigation, route }) {
                   newParticipants: participants,
                 })
                 .then((result) => {
+                  dispatch({
+                    type: "JOIN_EVENT",
+                  });
                   navigation.goBack();
                 })
                 .catch((err) => console.log(err));
