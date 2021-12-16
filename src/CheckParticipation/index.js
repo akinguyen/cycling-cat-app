@@ -7,7 +7,6 @@ import axios from "axios";
 export default function CheckParticipation({ navigation, route }) {
   const { id } = route.params;
   const [list, setList] = useState([]);
-  const [listInfo, setListInfo] = useState([]);
 
   useEffect(() => {
     axios
@@ -40,7 +39,6 @@ export default function CheckParticipation({ navigation, route }) {
             }}
           >
             <Text>
-              {" "}
               {user.index + 1}. {user.item.name}{" "}
             </Text>
             <TouchableOpacity
