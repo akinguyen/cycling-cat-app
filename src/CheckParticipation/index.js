@@ -87,7 +87,7 @@ export default function CheckParticipation({ navigation, route }) {
           </View>
         )}
       />
-      <View style={{ marginTop: 20 }}>
+      <View style={{ marginTop: 20, marginBottom: 30 }}>
         <Button
           title="BACK"
           onPress={() => navigation.goBack()}
