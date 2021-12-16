@@ -21,6 +21,7 @@ export default function EventDetail({ navigation, route }) {
   const [time, setTime] = useState("");
   const [participants, setParticipants] = useState([]);
   const [isVisibleDes, setIsVisibleDes] = useState(false);
+  const [join, setJoin] = useState("");
 
   const onEnterDescription = (value) => {
     setDescription(value);
@@ -51,6 +52,14 @@ export default function EventDetail({ navigation, route }) {
     return participants;
   };
 
+  const onSetJoin = () => {
+    const find = participants.find((user) => user._id == state.userData._id);
+    if (find) {
+      setJoin("JOINED");
+    }
+    //return join;
+  };
+
   useEffect(() => {
     axios
       .get("https://cycling-cat-api.herokuapp.com/events/" + id)
@@ -61,6 +70,7 @@ export default function EventDetail({ navigation, route }) {
         setCategory(response.data.category);
         setTime(response.data.time);
         setParticipants(response.data.participants);
+        onSetJoin();
       })
       .catch((error) => console.log(error));
   }, []);
@@ -69,6 +79,7 @@ export default function EventDetail({ navigation, route }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.BackGroundTop}>
         <Text style={styles.title}>EVENT</Text>
+        <Text>{join}</Text>
       </View>
       <View style={styles.infocontainer}>
         <TouchableOpacity onPress={() => setIsVisibleDes(true)}>
