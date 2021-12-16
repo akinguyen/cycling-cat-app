@@ -4,15 +4,11 @@ import {
   View,
   SafeAreaView,
   ScrollView,
-  Image,
   Button,
-  TextInput,
   Modal,
   TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
 import { Context } from "../../state/Provider";
 
@@ -54,10 +50,6 @@ export default function EventDetail({ navigation, route }) {
     }
     return participants;
   };
-
-  axios.create({
-    baseURL: "https://cycling-cat-api.herokuapp.com",
-  });
 
   useEffect(() => {
     axios
