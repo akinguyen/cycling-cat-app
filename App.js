@@ -1,23 +1,22 @@
 ﻿import "react-native-gesture-handler";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import MainNavigation from "./src/MainNavigation";
 import { Context } from "./state/Provider";
 import AuthNavigation from "./src/AuthNavigation";
+import MainStackNavigation from "./src/MainStackNavigation";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   const [state, dispatch] = useContext(Context);
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
         {!state.isSignedIn ? (
           // No token found, user isn't signed in
           <Stack.Screen
-            name="Auth"
+            name="AuthStack"
             component={AuthNavigation}
             options={{
               headerShown: false,
@@ -26,8 +25,8 @@ export default function App() {
         ) : (
           // User is signed in
           <Stack.Screen
-            name="Home"
-            component={MainNavigation}
+            name="MainStack"
+            component={MainStackNavigation}
             options={{
               headerShown: false,
             }}

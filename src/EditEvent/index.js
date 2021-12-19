@@ -128,11 +128,9 @@ export default function EditProfile({ navigation, route }) {
                           }
                         )
                         .then((result) => {
-                          navigation.push("MyEventDetail", { id: id });
+                          navigation.goBack();
                         })
                         .catch((err) => console.log(err));
-
-                      //console.log(state.userData._id);
                     }}
                     color="#339900"
                   />

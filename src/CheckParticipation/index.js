@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Button,
-  Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-  FlatList,
-} from "react-native";
+import { Text, View, TouchableOpacity, Image, FlatList } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./styles";
 import axios from "axios";
@@ -15,17 +7,11 @@ import axios from "axios";
 export default function CheckParticipation({ navigation, route }) {
   const { id } = route.params;
   const [list, setList] = useState([]);
-  const [listInfo, setListInfo] = useState([]);
-
-  const onSetListInfo = (value) => {
-    setListInfo(listInfo.push(value));
-  };
 
   useEffect(() => {
     axios
       .get("https://cycling-cat-api.herokuapp.com/events/" + id)
       .then((response) => {
-        //console.log(response.data.participants);
         setList(response.data.participants);
       })
       .catch((err) => console.log(err));
@@ -53,7 +39,6 @@ export default function CheckParticipation({ navigation, route }) {
             }}
           >
             <Text>
-              {" "}
               {user.index + 1}. {user.item.name}{" "}
             </Text>
             <TouchableOpacity
@@ -87,13 +72,6 @@ export default function CheckParticipation({ navigation, route }) {
           </View>
         )}
       />
-      <View style={{ marginTop: 20 }}>
-        <Button
-          title="BACK"
-          onPress={() => navigation.goBack()}
-          color="#339900"
-        />
-      </View>
     </View>
   );
 }

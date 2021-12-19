@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  SafeAreaView,
-  ScrollView,
-  Image,
-  Button,
-  TextInput,
-  Modal,
-  TouchableOpacity,
-} from "react-native";
+import React, { useState } from "react";
+import { Text, View, ScrollView, Button } from "react-native";
 import styles from "./styles";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
+import { useFocusEffect } from "@react-navigation/native";
 
 export default function MyEventDetail({ navigation, route }) {
   const { id } = route.params;
@@ -23,34 +12,22 @@ export default function MyEventDetail({ navigation, route }) {
   const [time, setTime] = useState("");
   const [isVisibleDes, setIsVisibleDes] = useState(false);
 
-  const onEnterDescription = (value) => {
-    setDescription(value);
-  };
+  useFocusEffect(
+    React.useCallback(() => {
+      axios
+        .get("https://cycling-cat-api.herokuapp.com/events/" + id)
+        .then((response) => {
+          console.log(response.data);
+          setDescription(response.data.description);
+          setLocation(response.data.location);
+          setCategory(response.data.category);
+          setTime(response.data.time);
+        })
+        .catch((error) => console.log(error));
 
-  const onEnterCategory = (value) => {
-    setCategory(value);
-  };
-
-  const onEnterLocation = (value) => {
-    setLocation(value);
-  };
-
-  const onEnterTime = (value) => {
-    setTime(value);
-  };
-
-  useEffect(() => {
-    axios
-      .get("https://cycling-cat-api.herokuapp.com/events/" + id)
-      .then((response) => {
-        console.log(response.data);
-        setDescription(response.data.description);
-        setLocation(response.data.location);
-        setCategory(response.data.category);
-        setTime(response.data.time);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+      return () => {};
+    }, [])
+  );
 
   return (
     <SafeAreaView style={styles.container}>
@@ -117,21 +94,16 @@ export default function MyEventDetail({ navigation, route }) {
           </View>
         </View>
       </View>
-      <View style={styles.button}>
-        <View style={styles.back}>
-          <Button
-            title="BACK"
-            onPress={() => navigation.push("MyEvent")}
-            color="#339900"
-          />
-        </View>
-        <View style={styles.back}>
-          <Button
-            title="JOIN"
-            onPress={() => navigation.goBack()}
-            color="#339900"
-          />
-        </View>
+      <View
+        style={
+          (styles.button, { marginTop: 50, width: 80, alignSelf: "center" })
+        }
+      >
+        <Button
+          title="BACK"
+          onPress={() => navigation.goBack()}
+          color="#339900"
+        />
       </View>
     </SafeAreaView>
   );

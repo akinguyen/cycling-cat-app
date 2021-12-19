@@ -16,6 +16,11 @@ export default function reducer(prevState, action) {
         ...prevState,
         userData: action.userData,
       };
+    case "JOIN_EVENT":
+      return {
+        ...prevState,
+        participations: prevState.participations + 1,
+      };
     default:
       return prevState;
   }

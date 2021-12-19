@@ -4,15 +4,11 @@ import {
   View,
   SafeAreaView,
   ScrollView,
-  Image,
   Button,
-  TextInput,
   Modal,
   TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import axios from "axios";
 import { Context } from "../../state/Provider";
 
@@ -25,39 +21,33 @@ export default function EventDetail({ navigation, route }) {
   const [time, setTime] = useState("");
   const [participants, setParticipants] = useState([]);
   const [isVisibleDes, setIsVisibleDes] = useState(false);
-
-  const onEnterDescription = (value) => {
-    setDescription(value);
-  };
-
-  const onEnterCategory = (value) => {
-    setCategory(value);
-  };
-
-  const onEnterLocation = (value) => {
-    setLocation(value);
-  };
-
-  const onEnterTime = (value) => {
-    setTime(value);
-  };
+  const [join, setJoin] = useState("");
 
   const onSetParticipants = () => {
-    const find = participants.find((user) => user._id == state.userData._id);
-    if (!find) {
-      setParticipants(
-        participants.push({
+    if (participants) {
+      const find = participants.find((user) => user._id == state.userData._id);
+      if (!find) {
+        let newParticipant = [...participants];
+
+        newParticipant.push({
           name: state.userData.info.name,
           _id: state.userData._id,
-        })
-      );
+        });
+        return newParticipant;
+      }
+      return participants;
     }
-    return participants;
   };
 
-  axios.create({
-    baseURL: "https://cycling-cat-api.herokuapp.com",
-  });
+  const onSetJoin = () => {
+    if (participants) {
+      const find = participants.find((user) => user._id == state.userData._id);
+      if (find) {
+        setJoin("JOINED");
+      }
+      //return join;
+    }
+  };
 
   useEffect(() => {
     axios
@@ -73,10 +63,15 @@ export default function EventDetail({ navigation, route }) {
       .catch((error) => console.log(error));
   }, []);
 
+  useEffect(() => {
+    onSetJoin();
+  }, [participants]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.BackGroundTop}>
         <Text style={styles.title}>EVENT</Text>
+        <Text>{join}</Text>
       </View>
       <View style={styles.infocontainer}>
         <TouchableOpacity onPress={() => setIsVisibleDes(true)}>
@@ -147,13 +142,17 @@ export default function EventDetail({ navigation, route }) {
           <Button
             title="JOIN"
             onPress={() => {
-              onSetParticipants();
+              let newParticipants = onSetParticipants();
+              setParticipants(newParticipants);
               axios
                 .patch("https://cycling-cat-api.herokuapp.com/events/" + id, {
-                  newParticipants: participants,
+                  newParticipants,
                 })
                 .then((result) => {
-                  navigation.push("EventList");
+                  dispatch({
+                    type: "JOIN_EVENT",
+                  });
+                  navigation.goBack();
                 })
                 .catch((err) => console.log(err));
             }}

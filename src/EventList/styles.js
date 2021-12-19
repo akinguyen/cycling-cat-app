@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     //padding: "10%",
-    alignItems: "center",
+    //alignItems: "center",
   },
 
   bar: {
@@ -23,8 +23,11 @@ const styles = StyleSheet.create({
     width: 127,
   },
 
+  groupcontainer: { alignItems: "center" },
+
   groupinfo: {
-    marginBottom: 75,
+    marginTop: 20,
+    marginBottom: 55,
     justifyContent: "flex-start",
     alignItems: "center",
     flexDirection: "row",

@@ -4,47 +4,28 @@ import {
   Text,
   View,
   SafeAreaView,
-  ScrollView,
   Image,
-  TextInput,
   TouchableOpacity,
   Button,
 } from "react-native";
 import styles from "./styles";
-import EditProfile from "../EditProfile";
 import { Context } from "../../state/Provider";
-import { createStackNavigator } from "@react-navigation/stack";
 
 function Profile({ navigation }) {
   const [state, dispatch] = useContext(Context);
-  console.log(state.userData.info);
-  const [name, setName] = useState(""); // look here
+  const [name, setName] = useState("");
   const [birth, setBirth] = useState("");
   const [school, setschool] = useState("");
   const [id, setId] = useState("");
 
-  const onEnterName = (value) => {
-    setName(value);
-  };
-
-  const onEnterBirth = (value) => {
-    setBirth(value);
-  };
-
-  const onSetSchool = (value) => {
-    setschool(value);
-  };
-
-  const onEnterId = (value) => {
-    setId(value);
-  };
-
   useEffect(() => {
-    setBirth(state.userData.info.birthday);
-    setId(state.userData.info.stuID);
-    setName(state.userData.info.name);
-    setschool(state.userData.info.school);
-  });
+    if (state.userData) {
+      setBirth(state.userData.info.birthday);
+      setId(state.userData.info.stuID);
+      setName(state.userData.info.name);
+      setschool(state.userData.info.school);
+    }
+  }, [state.userData]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -95,6 +76,13 @@ function Profile({ navigation }) {
               <Text>{id}</Text>
             </View>
           </View>
+
+          <View style={styles.BackGroundMid}>
+            <Text style={styles.text}>Participants:</Text>
+            <View style={{ marginVertical: 10, marginHorizontal: 10 }}>
+              <Text>{state.participations}</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.button}>
           <View style={styles.back}>
@@ -110,23 +98,4 @@ function Profile({ navigation }) {
   );
 }
 
-const ProfileStack = createStackNavigator();
-
-const ProfileNavigator = () => {
-  return (
-    <ProfileStack.Navigator initialRouteName="ProfileDetail">
-      <ProfileStack.Screen
-        name="ProfileDetail"
-        component={Profile}
-        options={{ headerShown: false }}
-      />
-      <ProfileStack.Screen
-        name="EditProfile"
-        component={EditProfile}
-        options={{ headerShown: false }}
-      />
-    </ProfileStack.Navigator>
-  );
-};
-
-export default ProfileNavigator;
+export default Profile;

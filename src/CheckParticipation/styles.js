@@ -9,11 +9,11 @@ const styles = StyleSheet.create({
   },
 
   back: {
-    height: 150,
+    height: 200,
     width: "100%",
     backgroundColor: "#CCFF99",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
   },
 
   avt: {
